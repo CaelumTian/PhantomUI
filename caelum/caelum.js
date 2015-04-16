@@ -13,11 +13,11 @@ var caelum = (function(){
 		"[object RegExp]" : "regexp",
 		"[object Date]" : "date",
 		"[object HTMLDocument]" : "Document",
-        "[object HTMLCollection]" : "NodeList",
-        "[object StaticNodeList]" : "NodeList",
-        "[object DOMWindow]" : "Window",
-        "[object global]" : "Window",
-        "[object Arguments]" : "Arguments"
+        	"[object HTMLCollection]" : "NodeList",
+		"[object StaticNodeList]" : "NodeList",
+        	"[object DOMWindow]" : "Window",
+        	"[object global]" : "Window",
+        	"[object Arguments]" : "Arguments"
 	}
 	function init_type(obj, str){
 		if(obj === void 0){
