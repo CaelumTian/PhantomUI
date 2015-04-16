@@ -45,6 +45,9 @@ var caelum = (function(){
 		}else{
 			//主要是处理IE9以下，节点类数组
 			makeArray = function(obj, start, end){
+				if (!obj || !obj.length) {
+                    			return [];
+                		}
 				var array = [],
 					length = obj.length,
 					start = start || 0,
