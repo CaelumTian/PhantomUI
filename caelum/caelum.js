@@ -1,4 +1,4 @@
-var caelum = (function(){
+var Caelum = (function(){
 	var _W3C = document.dispatchEvent;   //IE9+才支持该属性
 	var _toString = Object.prototype.toString;
 	var _factory = Array.prototype.slice;
@@ -64,4 +64,5 @@ var caelum = (function(){
 		type : init_type,
 		toArray : makeArray
 	}
-})()     //数据类型判断 数组转换 module方式
+})()     //数据类型判断 数组转换 module方式  
+
