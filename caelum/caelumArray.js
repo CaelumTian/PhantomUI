@@ -83,5 +83,22 @@ Caelum.Array = (function() {
 				return this.length;    //修复不返回长度的
 			}
 		}
+		return {
+			contains : function(array, item) {
+				return array.indexOf(item) > -1;  //返回是否包含
+			},
+			removeAt: function(array, index) {
+				return array.splice(index,1).length > 0;   //返回真假
+			},
+			remove: function(array, item) {
+				var index = array.indexOf(item);
+				return index > -1 ? removeAt(array, index) : false;
+			},
+			clean: function(array) {
+				array.filter(function(item){
+					return item != null;
+				})
+			}
+		}
 	}
 })()
