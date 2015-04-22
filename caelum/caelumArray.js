@@ -98,6 +98,35 @@ Caelum.Array = (function() {
 				array.filter(function(item){
 					return item != null;
 				})
+			},
+			shuffle: function(array) {
+				var len = array.length-1,
+					temp,
+					j;
+				for( ;len > 0 ; len--){
+					j = parseInt(Math.random() * len);   //生成区间
+					temp = array[len];
+					array[len] = array[j];
+					array[j] = temp;
+				}
+				return array;
+			},
+			flatten: function(array) {
+				var newArray = [];
+				function RFlatten(a) {
+					var len = a.length,
+						item;
+					for(var i = 0; i < len; i++) {
+						item = a[i];
+						if(Caelum.isArray(item)){
+							RFlatten(item);
+						}else{
+							newArray.push(item);
+						}
+					}
+					return newArray;
+				}
+				return RFlatten(array);     //递归实现数组平坦化
 			}
 		}
 	}
