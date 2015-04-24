@@ -127,6 +127,67 @@ Caelum.Array = (function() {
 					return newArray;
 				}
 				return RFlatten(array);     //递归实现数组平坦化
+			},
+			random: function(array) {
+				return array[Math.random() * array.length];
+			},
+			include: function(array, item){
+				if (!Caelum.Array.contains(array, item)){
+					array.push(item);
+				}
+			},   //把一个元素插入到数组，如果它不存在于这个数组
+			unique: function(array) {
+				var result = [],
+					len = array.length;
+				loop: for(var i = 0; i < len; i++) {
+					for(var x = i+1; x < len; x++) {
+						if( result[i] === result[x]) {
+							continue loop;
+						}
+					}
+					result.push(array[i]);
+				}
+				return result;
+			},    //去重
+			merge: function(array) {
+				var args = [].slice.call(arguments),
+					len = args.length,
+					result = [];
+				for(var i = 0; i < len; i++) {
+					result = result.concat(args[i]);
+				}
+				return Caelum.Array.unique(result); 
+			},   //取并集
+			intersect: function(target, array) {
+				return target.filter(function(item){
+					return ~array.indexOf(item);    //取反 || 取交集
+				})
+			},
+			diff: function(target, array) {
+				for(var i = 0; i < target.length; i++) {
+					for(var j=0; j < array.length; j++) {
+						if(target[i] === array[j]) {
+							target.splice(i,1);   //删除
+							i--;
+							break;
+						}
+					}
+				}
+				return target;   //取补集
+			},
+			min: function(array) {
+				return Math.min.apply(null, array);
+			},
+			max: function(array) {
+				return Math.max.apply(null, array);
+			},
+			sum: function(array) {
+				var len = array.length,
+					result = 0;
+				for(var i = 0; i < len; i++) {
+					result += array[i];
+				}
+				return result;
 			}
 		}
 	}
