@@ -34,14 +34,14 @@ Caelum.Array = (function() {
 				return -1;
 			}
 		}
-		if(!('forEach') in arrayPrototype) {
+		if(!('forEach' in arrayPrototype)) {
 			arrayPrototype.forEach = function(fn, scope) {   //scope为运行作用域
 				for(var i = 0, j = this.length; i < j; i++){
 					fn.call(scope, this[i], i, this);        //为回调传入三个参数：this，当前内容，索引，迭代的对象
 				}
 			}
 		}
-		if(!('filter') in arrayPrototype) {
+		if(!('filter' in arrayPrototype)) {
 			arrayPrototype.filter = function(fn, scope) {   //scope为运行作用域
 				var result = [];
 				for(var i = 0, j = this.length; i < j; i++) {
@@ -52,7 +52,7 @@ Caelum.Array = (function() {
 				return result;     //返回结果
 			}
 		}
-		if(!('map') in arrayPrototype) {
+		if(!('map' in arrayPrototype)) {
 			arrayPrototype.map = function(fn, scope) {   //scope为运行作用域
 				var result = [];
 				for(var i = 0, j = this.length; i < j; i++) {
@@ -61,19 +61,23 @@ Caelum.Array = (function() {
 				return result;
 			}
 		}
-		if(!('every') in arrayPrototype) {
+		if(!('every' in arrayPrototype)) {
 			arrayPrototype.every = function(fn, scope) {   //scope为运行作用域
-				if (!fn.call(scope, array[i], i, array)) {
-                    return false;   //有错误的就返回false
-                }
+				for(var i = 0, j = this.length; i < j; i++){
+					if (!fn.call(scope, this[i], i, this)) {
+	                    return false;   //有错误的就返回false
+	                }
+				}
 				return true;
 			}
 		}
-		if(!('some') in arrayPrototype) {
+		if(!('some' in arrayPrototype)) {
 			arrayPrototype.some = function(fn, scope) {   //scope为运行作用域
-				if (fn.call(scope, array[i], i, array)) {
-                    return true;   //有错误的就返回false
-                }
+				for(var i = 0, j = this.length; i < j; i++){
+					if (fn.call(scope, this[i], i, this)) {
+	                    return true;   //有错误的就返回false
+	                }
+				}
 				return false;
 			}
 		}
