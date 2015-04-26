@@ -87,6 +87,15 @@ Caelum.Array = (function() {
 				return this.length;    //修复不返回长度的
 			}
 		}
+		if([1,2].splice(1).length == 0) {
+			Array.prototype.splice() = function(num) {
+				if(arguments.length == 1) {
+					return _splice(this, num, this.length);
+				}else{
+					return _splice(this, arguments);
+				}
+			}
+		}
 		return {
 			contains : function(array, item) {
 				return array.indexOf(item) > -1;  //返回是否包含
@@ -99,7 +108,7 @@ Caelum.Array = (function() {
 				return index > -1 ? removeAt(array, index) : false;
 			},
 			clean: function(array) {
-				array.filter(function(item){
+				return array.filter(function(item){
 					return item != null;
 				})
 			},
