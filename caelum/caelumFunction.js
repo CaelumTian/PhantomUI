@@ -58,3 +58,48 @@ var P = (function(prototype, ownProperty, undefined) {
 	}	
 	return P;
 })('prototype', ({}).hasOwnProperty);
+
+var JS = {}
+JS.Class = function(definition) {
+	//实际构造器
+	function getClassBase() {
+		return function() {
+			if(typeof this['construct'] === 'function' && preventJSBaseConstructorCall === false) {
+				this.construct.apply(this, arguments);
+			}
+		}
+	}
+	//添加原形类和方法
+	function createClassDefinition(definition) {
+		var parent = this.prototype["parent"] || (this.prototype["parent"] = {});
+		for (var prop in definition) {
+			if(prop === 'statics') {
+				//复制静态方法,给类本身
+				for(var sprop in definition.statics) {
+					this[sprop] = definition.statics[sprop];
+				}
+			}else{
+				//如果有同名的原形方法，则给 Base.parent属性，没有则直接添加
+				if(typeof this.prototype[prop] === 'function') {
+					var parentMethod = this.prototype[prop];
+					parent[prop] = parnetMethod;
+				}
+				this.prototype[prop] = definition[prop];
+			}
+		}
+	}
+	var preventJSBaseConstructorCall = true;  //还是不太明白有什么用，及时没有这个不也能成功么？
+	var Base = getClassBase();
+	preventJSBaseConstructorCall = false;
+	createClassDefinition.call(Base, definition);  //给Base添加属性
+	Base.extend = function(definition) {
+		preventJSBaseConstructorCall = true;
+		var SonClass = getClassBase();
+		SonClass.prototype = new this();   //Base实例化对象，给SonClass原形链
+		preventJSBaseConstructorCall = false;
+		createClassDefinition.call(SonClass, definition);
+		SonClass.extend = this.extend;
+		return SonClass;   //再次绑定
+	}
+	return Base;
+}
