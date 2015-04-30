@@ -103,3 +103,49 @@ JS.Class = function(definition) {
 	}
 	return Base;
 }
+
+(function(global){
+	if(!Object.create){
+		Object.create= (function(){
+			function F(){}   //中介函数
+			return function(obj) {
+				if(arguments.length !== 1) {
+					throw new Error("仅支持一个参数");
+				}
+				F.prototype = obj;   //原形绑定
+				return new F();
+			}
+		})()
+	}
+	//检测func.toString能否返回函数内容，能就匹配 _super对象，不能则返回一个永远为真的正则
+	var fnText = /xyz/.test(function(){xyz}) ? /\b_super\b/ : /.*/;
+	function BaseClass(){}   //基类
+	BaseClass.extend = function(props) {
+		var _super = this.prototype;    //获取基类prototype
+		var proto = Object.create(_super); //创建原形
+		for(var name in props) {
+			//检测子类方法props中是否含有基类原形，有则重写方法
+			proto[name] = typeof props[name] === 'function' && typeof _super[name] === 'function' && fnText.test(props[name]) ?
+			(function(name, fn){   //属性名，子类属性方法
+				return function() {
+					var tmp = this._super;   //我觉得是为了方式 this._super存在而书写的,以免被覆盖
+					console.log(tmp + "11111");
+					this._super = _super[name];
+                    var ret = fn.apply(this, arguments);
+                    this._super = tmp;
+                    return ret;
+				}
+			})(name, props[name]) : props[name];
+		}
+		var newClass = function() {
+			if(typeof this.init === 'function') {
+				this.init.apply(this, arguments);
+			}
+		}
+		newClass.prototype = proto;
+		proto.constructor = newClass;
+		newClass.extend = BaseClass.extend;
+		return newClass;
+	}
+	global.Class = BaseClass;
+})(window)
