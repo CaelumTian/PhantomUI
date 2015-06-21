@@ -154,7 +154,7 @@ Caelum.Array = (function() {
 					len = array.length;
 				loop: for(var i = 0; i < len; i++) {
 					for(var x = i+1; x < len; x++) {
-						if( result[i] === result[x]) {
+						if( array[i] === array[x]) {
 							continue loop;
 						}
 					}
