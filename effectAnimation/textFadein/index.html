@@ -46,8 +46,8 @@
         var stage = document.getElementsByClassName("ctn")[0],
             C = 4,   //4列，8行
             R = 8;
-        var stageCx = stage.offsetWidth / 2;
-        var stageCy = stage.offsetHeight / 2;   //中心点坐标
+        var stageCx = stage.offsetWidth / 2,
+            stageCy = stage.offsetHeight / 2;   //中心点坐标
         function rnd(n, m) {
             return parseInt(Math.random() * (m - n) + n);  //随机函数，随机旋转位置
         }
