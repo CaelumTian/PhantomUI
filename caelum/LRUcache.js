@@ -1,44 +1,27 @@
-	var defaults={
-		max:500,				//队列最大长度
-		maxAge:1000*60*60  		//最大生存时间
-	}
-	function hasOp(obj,key){
-		return Object.hasOwnProperty.call(obj,key);
-	}
-	function LRUcache(options){
-		if(!(this instanceof LRUcache)){
-			return new LRUcache(options);  
-		}  //安全构造函数
-		if(!options.max || !(typeof options.max === "undefined") || options.max<=0){
-			this._max = defaults.max;
-		}else{
-			this._max = options.max;
-		}  //设置最大长度
-		this._maxAge = typeof options.maxAge === "number" ? options.maxAge : defaults.maxAge;
-		this._dispose = options.dispose;
-		this.init();
-	}
-	LRUcache.prototype.init=function(){
-		this._cache = Object.create(null); //防止原形污染
-		this._lruList = Object.create(null);
-		this._mru = 0;
-		this._lru = 0;
-		this._length = 0;
-		this._itemCount = 0;
-	}
-	LRUcache.prototype.set=function(key,value){
-		if(hasOp(this._cache,key)){
-			if(this._maxAge){
-				this._cache[key].now = Date.now();
-			}
-			this._cache[key].value=value;  //设置缓存
-		}
-		var len=this._lengthCalculator(value);
-	}
-	function Entry(key,value,lu,length,now){
-		this.key = key;
-		this.value = value;
-		this.lu = lu;
-		this.length = length;
-		this.now = now;
-	}
+/*
+ * Created by DELL on 2015/6/23. LRU缓存
+ */
+function LRUcache(options) {
+    options = options || {};
+    if(!(this instanceof LRUcache)) {
+        return new LRUcache(options);
+    }
+    if(typeof options === 'number') {
+        options = {
+            'max' : options   //缓存最大的长度
+        }
+    }
+    this._max = options.max;
+    if(!this._max || !(typeof this._max === 'number') || this._max < 0){
+        this._max = Infinity;    //没有设置最大值
+    }
+    this.reset();
+}
+LRUcache.prototype.reset = function() {
+    this._cache = Object.create(null);   //储存数据的哈希表
+    this._lruList = Object.create(null); //最近使用的数据存储
+    this._length = 0;    //缓存长度
+}
+LRUcache.prototype.set = function(key, value) {
+    
+}
