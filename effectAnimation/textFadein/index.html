@@ -81,7 +81,13 @@
         function fadeOut() {
             var divs = stage.getElementsByTagName("div");
             for(var i = 0; i < divs.length; i++) {
-                divs[i].className = "";
+                divs[i].className = "";   //清空样式，还原
+            }
+        }
+        function fadeIn() {
+            var divs = stage.getElementsByTagName("div");
+             for(var i = 0; i < divs.length; i++) {
+                divs[i].className = "nowClass";   //清空样式，还原
             }
         }
     </script>
