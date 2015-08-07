@@ -1,0 +1,25 @@
+{
+	"predef" : [
+		"console",
+		"document",
+		"module",
+		"__dirname",
+		"process",
+		"require",
+		"it"
+	],                     //以上数组中变量已经定义，不再需要检查，和undef相对应
+	"strict" : false,	   //是否使用严格模式
+	"bitwise" : false,	   //禁用为运算符
+	"curly" : true,		   //循环或者条件语句必须使用花括号包围
+	"eqeqeq" : true,       //强制使用'==='
+	"es5" : false,		   //这个设置了true就会报错，不知道什么问题
+	"latedef" : true,	   //禁止变量未定义就使用
+	"forin" : false,       //设置为true则for-in中必须含有hasOwnproperty（不检测原形链）
+	"newcap" : true,	   //构造函数开头必须大写
+	"noarg" : true,		   //禁用arguments.callee
+	"nonew" : true,        //构造函数前必须有new
+	"plusplus" : false,    //可以使用自增自减
+	"undef" : true,        //禁止未定义变量（var声明的存在）
+	"unused" : "vars",     //对于已定义未使用的变量进行检测，不检查参数
+	"onevar" : false      //函数声明方式都可以，true只能用var
+} 
