@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/effectAnimation.iml" filepath="$PROJECT_DIR$/.idea/effectAnimation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PhantomUI.iml" filepath="$PROJECT_DIR$/.idea/PhantomUI.iml" />
     </modules>
   </component>
 </project>
-
