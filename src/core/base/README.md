@@ -50,7 +50,7 @@ var te = new Teacher("cjk", 30, 't_hot');
     xyz;
  }) ? /\b_super\b/ : /.*/ 
  for(var name in definition) {
-    _Objec.prototype[name] = typeof definition[name] === 'function' && typeof _super[fn] === 'function' && fnText.test(definition[name]) ?
+    _Object.prototype[name] = typeof definition[name] === 'function' && typeof _super[fn] === 'function' && fnText.test(definition[name]) ?
     (function(name, fn) {
         return function() {
             var tmp = this._super;

@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c55839ed-833c-41ae-92cb-5a5c2e6644b5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/core/base/README.md" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/core/base/class.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/effectAnimation/.idea/.name" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/effectAnimation/.idea/effectAnimation.iml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/effectAnimation/.idea/encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/effectAnimation/.idea/misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/effectAnimation/.idea/modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/effectAnimation/.idea/scopes/scope_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/effectAnimation/.idea/workspace.xml" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/effectAnimation/textFadein/bg.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/effectAnimation/textFadein/index.html" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/effectAnimation/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/base/README.md" afterPath="$PROJECT_DIR$/src/core/base/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/base/class.js" afterPath="$PROJECT_DIR$/src/core/base/class.js" />
     </list>
     <ignored path="PhantomUI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -34,25 +24,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="class.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="class.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/core/base/class.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.185185">
-              <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+            <state vertical-scroll-proportion="0.67355984">
+              <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/base/README.md">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-13.310345">
+              <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
               <folding />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="MarkdownPreviewEditor">
+          <provider editor-type-id="MarkdownPreviewEditor">
             <state />
           </provider>
         </entry>
@@ -66,8 +56,8 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/core/class.js" />
-        <option value="$PROJECT_DIR$/src/core/base/class.js" />
         <option value="$PROJECT_DIR$/src/core/base/README.md" />
+        <option value="$PROJECT_DIR$/src/core/base/class.js" />
       </list>
     </option>
   </component>
@@ -307,23 +297,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/base/class.js">
+    <entry file="file://$PROJECT_DIR$/src/core/base/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.185185">
-          <caret line="20" column="1" selection-start-line="20" selection-start-column="1" selection-end-line="20" selection-end-column="1" />
+        <state vertical-scroll-proportion="-13.310345">
+          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/base/README.md">
-      <provider editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
+    <entry file="file://$PROJECT_DIR$/src/core/base/class.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.67355984">
+          <caret line="37" column="16" selection-start-line="37" selection-start-column="16" selection-end-line="37" selection-end-column="16" />
           <folding />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="MarkdownPreviewEditor">
-        <state />
       </provider>
     </entry>
   </component>

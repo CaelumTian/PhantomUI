@@ -18,7 +18,7 @@
                 throw new Error("superclass must be fun");
             }
             var _super = superclass.prototype;
-d
+
             //删去静态方法（静态方法不能被继承）
             var statics = definition.statics;
             delete definition.statics;
