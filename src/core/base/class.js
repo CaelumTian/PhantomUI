@@ -41,8 +41,7 @@
             //绑定静态内容
             _Object.statics = statics;
 
-            return _Object
-                ;
+            return _Object;
         }
     }
 
