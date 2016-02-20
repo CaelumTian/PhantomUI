@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../class.js"></script>
+    <script src="../base.js"></script>
+</head>
+<body>
+    <script>
+        var Text = Class.create(Base, {
+            init : function() {
+                console.log("-----执行-----");
+            }
+        });
+        function fn1(event) {
+            event.stopPropagation();
+            console.log(event.type + "事件触发");
+            console.log("这是fn1函数");
+        }
+        function fn2(event) {
+            console.log(event.type + "事件触发");
+            console.log("这是fn2函数")
+        }
+        var t = new Text();
+        t.on("change submit", fn1);
+        t.on("change", fn2);
+        t.trigger("change");
+
+        var SaleOffice = Class.create(Base, {
+            init : function() {
+                this.on("home", function(event) {
+                    console.log(event.type + "事件触发");
+                    console.log("出售房子");
+                })
+            },
+            sale : function() {
+                this.trigger("home");
+            },
+            destruct : function() {
+                this.off("home");
+            }
+        });
+        var wanda = new SaleOffice();
+        wanda.on("change", function(event) {
+            event.stopPropagation();
+            console.log(arguments);
+            console.log("这个事件不会传递");
+        });
+        wanda.trigger("change", ["tgy", 12]);
+    </script>
+</body>
+</html>
