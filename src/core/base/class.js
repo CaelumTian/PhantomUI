@@ -39,7 +39,10 @@
             }
 
             //绑定静态内容
-            _Object.statics = statics;
+            _Object.statics = {};
+            for(var name in statics) {
+                _Object.statics[name] = statics[name];
+            }
 
             return _Object;
         }

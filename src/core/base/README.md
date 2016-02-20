@@ -17,8 +17,9 @@ var Person = Class.create({
         this.name = name;
         this.age = age;
     },
-    statics : function() {
-        console.log("我是Person类");
+    statics : {
+        "name" : "PERSON",
+        "type" : "CLASS"
     }
 })
 var per = new Person("phantom", 1);
