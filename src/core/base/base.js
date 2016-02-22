@@ -4,6 +4,7 @@
 (function(global) {
     "use strict"
     global.CONST_ATTR_KEYS = ['value', 'setter', 'getter'];
+    global.CONST_ATTR_ERROR = "SET ATTR ERROR";
     /**
      * Event类, 用于创建事件监听中的event对象
      * event.stopPropagation() 停止方法传递
@@ -20,9 +21,7 @@
     });
     var Base = Class.create({
         init : function(config) {
-            config = config || {};
             this._initAttrs(config);
-            //这里先空着,用于attr
         },
         destroy : function() {
             this.off();
@@ -151,11 +150,17 @@
                     }
                 }
             }
+            //最终给attrs赋值
+            config = config || {};
+            currAttrs = $.extend(true, {}, currAttrs, Util.normalizeAttr(config));
+            self.attrs = currAttrs;
+
         },
         set : function(name, val, options) {
             var self = this;
-            //临时存储属性对象
+            //临时存储操作过的属性(深拷贝)
             var attrs = {};
+
             //已经有的attrs属性
             var curAttr = this.attrs;
 
@@ -181,19 +186,30 @@
                     return false;
                 }
                 if(hasSubAttr) {
+                    //检查是a.b是否能添加
                     var subAttr = Util.getProperty(preVal.value, path.slice(1, -1).join("."));
-                    if(subAttr === undefined) {
+                    if(subAttr === undefined || !$.isPlainObject(subAttr) ) {
                         return false;
                     }
-                    //深拷贝当前属性的值
+                    //深拷贝一份当前值, 加入子属性后赋值给attrs;不直接修改是因为还要有setter判断才能决定最后结果.
                     var newValue = $.extend({}, preVal.value);
                     subAttr = Util.getProperty(newValue, path.slice(1, -1).join("."));
                     subAttr[path[path.length - 1]] = attrs[name];
                     attrs[name] = newValue;
                 }
+
+                //若有定义setter 则调用setter, setter返回设置的值(注意死循环)
+                if(preVal.setter && typeof preVal.setter === "function") {
+                    attrs[name] = preVal.setter.call(self, attrs[name], name, options.data);
+                    if(attrs[name] === CONST_ATTR_ERROR) {
+                        return false;
+                    }
+                }
+
                 preVal = preVal.value;
                 curAttr[attrName].value = attrs[name];
             }
+            return true;
         }
     });
     global.Base = Base;
@@ -201,7 +217,7 @@
     //支持函数
     var Util = {
         /**
-         * 获得字属性 (obj, "a.b.c") 返回 obj.a.b.c
+         * 获得字属性 (obj, "a.b") 返回 obj.b的值
          * @param obj   要混入的对象
          * @param path  属性路径字符串
          */
@@ -240,12 +256,11 @@
          * @param properties [Array] 待检查信息
          */
         hasOwnProperty : function(obj, properties) {
-            for(var i = 0, len = properties; i < len; i++) {
-                if(obj.hasOwnProperty(properties[i])) {
-                    return true;
-                }
-            }
-            return false;
+            var result = false;
+            $.each(properties, function(index, val) {
+                if(obj.hasOwnProperty(val)) result = true;
+            });
+            return result;
         }
     };
 })(this);

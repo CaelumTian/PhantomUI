@@ -12,17 +12,33 @@
         var Person = Class.create(Base, {
             attrs : {
                 "name" : {
-                    value : "tgy",
+                    value : {
+                        "name" : "杨",
+                        "work" : {
+
+                        }
+                    },
                     attrMerge : true
                 }
             }
         });
         var Child = Class.create(Person, {
             attrs : {
-                "age" : 11
+                "age" : {
+                    "value" : 11,
+                    "setter" : function(val) {
+                        console.log(arguments);
+                        if(typeof val !== "number") {
+                            this.set("age", 80)
+                        }
+                    }
+                }
             }
         });
         var ch = new Child();
+        console.log(ch.attrs);
+        ch.set("name.work.main", "徐州");
+        ch.set("age", "80")
     </script>
 </body>
 </html>

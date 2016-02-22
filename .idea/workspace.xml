@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c55839ed-833c-41ae-92cb-5a5c2e6644b5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/support/zepto.min.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/base/base.js" afterPath="$PROJECT_DIR$/src/core/base/base.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/base/class.js" afterPath="$PROJECT_DIR$/src/core/base/class.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/base/test/test.html" afterPath="$PROJECT_DIR$/src/core/base/test/test.html" />
     </list>
     <ignored path="PhantomUI.iws" />
@@ -41,8 +38,8 @@
       <file leaf-file-name="base.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/core/base/base.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.4872159">
-              <caret line="153" column="10" selection-start-line="153" selection-start-column="10" selection-end-line="153" selection-end-column="10" />
+            <state vertical-scroll-proportion="0.10653409">
+              <caret line="200" column="59" selection-start-line="200" selection-start-column="59" selection-end-line="200" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -51,8 +48,8 @@
       <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/base/test/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.5384617">
-              <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+            <state vertical-scroll-proportion="-12.346154">
+              <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -78,8 +75,8 @@
         <option value="$PROJECT_DIR$/src/core/base/text/index.html" />
         <option value="$PROJECT_DIR$/src/core/base/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/src/core/base/test/test.html" />
         <option value="$PROJECT_DIR$/src/core/base/class.js" />
+        <option value="$PROJECT_DIR$/src/core/base/test/test.html" />
         <option value="$PROJECT_DIR$/src/core/base/base.js" />
       </list>
     </option>
@@ -468,8 +465,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/base/test/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.5384617">
-          <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
+        <state vertical-scroll-proportion="-12.346154">
+          <caret line="25" column="21" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -484,8 +481,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/base/base.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4872159">
-          <caret line="153" column="10" selection-start-line="153" selection-start-column="10" selection-end-line="153" selection-end-column="10" />
+        <state vertical-scroll-proportion="0.10653409">
+          <caret line="200" column="59" selection-start-line="200" selection-start-column="59" selection-end-line="200" selection-end-column="59" />
           <folding />
         </state>
       </provider>
