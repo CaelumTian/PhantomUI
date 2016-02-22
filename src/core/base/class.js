@@ -33,6 +33,12 @@
             _Object.prototype._super = _super;
             _Object.prototype.constructor = _Object;
 
+            //确保一定存在init方法
+            if(typeof _Object.prototype.init !== 'function') {
+                _Object.prototype.init = function() {
+                    superclass.apply(this, arguments);
+                }
+            }
             //copy对象内容到原型中
             for(var name in definition) {
                 _Object.prototype[name] = definition[name];
