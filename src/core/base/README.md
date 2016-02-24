@@ -134,7 +134,9 @@ sipc.trigger("change submit");
 `event.target` : 触发事件的对象   
 `event.type` : 触发的事件名称    
 `event.stopPropagation()` : 终止事件传递下去   
-不太完善总觉得...... 
+不太完善总觉得......   
+
+
 
 
 

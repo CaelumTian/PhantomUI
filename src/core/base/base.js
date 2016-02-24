@@ -90,7 +90,7 @@
             var event,
                 self = this;
             if(!events) {
-                console.warn("there must be an event");
+                console.warn("EventError : there must be an event");
                 return false;
             }
             events = events.split(/\s+/);
@@ -114,6 +114,8 @@
                                 break;
                             }
                         }
+                    }else {
+                        console.warn("EventError : this event is not find");
                     }
                 }
             }
@@ -158,7 +160,7 @@
         },
         set : function(name, val, options) {
             var self = this;
-            //临时存储操作过的属性(深拷贝)
+            //临时存储操作过的属性
             var attrs = {};
 
             //已经有的attrs属性
@@ -191,7 +193,7 @@
                     if(subAttr === undefined || !$.isPlainObject(subAttr) ) {
                         return false;
                     }
-                    //深拷贝一份当前值, 加入子属性后赋值给attrs;不直接修改是因为还要有setter判断才能决定最后结果.
+                    //拷贝一份当前值, 加入子属性后赋值给attrs;不直接修改是因为还要有setter判断才能决定最后结果.
                     var newValue = $.extend({}, preVal.value);
                     subAttr = Util.getProperty(newValue, path.slice(1, -1).join("."));
                     subAttr[path[path.length - 1]] = attrs[name];
@@ -206,10 +208,51 @@
                     }
                 }
 
+                //决定是否保留原attrName中的其他属性
+                if(options.merge) {
+                    attrs[name] = ($.extend(true, {}, preVal, {value : attrs[name]})).value;
+                }
                 preVal = preVal.value;
                 curAttr[attrName].value = attrs[name];
+
+                /**
+                 *  触发 change:attrname 变动事件
+                 *  触发 change:* 变动事件
+                 *  传入参数: 变动属性当前值, 原值, 属性明, 额外参数
+                 */
+                if(options.event) {
+                    self.trigger('change:' + attrName, [self.get(attrName), preVal, name, options.data]);
+                    self.trigger('change:*' + attrName, [self.get(attrName), preVal, name, options.data]);
+                }
+
             }
             return true;
+        },
+        get : function(name) {
+            var self = this;
+            if(!name) {
+                var attrs = {};
+                for(var name in self.attrs) {
+                    attrs[name] = self.get(name);   //取所有值
+                }
+                return attrs;
+            }else {
+                var path = name.split('.');
+                //不存在值
+                if(!self.attrs.hasOwnProperty(path[0])) {
+                    return false;
+                }
+                var attr = self.attrs[path[0]];
+                var val = attr.value;
+                if(attr.getter) {
+                    val = attr.getter.call(self, val, name);
+                }
+                val = Util.getProperty(val, path.slice(1).join('.'));
+                if(val === CONST_ATTR_ERROR) {
+                    val = undefined;
+                }
+                return val;
+            }
         }
     });
     global.Base = Base;

@@ -9,36 +9,32 @@
 </head>
 <body>
     <script>
-        var Person = Class.create(Base, {
+        var Widget = Class.create(Base, {
             attrs : {
-                "name" : {
+                template : '<div></div>',
+                className : 'span-12',
+                ownerNode : {
                     value : {
-                        "name" : "杨",
-                        "work" : {
-
-                        }
-                    },
-                    attrMerge : true
-                }
-            }
-        });
-        var Child = Class.create(Person, {
-            attrs : {
-                "age" : {
-                    "value" : 11,
-                    "setter" : function(val) {
-                        console.log(arguments);
-                        if(typeof val !== "number") {
-                            this.set("age", 80)
-                        }
+                        "parent" : "body",
+                        "time" : "2016"
                     }
                 }
             }
         });
-        var ch = new Child();
-        console.log(ch.attrs);
-        ch.set("name.work.main", "徐州");
-        ch.set("age", "80")
+        var Dialog = Class.create(Widget, {
+            attrs : {
+                template : '<div></div>',
+                className : 'phantom-dialog',
+                ownerNode : {
+                    value : {
+                        "parent" : "div"
+                    },
+                    attrMerge : true    //继承attrs
+                },
+                id : '#dialog'
+            }
+        });
+        var dia = new Dialog();
     </script>
 </body>
 </html>
