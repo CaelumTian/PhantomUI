@@ -22,6 +22,11 @@
             }
         });
         var Dialog = Class.create(Widget, {
+            init : function(config) {
+                console.log("初始化");
+                this._super._initAttrs.apply(this, config);
+                this.on("change:status", this.change);
+            },
             attrs : {
                 template : '<div></div>',
                 className : 'phantom-dialog',
@@ -31,7 +36,20 @@
                     },
                     attrMerge : true    //继承attrs
                 },
-                id : '#dialog'
+                id : '#dialog',
+                status : {
+                    value : "open",
+                    setter : function(value, name, data) {
+                        console.log(arguments);
+                        return value;
+                    },
+                    getter : function(value, key) {
+                        return "当前状态为:" + value;
+                    }
+                }
+            },
+            change : function() {
+                console.log("status发生改变,传入参数为" + arguments);
             }
         });
         var dia = new Dialog();

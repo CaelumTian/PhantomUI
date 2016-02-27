@@ -115,7 +115,7 @@
                             }
                         }
                     }else {
-                        console.warn("EventError : this event is not find");
+                        console.warn("EventError : this event " + event + "is not find");
                     }
                 }
             }
@@ -222,7 +222,7 @@
                  */
                 if(options.event) {
                     self.trigger('change:' + attrName, [self.get(attrName), preVal, name, options.data]);
-                    self.trigger('change:*' + attrName, [self.get(attrName), preVal, name, options.data]);
+                    self.trigger('change:*', [self.get(attrName), preVal, name, options.data]);
                 }
 
             }

@@ -134,7 +134,107 @@ sipc.trigger("change submit");
 `event.target` : 触发事件的对象   
 `event.type` : 触发的事件名称    
 `event.stopPropagation()` : 终止事件传递下去   
-不太完善总觉得......   
+不太完善总觉得......     
+
+# Attribute  
+
+----  
+提供基本属性添加，获取，修改  
+## 属性初始化  
+#### 定义类的时候通过attrs属性设置，注意：`init`函数中一定要调用 `_initAttrs` 方法。 
+可选属性如下：  
+`value` : 初始化值  
+`getter` : getter魔术方法  
+`setter` : setter魔术方法 
+`attrMerge` : 是否继承父类该属性。
+
+```javascript
+var Widget = Class.create(Base, {
+    attrs : {
+        template : '<div></div>',  //省略参数，直接定义
+        className : 'span-12',
+        ownerNode : {              //第二种定义方式
+            value : {
+                "parent" : "body",
+                "time" : "2016"
+            }，
+            setter : function(){...}，
+            getter : function(){...}
+        }
+    }
+});
+```  
+## 基本方法： 
+### function set(key, value, option);  
+设置某个属性的值，如果该属性设置 setter 函数，则调用setter函数
+`key` : 键名  
+`value` : 键值  
+`option` : 额外参数 
+`option.event` : 决定是否触发 "change:key" 事件，默认 false  
+`option.merge` : 决定属性是覆盖还是继承, 默认false  
+`option.data` : 传递给setter函数和事件函数的额外参数  
+return : 返回true表示成功，返回`CONST_ATTR_ERROR`表示设置属性失败。  
+
+```javascript
+//具体设置单一属性
+dia.set("status", "close", {event : true, merge : false}); 
+//设置一组属性 
+dia.set({
+    name : "dia",
+    status : "open"
+})
+//设置子属性 
+dia.set("status.time", new Date()); 
+```  
+
+### setter函数使用  
+属性若有定义setter，则在设置属性时，会调用setter，再将属性值设为它的返回值。  
+#### function setter(value, name, data);  
+`value` : 要设置成的值  
+`name` : 要设置的属性名  
+`data` : 额外参数即 option.data 
+return : 返回值，若设置合理，则返回值为最终属性值。设置不合理，请返回`CONST_ATTR_ERROR` 表示设置失败。  
+
+```javascript 
+var Dialog = Class.create("Widget", {
+    attrs : {
+        uuid : {
+            value : +new Data(),
+            setter : function(value) {
+                if(typeof value !== "number") {
+                    return CONST_ATTR_ERROR;
+                }else {
+                    return value;
+                }
+            }
+        }
+    }
+})
+``` 
+### function get(key)  
+根据属性明，获取对应的属性, 若有getter函数，优先调用getter  
+```javascript
+dia.get();   //获取所有属性 
+dia.get("status");  //获取指定属性
+dia.get("status.time"); //获取子属性
+```   
+### getter函数使用  
+属性若有定义getter，则会在调用对象调用get()时触发，并返回getter()返回的值  
+#### function getter(value, name)  
+```javascript
+var Dialog = Class.create("Widget", {
+    attrs : {
+        uuid : {
+            value : +new Data(),
+            getter : function(value, name) {
+                return "当前状态为：" + value;
+            }
+        }
+    }
+})
+```     
+### change事件  
+当通过set()改变属性值时，会触发change:attrName事件。 因此可通过 this.on('change:attrName', function(ev, val, prev, data) { /* ... */ })来监听属性更改。
 
 
 
