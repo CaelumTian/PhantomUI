@@ -20,6 +20,10 @@
         }
     });
     var Base = Class.create({
+        /**
+         * config 参数, 配置attrs
+         * 继承类一定要调用 _initAttrs函数
+         */
         init : function(config) {
             this._initAttrs(config);
         },

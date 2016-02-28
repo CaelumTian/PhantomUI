@@ -24,7 +24,7 @@
         var Dialog = Class.create(Widget, {
             init : function(config) {
                 console.log("初始化");
-                this._super._initAttrs.apply(this, config);
+                this._super.init.call(this, config);
                 this.on("change:status", this.change);
             },
             attrs : {
@@ -52,7 +52,9 @@
                 console.log("status发生改变,传入参数为" + arguments);
             }
         });
-        var dia = new Dialog();
+        var dia = new Dialog({
+            "other" : "else"
+        });
     </script>
 </body>
 </html>
