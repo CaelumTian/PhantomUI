@@ -4,7 +4,8 @@
 (function(global) {
     //组件实例缓存
     var cacheWidget = {};
-
+    //事件命名空间
+    var CONST_EVENT_NS = ".widget-";
     var Widget = Class.create(Base, {
         element : null,
         $element : null,
@@ -25,6 +26,7 @@
             this._stamp();
             //初始化事件
             this.delegateEvents();
+            this.setup();
         },
         _parseConfig : function(config) {
             config = config || {};
@@ -95,10 +97,41 @@
             element = $(element);
             if(events) {
                 $.each(events, function(eventKey, handler) {
-
-                })
+                    var event = Util.parseEventKey(self, eventKey);
+                    var callback;
+                    if(typeof handler === 'string') {
+                        callback = function(ev) {
+                            // 当handler为字符串时,说明调用this上的方法
+                            self[handler](ev);
+                        }
+                    }else if(typeof handler === 'function') {
+                        callback = function(ev) {
+                            handler.call(self, ev);
+                        }
+                    }
+                    element.on(event.type, event.selector, callback);
+                });
             }
-        }
+            return this;
+        },
+        /**
+         *  组件生命周期
+         *  setup : 组件初始化重载方法
+         */
+        setup : function() {},
+        /**
+         *  渲染this.element 调用_onRenderAttr
+         *  若this.element是由模板生成, 则将其添加到parentNode中
+         *  如果希望组件初始化时渲染，可在setup中调用render
+         */
+        render : function() {
+            //初次调用render方法
+            if(!this.rendered) {
+                this._renderAndBindAttrs();
+                this.rendered = true;
+            }
+        },
+        _renderAndBindAttrs : function() {}
     });
     var Util = {
         uuid : 0,
@@ -135,6 +168,17 @@
                 data = JSON.parse(data);
             }
             return data;
+        },
+        parseEventKey : function(self, eventKey) {
+            var event = {};
+            //匹配 "click .btn" -> ["click .btn", "click", ".btn"]
+            var re = eventKey.match(/^(\S+)\s*(.*)$/);
+            event.type = re[1] + CONST_EVENT_NS + self.uuid;
+            //event 添加{$attrName}支持
+            event.selector = re[2].replace(/{\$(.*)}/, function() {
+                return self.get(arguments[1]);
+            });
+            return event;
         }
     };
     global.Widget = Widget;
