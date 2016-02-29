@@ -13,19 +13,20 @@
     <script>
         var MyWidget = Class.create(Widget, {
             attrs : {
-                id : "myId",
-                className : "myClassName",
-                events : null,
-                template :  '<div>'
-                           +    '<a><button class="btn">点击我</button></a>'
-                           +'</div>',
-                name : null,
-                setup : function() {
-                    this.render();
-                },
-                _onRenderName : function() {
-                    console.log(arguments);
-                }
+                id: "myId",
+                className: "myClassName",
+                events: null,
+                template: '<div>'
+                            + '<a><button class="btn">点击我</button></a>'
+                        + '</div>',
+                name: null
+            },
+            setup : function() {
+                console.log("我调用的是这里");
+                this.render();
+            },
+            _onRenderName : function() {
+                console.log(arguments);
             }
         });
         var ins1 = new MyWidget({className: 'widget1'});

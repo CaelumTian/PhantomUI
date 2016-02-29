@@ -145,7 +145,7 @@
                 _protoChain = [];
             while(_proto && !$.isEmptyObject(_proto)) {
                 _protoChain.push(_proto);
-                _proto = _proto.constructor.prototype._super;    //父类原型
+                _proto = _proto.constructor._super;    //父类原型
             }
             //继承原型上的attrs
             while(_proto = _protoChain.pop()) {

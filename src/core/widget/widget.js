@@ -26,6 +26,7 @@
             this._stamp();
             //初始化事件
             this.delegateEvents();
+            console.log(this.setup);
             this.setup();
         },
         _parseConfig : function(config) {

@@ -16,7 +16,8 @@
                 ownerNode : {
                     value : {
                         "parent" : "body",
-                        "time" : "2016"
+                        "time" : "2016",
+                        attrMerge : true
                     }
                 }
             },
@@ -27,7 +28,6 @@
         });
         var Dialog = Class.create(Widget, {
             attrs : {
-                template : '<div></div>',
                 className : 'phantom-dialog',
                 ownerNode : {
                     value : {
