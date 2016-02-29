@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c55839ed-833c-41ae-92cb-5a5c2e6644b5" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/base/base.js" afterPath="$PROJECT_DIR$/src/core/base/base.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/base/test/test.html" afterPath="$PROJECT_DIR$/src/core/base/test/test.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/widget/test/test.html" afterPath="$PROJECT_DIR$/src/core/widget/test/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/widget/widget.js" afterPath="$PROJECT_DIR$/src/core/widget/widget.js" />
     </list>
     <ignored path="PhantomUI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -69,12 +66,12 @@
       <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/core/widget/test/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5014749">
-              <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+            <state vertical-scroll-proportion="0.82743365">
+              <caret line="33" column="49" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
               <folding>
-                <marker date="1456761836000" expanded="true" signature="620:676" placeholder="..." />
-                <marker date="1456761836000" expanded="true" signature="620:692" placeholder="..." />
-                <marker date="1456761836000" expanded="true" signature="620:727" placeholder="..." />
+                <marker date="1456762204000" expanded="true" signature="519:575" placeholder="..." />
+                <marker date="1456762204000" expanded="true" signature="519:591" placeholder="..." />
+                <marker date="1456762204000" expanded="true" signature="519:626" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -451,9 +448,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
           <folding>
-            <marker date="1456761836000" expanded="true" signature="620:676" placeholder="..." />
-            <marker date="1456761836000" expanded="true" signature="620:692" placeholder="..." />
-            <marker date="1456761836000" expanded="true" signature="620:727" placeholder="..." />
+            <marker date="1456762204000" expanded="true" signature="519:575" placeholder="..." />
+            <marker date="1456762204000" expanded="true" signature="519:591" placeholder="..." />
+            <marker date="1456762204000" expanded="true" signature="519:626" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -633,34 +630,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/widgetcore-32ed00b0062461539e87430704ab284e160e9c6d/src/widget/widget.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="143" column="43" selection-start-line="143" selection-start-column="16" selection-end-line="143" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/base/class.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/base/base.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="147" column="43" selection-start-line="147" selection-start-column="43" selection-end-line="147" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/base/test/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.0384614">
-          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -673,14 +646,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/base/test/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="2.0384614">
+          <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/base/class.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/widgetcore-32ed00b0062461539e87430704ab284e160e9c6d/src/widget/widget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="143" column="43" selection-start-line="143" selection-start-column="16" selection-end-line="143" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/widget/test/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5014749">
-          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.82743365">
+          <caret line="33" column="49" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
           <folding>
-            <marker date="1456761836000" expanded="true" signature="620:676" placeholder="..." />
-            <marker date="1456761836000" expanded="true" signature="620:692" placeholder="..." />
-            <marker date="1456761836000" expanded="true" signature="620:727" placeholder="..." />
+            <marker date="1456762204000" expanded="true" signature="519:575" placeholder="..." />
+            <marker date="1456762204000" expanded="true" signature="519:591" placeholder="..." />
+            <marker date="1456762204000" expanded="true" signature="519:626" placeholder="..." />
           </folding>
         </state>
       </provider>

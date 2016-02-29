@@ -5,7 +5,6 @@
     <title>Document</title>
 </head>
 <body>
-    <div class=".dia" data-api="on" data-uuid="12" data-info="{now : 'open', next : 'close'}"></div>
     <script src="../../../../support/zepto.min.js"></script>
     <script src="../../base/class.js"></script>
     <script src="../../base/base.js"></script>
@@ -26,11 +25,13 @@
                 this.render();
             },
             _onRenderName : function() {
+                console.log("是我这里被触发了");
                 console.log(arguments);
             }
         });
         var ins1 = new MyWidget({className: 'widget1'});
-        //var ins2 = new MyWidget({className: 'widget2'});
+        var ins2 = new MyWidget({className: 'widget2'});
+        ins1.set("name", "hyang", {event : true})
     </script>
 </body>
 </html>
