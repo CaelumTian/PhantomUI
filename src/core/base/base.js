@@ -25,6 +25,7 @@
          * 继承类一定要调用 _initAttrs函数
          */
         init : function(config) {
+            console.log("调用了BASE的init");
             this._initAttrs(config);
         },
         destroy : function() {
@@ -133,6 +134,8 @@
          * @param options {Object} 选项
          */
         _initAttrs : function(config) {
+            console.log("调用初始化attr了");
+            console.log(this.attrs);
             //继承attrs
             var self = this;
             var currAttrs = {};
@@ -160,7 +163,6 @@
             config = config || {};
             currAttrs = $.extend(true, {}, currAttrs, Util.normalizeAttr(config));
             self.attrs = currAttrs;
-
         },
         set : function(name, val, options) {
             var self = this;

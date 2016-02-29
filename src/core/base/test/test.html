@@ -19,14 +19,13 @@
                         "time" : "2016"
                     }
                 }
+            },
+            init : function(config) {
+                console.log("调用Widget父类init");
+                Widget._super.init.call(this, config);
             }
         });
         var Dialog = Class.create(Widget, {
-            init : function(config) {
-                console.log("初始化");
-                this._super.init.call(this, config);
-                this.on("change:status", this.change);
-            },
             attrs : {
                 template : '<div></div>',
                 className : 'phantom-dialog',

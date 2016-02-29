@@ -3,7 +3,7 @@
  */
 (function(global) {
     //组件实例缓存
-    var cacheWidget = {};
+    var cacheWidgets = {};
     //事件命名空间
     var CONST_EVENT_NS = ".widget-";
     var Widget = Class.create(Base, {
@@ -20,7 +20,7 @@
         },
         init : function(config) {
             config = this._parseConfig(config);
-            this._super.init.call(this, config);
+            Widget._super.init.call(this, config);
             this._parseElement();
             //加入缓存实例
             this._stamp();
@@ -49,7 +49,7 @@
         },
         _stamp : function() {
             var uuid = this.uuid = Util.getUuid();
-            cacheWidget[uuid] = this;
+            cacheWidgets[uuid] = this;
             this.$element.attr("data-widget-id", uuid);
         },
 
@@ -114,6 +114,39 @@
             }
             return this;
         },
+        undelegateEvents : function(element, eventKey) {
+            //删除全部事件
+            if(arguments.length === 0) {
+                var uuid = this.uuid;
+                this.$element.off(CONST_EVENT_NS + uuid);
+                if(this.delegateElements) {
+                    $.each(this.delegateElements, function(index, element) {
+                        element.off(CONST_EVENT_NS + uuid);
+                    })
+                }
+            }
+            /**
+             *  undelegateEvents("click .btn");
+             *  undelegateEvents(element);
+             *  undelegateEvents(element, 'click .btn');
+             */
+            else {
+                if(arguments.length === 1) {
+                    if(!Util.contain(document.documentElement, $(element)[0])) {
+                        eventKey = element;
+                        element = this.element;
+                    }
+                }
+                element = $(element);
+                var event = eventKey && Util.parseEventKey(this, eventKey);
+                if(event) {
+                    element.off(event.type, event.selector);
+                }else {
+                    element.off(CONST_EVENT_NS + this.uuid);
+                }
+            }
+            return this;
+        },
         /**
          *  组件生命周期
          *  setup : 组件初始化重载方法
@@ -130,8 +163,72 @@
                 this._renderAndBindAttrs();
                 this.rendered = true;
             }
+
+            // 若element不在DOM中，插入到parentNode
+            var parentNode = this.get('parentNode');
+            if(parentNode && !Util.contain(document.documentElement, this.element)) {
+                this.$element.appendTo(parentNode);
+            }
+            return this;
         },
-        _renderAndBindAttrs : function() {}
+        /**
+         * 注销对象
+         */
+        destroy: function() {
+            // 注销事件代理
+            this.undelegateEvents();
+
+            // 清除组件缓存
+            delete cacheWidgets[this.uuid];
+
+            // 如果是通过模板生成element, 则从DOM中删除
+            if(this.$element && this._isTemplate) {
+                this.$element.off();
+                this.$element.remove();
+            }
+
+            this.element = null;
+            this._super.destroy.call(this);
+        },
+        _renderAndBindAttrs : function() {
+            var self = this;
+            $.each(self, function(name, func) {
+                var match = name.match(/^_onRender([A-Z](.)*)/);
+                if(!match){
+                    return;
+                }
+                //绑定change:attrName变化事件
+                var attrName = Util.firstLetterToLc(match[1]);
+                self.on("change:" + attrName, func);
+
+                // 若attr有合法初始值(非null, undefined), 则触发onRenderAttr
+                var val = self.get(attrName);
+                if(val !== undefined && val !== null) {
+                    self.trigger('change:' + attrName, [val, undefined, attrName]);
+                }
+            })
+        },
+
+        //已经定义好的_onRenderAttr
+        _onRenderId: function(ev, val) {
+            this.$element.attr('id', val);
+        },
+
+        _onRenderClassName: function(ev, val, prev) {
+            prev && this.$element.removeClass(prev);
+            this.$element.addClass(val);
+        },
+
+        _onRenderStyle: function(ev, val, prev) {
+            this.$element.css(val);
+        },
+
+        statics : {
+            query : function(selector) {
+                var uuid = parseInt($(selector).attr("data-widget-id"));
+                return cacheWidgets[uuid];
+            }
+        }
     });
     var Util = {
         uuid : 0,
@@ -173,12 +270,19 @@
             var event = {};
             //匹配 "click .btn" -> ["click .btn", "click", ".btn"]
             var re = eventKey.match(/^(\S+)\s*(.*)$/);
+            //事件+命名空间
             event.type = re[1] + CONST_EVENT_NS + self.uuid;
             //event 添加{$attrName}支持
             event.selector = re[2].replace(/{\$(.*)}/, function() {
                 return self.get(arguments[1]);
             });
             return event;
+        },
+        firstLetterToLc : function(string) {
+            return string.charAt(0).toLowerCase() + string.substring(1);
+        },
+        contain : function(a, b) {
+            return a.contains ? a != b && a.contains(b) : !!(a.compareDocumentPosition(b) & 16);
         }
     };
     global.Widget = Widget;

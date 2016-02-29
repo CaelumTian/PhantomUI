@@ -29,8 +29,8 @@
             }
             _Object.prototype = Object.create(_super);
 
-            //_super 属性保存父类原型
-            _Object.prototype._super = _super;
+            //_super 属性保存父类原型  原来保存在了this上有bug因为this指向,现在更新位置
+            _Object._super = _super;
             _Object.prototype.constructor = _Object;
 
             //确保一定存在init方法

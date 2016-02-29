@@ -6,9 +6,30 @@
 </head>
 <body>
     <div class=".dia" data-api="on" data-uuid="12" data-info="{now : 'open', next : 'close'}"></div>
-    <script src="/support/zepto.min.js"></script>
+    <script src="../../../../support/zepto.min.js"></script>
     <script src="../../base/class.js"></script>
     <script src="../../base/base.js"></script>
     <script src="../widget.js"></script>
+    <script>
+        var MyWidget = Class.create(Widget, {
+            attrs : {
+                id : "myId",
+                className : "myClassName",
+                events : null,
+                template :  '<div>'
+                           +    '<a><button class="btn">点击我</button></a>'
+                           +'</div>',
+                name : null,
+                setup : function() {
+                    this.render();
+                },
+                _onRenderName : function() {
+                    console.log(arguments);
+                }
+            }
+        });
+        var ins1 = new MyWidget({className: 'widget1'});
+        //var ins2 = new MyWidget({className: 'widget2'});
+    </script>
 </body>
 </html>
