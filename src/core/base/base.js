@@ -119,8 +119,6 @@
                                 break;
                             }
                         }
-                    }else {
-                        console.warn("EventError : this event " + event + "is not find");
                     }
                 }
             }
@@ -226,7 +224,7 @@
                  *  触发 change:* 变动事件
                  *  传入参数: 变动属性当前值, 原值, 属性明, 额外参数
                  */
-                if(options.event) {
+                if(!options.event) {
                     self.trigger('change:' + attrName, [self.get(attrName), preVal, name, options.data]);
                     self.trigger('change:*', [self.get(attrName), preVal, name, options.data]);
                 }

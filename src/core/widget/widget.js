@@ -26,7 +26,6 @@
             this._stamp();
             //初始化事件
             this.delegateEvents();
-            console.log(this.setup);
             this.setup();
         },
         _parseConfig : function(config) {
@@ -189,7 +188,7 @@
             }
 
             this.element = null;
-            this._super.destroy.call(this);
+            Widget._super.destroy.call(this);
         },
         _renderAndBindAttrs : function() {
             var self = this;
@@ -231,6 +230,11 @@
             }
         }
     });
+    // 根据selector获取widget实例
+    Widget.query = function(selector) {
+        var uuid = parseInt($(selector).attr("data-widget-id"));
+        return cacheWidgets[uuid];
+    };
     var Util = {
         uuid : 0,
         //解析element中data属性

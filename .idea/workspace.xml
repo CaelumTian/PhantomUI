@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c55839ed-833c-41ae-92cb-5a5c2e6644b5" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/base/base.js" afterPath="$PROJECT_DIR$/src/core/base/base.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/widget/test/test.html" afterPath="$PROJECT_DIR$/src/core/widget/test/test.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/widget/widget.js" afterPath="$PROJECT_DIR$/src/core/widget/widget.js" />
     </list>
     <ignored path="PhantomUI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,8 +28,8 @@
       <file leaf-file-name="widget.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/widget/widget.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.740741">
-              <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+            <state vertical-scroll-proportion="69.888885">
+              <caret line="130" column="35" selection-start-line="130" selection-start-column="35" selection-end-line="130" selection-end-column="35" />
               <folding />
             </state>
           </provider>
@@ -37,7 +39,7 @@
         <entry file="file://$PROJECT_DIR$/src/core/base/base.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="147" column="43" selection-start-line="147" selection-start-column="43" selection-end-line="147" selection-end-column="43" />
+              <caret line="121" column="21" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -53,25 +55,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="widget.js" pinned="false" current-in-tab="false">
-        <entry file="file://$USER_HOME$/Downloads/widgetcore-32ed00b0062461539e87430704ab284e160e9c6d/src/widget/widget.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="143" column="43" selection-start-line="143" selection-start-column="16" selection-end-line="143" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/core/widget/test/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.82743365">
-              <caret line="33" column="49" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
+            <state vertical-scroll-proportion="0.79941005">
+              <caret line="59" column="37" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
               <folding>
-                <marker date="1456762204000" expanded="true" signature="519:575" placeholder="..." />
-                <marker date="1456762204000" expanded="true" signature="519:591" placeholder="..." />
-                <marker date="1456762204000" expanded="true" signature="519:626" placeholder="..." />
+                <marker date="1456846075000" expanded="true" signature="795:851" placeholder="..." />
+                <marker date="1456846075000" expanded="true" signature="795:867" placeholder="..." />
+                <marker date="1456846075000" expanded="true" signature="795:902" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -80,7 +72,7 @@
       <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/base/test/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.0384614">
+            <state vertical-scroll-proportion="3.3461537">
               <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
               <folding />
             </state>
@@ -109,6 +101,7 @@
         <option value="$PROJECT_DIR$/src/core/base/README.md" />
         <option value="$PROJECT_DIR$/src/core/base/class.js" />
         <option value="$PROJECT_DIR$/src/core/base/test/test.html" />
+        <option value="$USER_HOME$/Downloads/widgetcore-32ed00b0062461539e87430704ab284e160e9c6d/src/widget/widget.js" />
         <option value="$PROJECT_DIR$/src/core/base/base.js" />
         <option value="$PROJECT_DIR$/src/core/widget/widget.js" />
         <option value="$PROJECT_DIR$/src/core/widget/test/test.html" />
@@ -157,6 +150,7 @@
     </navigator>
     <panes>
       <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -287,7 +281,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -296,6 +289,7 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="FullScreen" value="true" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/caelumtian/Programmer/PhantomUI/src/core/widget/test/test.html" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -418,7 +412,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/core/base/base.js</url>
-          <line>221</line>
+          <line>219</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
@@ -427,6 +421,38 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/core/widget/widget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/base/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="147" column="43" selection-start-line="147" selection-start-column="43" selection-end-line="147" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/base/class.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="41" selection-start-line="25" selection-start-column="41" selection-end-line="25" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Downloads/widgetcore-32ed00b0062461539e87430704ab284e160e9c6d/src/widget/widget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="143" column="43" selection-start-line="143" selection-start-column="16" selection-end-line="143" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/widget/widget.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -448,9 +474,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="40" selection-start-line="11" selection-start-column="40" selection-end-line="11" selection-end-column="40" />
           <folding>
-            <marker date="1456762204000" expanded="true" signature="519:575" placeholder="..." />
-            <marker date="1456762204000" expanded="true" signature="519:591" placeholder="..." />
-            <marker date="1456762204000" expanded="true" signature="519:626" placeholder="..." />
+            <marker date="1456846075000" expanded="true" signature="795:851" placeholder="..." />
+            <marker date="1456846075000" expanded="true" signature="795:867" placeholder="..." />
+            <marker date="1456846075000" expanded="true" signature="795:902" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -630,26 +656,34 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/base/base.js">
+    <entry file="file://$USER_HOME$/Downloads/widgetcore-32ed00b0062461539e87430704ab284e160e9c6d/src/widget/widget.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="147" column="43" selection-start-line="147" selection-start-column="43" selection-end-line="147" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/widget/widget.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.740741">
-          <caret line="36" column="47" selection-start-line="36" selection-start-column="47" selection-end-line="36" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.6036932">
+          <caret line="149" column="35" selection-start-line="149" selection-start-column="35" selection-end-line="149" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/base/test/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.0384614">
+        <state vertical-scroll-proportion="3.3461537">
           <caret line="19" column="40" selection-start-line="19" selection-start-column="40" selection-end-line="19" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/widget/widget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="69.888885">
+          <caret line="130" column="35" selection-start-line="130" selection-start-column="35" selection-end-line="130" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/base/base.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="121" column="21" selection-start-line="121" selection-start-column="21" selection-end-line="121" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -662,22 +696,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Downloads/widgetcore-32ed00b0062461539e87430704ab284e160e9c6d/src/widget/widget.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="143" column="43" selection-start-line="143" selection-start-column="16" selection-end-line="143" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/widget/test/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.82743365">
-          <caret line="33" column="49" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
+        <state vertical-scroll-proportion="0.79941005">
+          <caret line="59" column="37" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
           <folding>
-            <marker date="1456762204000" expanded="true" signature="519:575" placeholder="..." />
-            <marker date="1456762204000" expanded="true" signature="519:591" placeholder="..." />
-            <marker date="1456762204000" expanded="true" signature="519:626" placeholder="..." />
+            <marker date="1456846075000" expanded="true" signature="795:851" placeholder="..." />
+            <marker date="1456846075000" expanded="true" signature="795:867" placeholder="..." />
+            <marker date="1456846075000" expanded="true" signature="795:902" placeholder="..." />
           </folding>
         </state>
       </provider>

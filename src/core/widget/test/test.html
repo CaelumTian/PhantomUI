@@ -5,23 +5,34 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="panel"></div>
     <script src="../../../../support/zepto.min.js"></script>
     <script src="../../base/class.js"></script>
     <script src="../../base/base.js"></script>
     <script src="../widget.js"></script>
     <script>
+        function callback(event) {
+            console.log(this);
+            console.log(event.currentTarget);
+            console.log(event.target);
+        }
         var MyWidget = Class.create(Widget, {
             attrs : {
                 id: "myId",
                 className: "myClassName",
+                eventTarget : {
+                    trigger : "a"
+                },
                 events: null,
                 template: '<div>'
                             + '<a><button class="btn">点击我</button></a>'
                         + '</div>',
-                name: null
+                name: null,
             },
+           /* events : {
+                "click {$eventTarget.trigger}" : callback
+            },*/
             setup : function() {
-                console.log("我调用的是这里");
                 this.render();
             },
             _onRenderName : function() {
@@ -29,9 +40,24 @@
                 console.log(arguments);
             }
         });
-        var ins1 = new MyWidget({className: 'widget1'});
-        var ins2 = new MyWidget({className: 'widget2'});
-        ins1.set("name", "hyang", {event : true})
+        var HyangWidget = Class.create(Widget, {
+            attrs : {
+                className : "hyang",
+                template : '<a>胡杨</a>'
+            },
+            setup : function() {
+                this.render();
+            }
+        });
+        /*var ins1 = new MyWidget({className: 'widget1'});
+        var ins2 = new MyWidget({className: 'widget2'});*/
+        var ins3 = new MyWidget({
+            parentNode : ".panel",
+            className: 'widgetclass1',
+            id: 'widgetid1'
+        });
+        ins3.delegateEvents("click .btn", callback);
+        var ins4 = new HyangWidget();
     </script>
 </body>
 </html>
