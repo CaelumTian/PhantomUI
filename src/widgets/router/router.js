@@ -264,7 +264,30 @@
             }
         },
         _loadDocument : function(url, callback) {
-
+            var self = this;
+            //防止之前的没有加载完,重复加载
+            if(this.xhr && this.xhr.readyState < 4) {
+                this.xhr.onreadystatechange = function(){};
+                this.xhr.abort();   //取消请求
+                this.trigger("pageLoadCancel");
+            }
+            this.trigger("pageLoadStart");
+            callback = callback || {};
+            this.xhr = $.ajax({
+                url : url,
+                success: $.proxy(function(data, status, xhr) {
+                    // 给包一层 <html/>，从而可以拿到完整的结构
+                    var $doc = $('<html></html>');
+                    $doc.append(data);
+                    callback.success && callback.success.call(null, $doc, status, xhr);
+                }, this),
+                error: function(xhr, status, err) {
+                    callback.error && callback.error.call(null, xhr, status, err);
+                },
+                complete: function(xhr, status) {
+                    callback.complete && callback.complete.call(null, xhr, status);
+                }
+            })
         },
         /**
          * 缓存页面
