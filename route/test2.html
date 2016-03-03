@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="page-group">
+        <div class="page page-current" id="router-index">
+            <header>
+                <a class="back">后退</a>
+                <h1>路由B(Ajax)</h1>
+            </header>
+            <section class="wrap">
+                <ul class="list">
+                    <li>
+                        <a href="./test3.html">跳转到C页面(ajax请求)</a>
+                    </li>
+                    <li>
+                        <a href="#router1">B页面内联跳转(#router1)</a>
+                    </li>
+                    <li>
+                        <a href="#router2">B页面内联跳转(#router2)</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        <div class="page" id="router1">
+            <header>
+                <a class="back">后退</a>
+                <h1>B内联的页面#router1</h1>
+            </header>
+        </div>
+        <div class="page" id="router2">
+            <header>
+                <a class="back">后退</a>
+                <h1>B内联的页面#router2</h1>
+            </header>
+        </div>
+    </div>
+</body>
+</html>
