@@ -1,0 +1,40 @@
+var gulp = require("gulp"),
+	gulpLoadPlugins = require('gulp-load-plugins'),
+    Browsersync = require('browser-sync').create(),
+    reload = Browsersync.reload;
+var concat = require("gulp-concat");
+const $ =  gulpLoadPlugins();
+gulp.task("less", function() {
+	return gulp.src("./less/*.less")
+			   .pipe($.less())
+			   .pipe($.autoprefixer())
+			   .pipe(gulp.dest("./build"));
+});
+gulp.task("js", function() {
+	return gulp.src([
+						'./src/core/base/class.js',
+						'./src/core/base/base.js',
+						'./src/core/widget/widget.js',
+						'./src/core/widgets/router/router.js'
+					])
+				.pipe($.concat("phantomui.js"))
+				.pipe($.jshint(".jshintrc"))
+				.pipe($.jshint.reporter('default'))
+				.pipe($.uglify())
+				.pipe(gulp.dest("./build"));
+});
+gulp.task("clean", function() {
+	//del(['./styles/**/*.css']);
+});
+gulp.task("build", ["less", "js"], function() {
+	console.log("文件打包完毕");
+});
+gulp.task('server', ['less', 'js'], function() {
+    Browsersync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
+    gulp.watch("./lib/styles/less/*.less", ['less']);
+    gulp.watch("*.html").on("change", reload);
+});

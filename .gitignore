@@ -1,2 +1,4 @@
 .DS_Store
 /support
+/node_modules
+/.idea
