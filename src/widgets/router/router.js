@@ -76,6 +76,7 @@
             Router._super.init.call(this, config);
             this._init();
             this.xhr = null;
+            window.addEventListener('popstate', this._onPopState.bind(this));
         },
         /**
          * 初始化函数, 把当前页面缓存起来
@@ -210,13 +211,14 @@
          * 判断两个url 是否去hash后一样
          */
         _isTheSameUrl : function(firstUrl, secUrl) {
-            return Util.toUrlObject(firstUrl).base === Util.toUrlObject(secUrl);
+            return Util.toUrlObject(firstUrl).base === Util.toUrlObject(secUrl).base;
         },
 
         _getCurrentSection : function() {
             return this.$view.find('.' + this.get("curPageClass")).eq(0);
         },
         _switchToSection : function(sectionId) {
+            console.log(sectionId);
             if(!sectionId) {
                 return false;
             }
@@ -249,12 +251,14 @@
             }else {
                 this._loadDocument(url, {
                     success : function($doc) {
-                       try {
+                        self._parseDocument(url, $doc);
+                        self._doSwitchDocument(url, isPushState, direction);
+                       /*try {
                            self._parseDocument(url, $doc);
                            self._doSwitchDocument(url, isPushState, direction);
                        }catch(e) {
                            global.location.href = url;
-                       }
+                       }*/
                     },
                     error : function() {
                         console.warn("请求错误,location.href返回");
@@ -310,7 +314,9 @@
          * @private
          */
         _doSwitchDocument : function(url, isPushState, direction) {
-            isPushState === isPushState || true;
+            if (typeof isPushState === 'undefined') {
+                isPushState = true;
+            }
             var urlObj = Util.toUrlObject(url);
             var $currentDoc = this.$view.find('.' + this.get("sessionGroupClass"));
             var $newDoc = $($('<div></div>').append(this.cache[urlObj.base].$content).html());
@@ -343,22 +349,23 @@
             }
         },
         _animateDocument : function($from, $to, $visibleSection, direction) {
+            var self = this;
             var sectionId = $visibleSection.attr("id");
             var $visibleSectionInFrom = $from.find('.' + this.get("curPageClass"));
             $visibleSectionInFrom.addClass(this.get("visiblePageClass")).removeClass(this.get("curPageClass"));
             this.trigger("pageAnimationStart", [sectionId, $visibleSection]);
             //开始动画
             this._animateElement($from, $to, direction);
-            $from.animationEnd(function() {
-                $visibleSectionInFrom.removeClass(this.get("visiblePageClass"));
-                this.trigger("beforePageRemove", [$from]);
+            $from.on("animationEnd webkitAnimationEnd", function() {
+                $visibleSectionInFrom.removeClass(self.get("visiblePageClass"));
+                self.trigger("beforePageRemove", [$from]);
                 $from.remove();
-                this.trigger("pageRemoved");
+                self.trigger("pageRemoved");
             });
-            $to.animationEnd(function() {
-                this.trigger("pageAnimationEnd", [sectionId, $visibleSection]);
+            $to.on("animationEnd webkitAnimationEnd",function() {
+                self.trigger("pageAnimationEnd", [sectionId, $visibleSection]);
                 // 外层（init.js）中会绑定 pageInitInternal 事件，然后对页面进行初始化
-                this.trigger("pageInit", [sectionId, $visibleSection]);
+                self.trigger("pageInit", [sectionId, $visibleSection]);
             });
         },
         /**
@@ -400,10 +407,10 @@
             $from.removeClass(animPageClasses).addClass(classForFrom);
             $to.removeClass(animPageClasses).addClass(classForTo);
 
-            $from.animationEnd(function() {
+            $from.on("animationEnd webkitAnimationEnd",function() {
                 $from.removeClass(animPageClasses);
             });
-            $to.animationEnd(function() {
+            $to.on("animationEnd webkitAnimationEnd",function() {
                 $to.removeClass(animPageClasses);
             });
 
@@ -417,9 +424,103 @@
             this.trigger("pageAnimationStart", [toId, $to]);
 
             this._animateElement($from, $to, direction);
+        },
+        forward : function() {
+            global.history.forward();
+        },
+        back : function() {
+            global.history.back();
+        },
+        /**
+         * 从sessionStorage中获取页面当前状态
+         * @private
+         */
+        _getLastState : function() {
+            var currentState = global.sessionStorage.getItem(this.get("sessionNames.currentState"));
+            try {
+                currentState = JSON.parse(currentState);
+            }catch(e) {
+                currentState = null;
+            }
+            return currentState;
+        },
+        /**
+         * popstate 事件处理
+         * @private
+         */
+        _onPopState : function(event) {
+            var state = event.state;
+            if (!state || !state.pageId) {
+                return;
+            }
+            var lastState = this._getLastState();
+            if(!lastState) {
+                console.warn("缺少state");
+            }
+            if(state.id === lastState.id) {
+                return;
+            }
+            if (state.id < lastState.id) {
+                this._back(state, lastState);
+            } else {
+                this._forward(state, lastState);
+            }
+        },
+        _back : function(state, lastState) {
+            if(this._isTheSameUrl(state.url.full, lastState.url.full)) {
+                var $newPage = $('#' + state.pageId);
+                if ($newPage.length) {
+                    var $currentPage = this._getCurrentSection();
+                    this._animateSection($currentPage, $newPage, this.get("direction.leftToRight"));
+                    this._saveAsCurrentState(state);
+                } else {
+                    location.href = state.url.full;
+                }
+            }else {
+                this._saveDocumentIntoCache($(document), lastState.url.full);
+                this._switchToDocument(state.url.full, false, false, this.get("direction.leftToRight"));
+                this._saveAsCurrentState(state);
+            }
+        },
+        _forward : function(state, lastState) {
+            if(this._isTheSameUrl(state.url.full, lastState.url.full)) {
+                var $newPage = $('#' + state.pageId);
+                if ($newPage.length) {
+                    var $currentPage = this._getCurrentSection();
+                    this._animateSection($currentPage, $newPage, this.get("direction.rightToLeft"));
+                    this._saveAsCurrentState(state);
+                } else {
+                    location.href = state.url.full;
+                }
+            }else {
+                this._saveDocumentIntoCache($(document), lastState.url.full);
+                this._switchToDocument(state.url.full, false, false, this.get("direction.rightToLeft"));
+                this._saveAsCurrentState(state);
+            }
         }
         //************ 事件模块 *****************
+        //************ 拦截link事件 *************
+    });
+    $(document).ready(function() {
+        var router = new Router();
+        $(document).on("click", "a", function(event) {
+            //阻止a的默认事件   这里还要添加配置是否开启router
+            event.preventDefault();
+            var $target = $(event.currentTarget);
 
+            if ($target.hasClass('back')) {
+                router.back();
+            } else {
+                var url = $target.attr('href');
+                if (!url || url === '#') {
+                    return;
+                }
+
+                var ignoreCache = $target.attr('data-no-cache') === 'true';
+
+                router.load(url, ignoreCache);
+            }
+        });
     });
     global.Router = Router;
 })(this);

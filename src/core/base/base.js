@@ -94,6 +94,7 @@
         trigger : function(events) {
             var event,
                 self = this;
+            this._events = this._events || {};
             if(!events) {
                 console.warn("EventError : there must be an event");
                 return false;
