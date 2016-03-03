@@ -92,6 +92,6 @@ pageInit: 'pageInitInternal' // 目前是定义为一个 page 加载完毕后（
 设置类名`data-no-cache`  可取消页面缓存  
 设置类名`data-no-router` 可以取消对应链接的路由  
 
-### 版本信息  
+### 三丶版本信息  
 Route模块处于测试中，积极寻找bug，之后我们会添加对插入页面中`js`的处理（目前所有事件委托到document上）。
 以及添加更多的`动画效果`，现在只有左右切换。

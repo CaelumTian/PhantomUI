@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c55839ed-833c-41ae-92cb-5a5c2e6644b5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/widgets/router/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/PhantomUI.iml" afterPath="$PROJECT_DIR$/.idea/PhantomUI.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/widgets/router/README.md" afterPath="$PROJECT_DIR$/src/widgets/router/README.md" />
     </list>
     <ignored path="PhantomUI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -38,8 +36,8 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/widgets/router/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.4177778">
-              <caret line="96" column="23" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.79851854">
+              <caret line="94" column="6" selection-start-line="94" selection-start-column="6" selection-end-line="94" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -847,8 +845,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/widgets/router/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.4177778">
-          <caret line="96" column="23" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
+        <state vertical-scroll-proportion="0.79851854">
+          <caret line="94" column="6" selection-start-line="94" selection-start-column="6" selection-end-line="94" selection-end-column="6" />
           <folding />
         </state>
       </provider>
