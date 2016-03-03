@@ -118,11 +118,11 @@
             }
 
             //currPage visiblePage 不一致时
-            if($curVisibleSection.length > 0 && ($curVisibleSection.attr("id") !== $visibleSection.attr("id"))) {
+            if($curVisibleSection.length && ($curVisibleSection.attr("id") !== $visibleSection.attr("id"))) {
                 $curVisibleSection.removeClass(this.get("curPageClass"));
                 $visibleSection.addClass(this.get("curPageClass"));
             }else {
-                $visibleSection.addClass()
+                $visibleSection.addClass(this.get("curPageClass"));
             }
             curPageId = $visibleSection.attr("id");
 
@@ -162,8 +162,8 @@
         _pushNewState : function(url, sectionId) {
             var state = {
                 id: this._getNextStateId(),
-                url: Util.toUrlObject(url),
-                pageId: sectionId
+                pageId: sectionId,
+                url: Util.toUrlObject(url)
             };
 
             global.history.pushState(state, '', url);
@@ -198,7 +198,9 @@
          * @param ignoreCache  是否强制请求不使用缓存 默认false
          */
         load : function(url, ignoreCache) {
-            ignoreCache = ignoreCache || false;
+            if (ignoreCache === undefined) {
+                ignoreCache = false;
+            }
             if(this._isTheSameUrl(global.location.href, url)) {
                 //如果是, 切换内容块(hash);
                 this._switchToSection(Util.getUrlHashValue(url));
@@ -218,9 +220,8 @@
             return this.$view.find('.' + this.get("curPageClass")).eq(0);
         },
         _switchToSection : function(sectionId) {
-            console.log(sectionId);
             if(!sectionId) {
-                return false;
+                return;
             }
             var $curPage = this._getCurrentSection(),
                 $newPage = $('#' + sectionId);
@@ -251,14 +252,12 @@
             }else {
                 this._loadDocument(url, {
                     success : function($doc) {
-                        self._parseDocument(url, $doc);
-                        self._doSwitchDocument(url, isPushState, direction);
-                       /*try {
+                       try {
                            self._parseDocument(url, $doc);
                            self._doSwitchDocument(url, isPushState, direction);
                        }catch(e) {
                            global.location.href = url;
-                       }*/
+                       }
                     },
                     error : function() {
                         console.warn("请求错误,location.href返回");
@@ -327,8 +326,8 @@
             if(urlObj.hash) {
                 $hasSection = $newDoc.find("#" + urlObj.hash);
             }
-            if($hasSection && $hasSection.length > 0) {
-                $visibleSection = $hashSection.eq(0);
+            if($hasSection && $hasSection.length) {
+                $visibleSection = $hasSection.eq(0);
             }else if(!$visibleSection.length) {
                 $visibleSection = $allSections.eq(0);
             }
