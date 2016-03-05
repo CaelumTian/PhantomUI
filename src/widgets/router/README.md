@@ -94,4 +94,10 @@ pageInit: 'pageInitInternal' // 目前是定义为一个 page 加载完毕后（
 
 ### 三丶版本信息  
 Route模块处于测试中，积极寻找bug，之后我们会添加对插入页面中`js`的处理（目前所有事件委托到document上）。
-以及添加更多的`动画效果`，现在只有左右切换。
+以及添加更多的`动画效果`，现在只有左右切换。  
+
+### 四丶更新信息  
+1. 修复动画效果;  
+说明: css bug 在切换动画的时候, display:block和transilate3d 动画有一定问题. 对动画加入 animation-delay:30ms 可以解决.（原因不明）  
+2. 安卓低版本: 首页不会加入history  
+3. 在某些行况下浏览器不会记录第一次history 需要 location.reload
