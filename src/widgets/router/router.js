@@ -252,12 +252,12 @@
             }else {
                 this._loadDocument(url, {
                     success : function($doc) {
-                       try {
-                           self._parseDocument(url, $doc);
-                           self._doSwitchDocument(url, isPushState, direction);
-                       }catch(e) {
-                           global.location.href = url;
-                       }
+                        try {
+                            self._parseDocument(url, $doc);
+                            self._doSwitchDocument(url, isPushState, direction);
+                        }catch(e) {
+                            global.location.href = url;
+                        }
                     },
                     error : function() {
                         console.warn("请求错误,location.href返回");
@@ -351,10 +351,15 @@
             var self = this;
             var sectionId = $visibleSection.attr("id");
             var $visibleSectionInFrom = $from.find('.' + this.get("curPageClass"));
-            $visibleSectionInFrom.addClass(this.get("visiblePageClass")).removeClass(this.get("curPageClass"));
+
+            this._animateElement($from, $to, direction);
+
+            window.requestAnimationFrame(function() {
+                $visibleSectionInFrom.addClass(self.get("visiblePageClass")).removeClass(self.get("curPageClass"));
+            });
             this.trigger("pageAnimationStart", [sectionId, $visibleSection]);
             //开始动画
-            this._animateElement($from, $to, direction);
+
             $from.on("animationEnd webkitAnimationEnd", function() {
                 $visibleSectionInFrom.removeClass(self.get("visiblePageClass"));
                 self.trigger("beforePageRemove", [$from]);
@@ -419,11 +424,16 @@
             var toId = $to.attr("id");
 
             this.trigger("beforePageSwitch", [$from.attr('id'), $from]);
-            $from.removeClass(this.get("curPageClass"));
-            $to.addClass(this.get("curPageClass"));
+            self._animateElement($from, $to, direction);
+
+            window.requestAnimationFrame(function() {
+                $from.removeClass(this.get("curPageClass"));
+                $to.addClass(this.get("curPageClass"));
+            });
+
             this.trigger("pageAnimationStart", [toId, $to]);
 
-            self._animateElement($from, $to, direction);
+
             $to.on("animationEnd webkitAnimationEnd", function() {
                 self.trigger("pageAnimationEnd", [toId, $to]);
                 self.trigger("pageInit", [toId, $to]);

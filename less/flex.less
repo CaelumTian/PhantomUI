@@ -1,0 +1,99 @@
+@flex-num: 12;
+.flex-column, .flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.flex-column {
+  flex-direction: row;
+}
+.flex-row {
+  flex-direction: column;
+}
+.flex-around {
+  justify-content: space-around;
+}
+.flex-between {
+  justify-content: space-between;
+}
+.flex-baseline {
+  align-items: baseline;
+}
+.flex-strech {
+  align-items: stretch;
+}
+.flex-item {
+  float: left;
+  flex-grow: 1;
+}
+// 递归生成栅格
+.build-item(@i) when (@i > 0) {
+  .build-item((@i - 1));
+
+  // 栅格
+  .flex-item-@{i} {
+    float: left;
+    width: percentage(@i / @flex-num);
+  }
+
+  // 向左偏移
+  .flex-offset-@{i} {
+    margin-left: percentage(@i / @flex-num);
+  }
+
+  // 排序
+  .flex-order-@{i} {
+    order: @i;
+  }
+}
+
+.build-item(@flex-num);
+// flex-row的对齐方式
+.build-align(@type) when (@type = row) {
+  &.flex-left {
+    align-items: flex-start;
+  }
+  &.flex-right {
+    align-items: flex-end;
+  }
+  &.flex-top {
+    justify-content: flex-start;
+  }
+  &.flex-bottom {
+    justify-content: flex-end;
+  }
+  &.flex-center {
+    align-items: center;
+  }
+  &.flex-middle {
+    justify-content: center;
+  }
+}
+
+// flex-column的对齐方式
+.build-align(@type) when (@type = column) {
+  &.flex-left {
+    justify-content: flex-start;
+  }
+  &.flex-right {
+    justify-content: flex-end;
+  }
+  &.flex-top {
+    align-items: flex-start;
+  }
+  &.flex-bottom {
+    align-items: flex-end;
+  }
+  &.flex-center {
+    justify-content: center;
+  }
+  &.flex-middle {
+    align-items: center;
+  }
+}
+
+.flex-column {
+  .build-align(column);
+}
+.flex-row {
+  .build-align(row);
+}
