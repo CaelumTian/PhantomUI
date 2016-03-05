@@ -1,4 +1,4 @@
-core 组件库核心  
+core 核心组件库  
 ===  
 核心组件由三部分组成：Class.js Base.js Widget.js   
 
