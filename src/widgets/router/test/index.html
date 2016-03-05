@@ -3,12 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="./base.css">
     <style>
         * {
             padding: 0;
             margin: 0;
         }
-        /* ------- Pages 必须用css -------*/
+        body {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+        }
+        /* === Pages === */
         .page,
         .page-group {
             box-sizing: border-box;
@@ -42,20 +53,20 @@
         .page-group {
             display: block;
         }
-        .page-transitioning,
-        .page-transitioning .swipeback-page-shadow {
-            -webkit-transition: 400ms;
-            transition: 400ms;
-        }
         .page-from-right-to-center {
-            -webkit-animation: pageFromRightToCenter 400ms forwards;
-            animation: pageFromRightToCenter 400ms forwards;
-            z-index: 2002;
+            -webkit-animation: pageFromRightToCenter 500ms forwards;
+            -webkit-animation-delay: 20ms;
+            animation-delay: 20ms;
+            animation: pageFromRightToCenter 500ms forwards;
+            z-index: 2000;
+            display: block;
         }
         .page-from-center-to-right {
-            -webkit-animation: pageFromCenterToRight 400ms forwards;
-            animation: pageFromCenterToRight 400ms forwards;
-            z-index: 2002;
+            -webkit-animation: pageFromCenterToRight 500ms forwards;
+            -webkit-animation-delay: 20ms;
+            animation-delay: 20ms;
+            animation: pageFromCenterToRight 500ms forwards;
+            z-index: 2000;
         }
         @-webkit-keyframes pageFromRightToCenter {
             from {
@@ -108,10 +119,14 @@
         .page-from-center-to-left {
             -webkit-animation: pageFromCenterToLeft 400ms forwards;
             animation: pageFromCenterToLeft 400ms forwards;
+            -webkit-animation-delay: 20ms;
+            animation-delay: 20ms;
         }
         .page-from-left-to-center {
             -webkit-animation: pageFromLeftToCenter 400ms forwards;
             animation: pageFromLeftToCenter 400ms forwards;
+            -webkit-animation-delay: 20ms;
+            animation-delay: 20ms;
         }
         @-webkit-keyframes pageFromCenterToLeft {
             from {
@@ -210,7 +225,7 @@
 </head>
 <body>
     <div class="page-group">
-        <div class="page page-current" id="router-index">
+        <div class="page" id="router-index">
             <header>
                 <h1>路由Demo A 测试</h1>
             </header>
@@ -236,12 +251,15 @@
                 <a class="back">后退</a>
                 <h1>内联的页面#router</h1>
             </header>
+            <section class="wrap">
+                <div>1234haha</div>
+            </section>
         </div>
     </div>
-    <script src="../../../../support/zepto.min.js"></script>
-    <script src="../../../core/base/class.js"></script>
-    <script src="../../../core/base/base.js"></script>
-    <script src="../../../core/widget/widget.js"></script>
-    <script src="../router.js"></script>
+    <script src="./zepto.min.js"></script>
+    <script src="./class.js"></script>
+    <script src="./base.js"></script>
+    <script src="./widget.js"></script>
+    <script src="./router.js"></script>
 </body>
 </html>

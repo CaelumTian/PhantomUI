@@ -32,9 +32,9 @@ gulp.task("build", ["less", "js"], function() {
 gulp.task('server', ['less', 'js'], function() {
     Browsersync.init({
         server: {
-            baseDir: "./"
+            baseDir: "./src/widgets/router/test/"
         }
     });
-    gulp.watch("./lib/styles/less/*.less", ['less']);
+    //gulp.watch("./lib/styles/less/*.less", ['less']);
     gulp.watch("*.html").on("change", reload);
 });
