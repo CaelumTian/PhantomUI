@@ -1,4 +1,4 @@
- /**
+/**
  * Created by caelumtian on 16/3/2.
  */
 (function(global) {
@@ -62,7 +62,7 @@
             direction : {
                 value : {
                     leftToRight : "from-left-to-right",
-                    rightToLeft : "from-right-left"
+                    rightToLeft : "from-right-to-left"
                 }
             },
             sessionNames : {
@@ -252,12 +252,12 @@
             }else {
                 this._loadDocument(url, {
                     success : function($doc) {
-                       try {
-                           self._parseDocument(url, $doc);
-                           self._doSwitchDocument(url, isPushState, direction);
-                       }catch(e) {
-                           global.location.href = url;
-                       }
+                        try {
+                            self._parseDocument(url, $doc);
+                            self._doSwitchDocument(url, isPushState, direction);
+                        }catch(e) {
+                            global.location.href = url;
+                        }
                     },
                     error : function() {
                         console.warn("请求错误,location.href返回");
@@ -351,10 +351,15 @@
             var self = this;
             var sectionId = $visibleSection.attr("id");
             var $visibleSectionInFrom = $from.find('.' + this.get("curPageClass"));
-            $visibleSectionInFrom.addClass(this.get("visiblePageClass")).removeClass(this.get("curPageClass"));
+
+            this._animateElement($from, $to, direction);
+
+            window.requestAnimationFrame(function() {
+                $visibleSectionInFrom.addClass(self.get("visiblePageClass")).removeClass(self.get("curPageClass"));
+            });
             this.trigger("pageAnimationStart", [sectionId, $visibleSection]);
             //开始动画
-            this._animateElement($from, $to, direction);
+
             $from.on("animationEnd webkitAnimationEnd", function() {
                 $visibleSectionInFrom.removeClass(self.get("visiblePageClass"));
                 self.trigger("beforePageRemove", [$from]);
@@ -375,15 +380,15 @@
          * @private
          */
         _animateElement : function($from, $to, direction) {
-            direction = direction || this.get("direction.rightToLeft");
-
+            if (typeof direction === 'undefined') {
+                direction = this.get("direction.rightToLeft");
+            }
             //所有可能类名称, 用于移除
             var animPageClasses = [
                 'page-from-center-to-left',
                 'page-from-center-to-right',
                 'page-from-right-to-center',
-                'page-from-left-to-center'
-            ].join(' ');
+                'page-from-left-to-center'].join(' ');
 
             var classForFrom,
                 classForTo;
@@ -415,14 +420,24 @@
 
         },
         _animateSection : function($from, $to, direction) {
+            var self = this;
             var toId = $to.attr("id");
 
             this.trigger("beforePageSwitch", [$from.attr('id'), $from]);
-            $from.removeClass(this.get("curPageClass"));
-            $to.addClass(this.get("curPageClass"));
+            self._animateElement($from, $to, direction);
+
+            window.requestAnimationFrame(function() {
+                $from.removeClass(this.get("curPageClass"));
+                $to.addClass(this.get("curPageClass"));
+            });
+
             this.trigger("pageAnimationStart", [toId, $to]);
 
-            this._animateElement($from, $to, direction);
+
+            $to.on("animationEnd webkitAnimationEnd", function() {
+                self.trigger("pageAnimationEnd", [toId, $to]);
+                self.trigger("pageInit", [toId, $to]);
+            })
         },
         forward : function() {
             global.history.forward();
@@ -500,12 +515,14 @@
         //************ 事件模块 *****************
         //************ 拦截link事件 *************
     });
+    window.addEventListener('pageshow', function(event) {
+        if (event.persisted) {
+            location.reload();
+        }
+    });
     $(document).ready(function() {
-        var router = new Router();
-        $(document).on("touchstart", "a", function(event) {
-            event.preventDefault();
-        })
-        $(document).on("click touchend", "a", function(event) {
+        var router = new Router({});
+        $(document).on("click touchstart", "a", function(event) {
             //阻止a的默认事件   这里还要添加配置是否开启router
             event.preventDefault();
             var $target = $(event.currentTarget);
