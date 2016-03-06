@@ -160,7 +160,7 @@
          * @private
          */
         _pushNewState : function(url, sectionId) {
-            var state = {f
+            var state = {
                 id: this._getNextStateId(),
                 pageId: sectionId,
                 url: Util.toUrlObject(url)
