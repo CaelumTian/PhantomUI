@@ -160,7 +160,7 @@
          * @private
          */
         _pushNewState : function(url, sectionId) {
-            var state = {
+            var state = {f
                 id: this._getNextStateId(),
                 pageId: sectionId,
                 url: Util.toUrlObject(url)
@@ -427,8 +427,8 @@
             self._animateElement($from, $to, direction);
 
             window.requestAnimationFrame(function() {
-                $from.removeClass(this.get("curPageClass"));
-                $to.addClass(this.get("curPageClass"));
+                $from.removeClass(self.get("curPageClass"));
+                $to.addClass(self.get("curPageClass"));
             });
 
             this.trigger("pageAnimationStart", [toId, $to]);
