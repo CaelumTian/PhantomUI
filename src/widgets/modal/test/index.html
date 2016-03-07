@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../../../build/reset.css">
+    <style>
+        .page-panel {
+            position: fixed;
+            z-index: 10000;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.4);
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 400ms;
+        }
+        .ph-modal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -6.75rem;
+            text-align: center;
+            border-radius: 0.35rem;
+            width: 13.5rem;
+            transition-property: transform, opacity;
+            transform: translate3d(0, 0, 0) scale(1.185);
+            opacity: 0;
+            color: #3d4145;
+            z-index: 11000;
+        }
+        .ph-modal.ph-modal-in {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1);
+            transition-duration: 400ms;
+        }
+        .ph-modal.ph-modal-out {
+            opacity: 0;
+            z-index: 10999;
+            -webkit-transition-duration: 400ms;
+            transition-duration: 400ms;
+            -webkit-transform: translate3d(0, 0, 0) scale(0.815);
+            transform: translate3d(0, 0, 0) scale(0.815);
+        }
+        .ph-modal-inner {
+            padding: 0.75rem;
+            border-radius: 0.35rem 0.35rem 0 0;
+            position: relative;
+            background: #e8e8e8;
+        }
+        .ph-modal-title {
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        .ph-modal-title+.ph-modal-text {
+            margin-top: 0.25rem;
+        }
+        .ph-modal-inner:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: auto;
+            top: auto;
+            height: 1px;
+            width: 100%;
+            background-color: #b5b5b5;
+            display: block;
+            z-index: 15;
+            -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+        }
+        .ph-modal-buttons {
+            height: 2.2rem;
+            overflow: hidden;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+        }
+        .ph-modal-button {
+            width: 100%;
+            padding: 0 0.25rem;
+            height: 2.2rem;
+            font-size: 0.85rem;
+            line-height: 2.2rem;
+            text-align: center;
+            color: #0894ec;
+            background: #e8e8e8;
+            display: block;
+            position: relative;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            cursor: pointer;
+            box-sizing: border-box;
+            -webkit-box-flex: 1;
+        }
+        .ph-modal-button:first-child:last-child {
+            border-radius: 0 0 0.35rem 0.35rem;
+        }
+        .ph-modal-button:active {
+            background: #d4d4d4 !important;
+        }
+    </style>
+</head>
+<body>
+    <script src="../../../../support/zepto.min.js"></script>
+    <script src="../../../core/base/class.js"></script>
+    <script src="../../../core/base/base.js"></script>
+    <script src="../../../core/widget/widget.js"></script>
+    <script src="../pannel.js"></script>
+    <script src="../modal.js"></script>
+    <a href="http://www.baidu.com">baidu</a>
+    <script>
+        var modal1 = new Modal();
+        var modal2 = new Modal({
+            "title" : "这是另一个alert",
+            "test" : "不服就来试一试"
+        })
+    </script>
+</body>
+</html>
