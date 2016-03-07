@@ -2,13 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c55839ed-833c-41ae-92cb-5a5c2e6644b5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/widgets/modal/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reset.css" afterPath="$PROJECT_DIR$/build/reset.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/less/reset.less" afterPath="$PROJECT_DIR$/less/reset.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/base/base.js" afterPath="$PROJECT_DIR$/src/core/base/base.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/widget/test/test.html" afterPath="$PROJECT_DIR$/src/core/widget/test/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/core/widget/widget.js" afterPath="$PROJECT_DIR$/src/core/widget/widget.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/widgets/modal/README.md" afterPath="$PROJECT_DIR$/src/widgets/modal/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/widgets/modal/modal.js" afterPath="$PROJECT_DIR$/src/widgets/modal/modal.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/widgets/modal/test/index.html" afterPath="$PROJECT_DIR$/src/widgets/modal/test/index.html" />
     </list>
     <ignored path="PhantomUI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -32,22 +30,24 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/widgets/modal/test/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="59.576923">
-              <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+            <state vertical-scroll-proportion="-22.153847">
+              <caret line="162" column="20" selection-start-line="162" selection-start-column="20" selection-end-line="162" selection-end-column="20" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modal.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="modal.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/widgets/modal/modal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.56534094">
-              <caret line="62" column="89" selection-start-line="62" selection-start-column="89" selection-end-line="62" selection-end-column="89" />
+            <state vertical-scroll-proportion="-22.037037">
+              <caret line="36" column="9" selection-start-line="6" selection-start-column="7" selection-end-line="36" selection-end-column="9" />
               <folding>
-                <marker date="1457359469000" expanded="true" signature="768:1255" placeholder="..." />
-                <marker date="1457359469000" expanded="true" signature="832:1031" placeholder="..." />
-                <marker date="1457359469000" expanded="true" signature="1097:1221" placeholder="..." />
+                <marker date="1457369514000" expanded="true" signature="977:1489" placeholder="..." />
+                <marker date="1457369514000" expanded="true" signature="1041:1240" placeholder="..." />
+                <marker date="1457369514000" expanded="true" signature="1306:1343" placeholder="..." />
+                <marker date="1457369514000" expanded="true" signature="1306:1418" placeholder="..." />
+                <marker date="1457369514000" expanded="true" signature="1306:1455" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -56,8 +56,21 @@
       <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/widgets/modal/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.1724138">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state vertical-scroll-proportion="-9.965517">
+              <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.55407405">
+              <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -128,7 +141,6 @@
         <option value="$PROJECT_DIR$/src/widgets/router/router.js" />
         <option value="$PROJECT_DIR$/less/flex.less" />
         <option value="$PROJECT_DIR$/less/test/index.html" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/less/reset.less" />
         <option value="$PROJECT_DIR$/src/core/widget/test/test.html" />
         <option value="$PROJECT_DIR$/src/core/base/base.js" />
@@ -136,8 +148,10 @@
         <option value="$PROJECT_DIR$/src/widgets/pannel/pannel.js" />
         <option value="$PROJECT_DIR$/src/core/widget/widget.js" />
         <option value="$PROJECT_DIR$/src/widgets/pannel/modal.js" />
-        <option value="$PROJECT_DIR$/src/widgets/modal/README.md" />
+        <option value="$PROJECT_DIR$/src/widgets/modal/test/index.html" />
         <option value="$PROJECT_DIR$/src/widgets/modal/modal.js" />
+        <option value="$PROJECT_DIR$/src/widgets/modal/README.md" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -440,6 +454,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/caelumtian/Programmer/PhantomUI/src/core/widget/test/test.html" />
     <property name="FullScreen" value="true" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../PhantomUI-IO" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -885,16 +900,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32740742">
-          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/widgets/router/test/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15044248">
@@ -928,14 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/modal/pannel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/widget/widget.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -944,10 +941,40 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/modal/pannel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/modal/modal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.037037">
+          <caret line="36" column="9" selection-start-line="6" selection-start-column="7" selection-end-line="36" selection-end-column="9" />
+          <folding>
+            <marker date="1457369514000" expanded="true" signature="977:1489" placeholder="..." />
+            <marker date="1457369514000" expanded="true" signature="1041:1240" placeholder="..." />
+            <marker date="1457369514000" expanded="true" signature="1306:1343" placeholder="..." />
+            <marker date="1457369514000" expanded="true" signature="1306:1418" placeholder="..." />
+            <marker date="1457369514000" expanded="true" signature="1306:1455" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/modal/test/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.153847">
+          <caret line="162" column="20" selection-start-line="162" selection-start-column="20" selection-end-line="162" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/widgets/modal/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.1724138">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        <state vertical-scroll-proportion="-9.965517">
+          <caret line="17" column="51" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
           <folding />
         </state>
       </provider>
@@ -955,24 +982,15 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/modal/test/index.html">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="59.576923">
-          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        <state vertical-scroll-proportion="0.55407405">
+          <caret line="22" column="49" selection-start-line="22" selection-start-column="49" selection-end-line="22" selection-end-column="49" />
           <folding />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/modal/modal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.56534094">
-          <caret line="62" column="89" selection-start-line="62" selection-start-column="89" selection-end-line="62" selection-end-column="89" />
-          <folding>
-            <marker date="1457359469000" expanded="true" signature="768:1255" placeholder="..." />
-            <marker date="1457359469000" expanded="true" signature="832:1031" placeholder="..." />
-            <marker date="1457359469000" expanded="true" signature="1097:1221" placeholder="..." />
-          </folding>
-        </state>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
       </provider>
     </entry>
   </component>

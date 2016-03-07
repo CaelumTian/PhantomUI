@@ -14,25 +14,35 @@
                 "title" : "ph-modal-title",
                 "text" : "ph-modal-text",
                 "buttons" : "ph-modal-buttons",
-                "button" : "ph-modal-button ph-confirm"
+                "buttonConfirm" : "ph-modal-button ph-confirm",
+                "buttonCancel" : "ph-modal-button ph-modal-line ph-cancel"
             },
+            callbackOk : null,
+            callbackCancel : null,
             containerClass : "page-panel",
             title : "",
             text : "欢迎使用PhantomUI",
-            confirm : "确认",
+            confirmText : "确认",
+            cancelText : "取消",
+            cancel : "",
             template :   '<div class="{$classNames.container}">'
                         +   '<div class="{$classNames.inner}">'
                         +       '<div class="{$classNames.title}">{$title}</div>'
                         +       '<div class="{$classNames.text}">{$text}</div>'
                         +   '</div>'
                         +   '<div class="{$classNames.buttons}">'
-                        +       '<span class="{$classNames.button}">{$confirm}</span>'
+                        +       '{$cancel}' + '<span class="{$classNames.buttonConfirm}">{$confirmText}</span>'
                         +   '</div>'
                         +'</div>'
         },
         _initTemplate : function() {
             var self = this;
             var template = this.get('template');
+            switch(this.get("type")) {
+                case "confirm" :
+                    var str = '<div class="' + this.get("classNames.buttonCancel") + '">' + this.get("cancelText") + '</div>';
+                    this.set("cancel", str);
+            }
             // 替换template中的{$className}占位符
             typeof template == 'string' && (template = template.replace(/{\$([^\})]*)}/g, function() {
                 return self.get(arguments[1]);
@@ -60,7 +70,10 @@
                 });
                 this.$element.removeClass(this.get("classNames.none"));
                 this.$element.addClass(this.get("classNames.appear"));
-                this.delegateEvents(document, "click .ph-confirm", this._handlerConfirm);
+                this.delegateEvents(document, "click .ph-confirm", this._handlerOk);
+                if(this.get("type") === "confirm") {
+                    this.delegateEvents(document, "click .ph-cancel", this._handlerCancel);
+                }
             }
         },
         show : function() {
@@ -82,10 +95,24 @@
                 this.pannel.hide();
             }
         },
-        _handlerConfirm : function(event) {
+        _handlerOk : function(event) {
             if(Util.contain(document, this.element)) {
                 this.hide();
                 this.undelegateEvents(document, "click .ph-confirm");
+                //触发点击ok后的回调函数
+                if(typeof this.get("callbackOk") === "function") {
+                    this.get("callbackOk").apply(this);
+                }
+            }
+        },
+        _handlerCancel : function() {
+            if(Util.contain(document, this.element)) {
+                this.hide();
+                this.undelegateEvents(document, "click .ph-cancel");
+                //触发点击ok后的回调函数
+                if(typeof this.get("callbackCancel") === "function") {
+                    this.get("callbackCancel").apply(this);
+                }
             }
         }
     });
@@ -93,6 +120,6 @@
         contain : function(a, b) {
             return a.contains ? a != b && a.contains(b) : !!(a.compareDocumentPosition(b) & 16);
         }
-    }
+    };
     global.Modal = Modal;
 })(this);

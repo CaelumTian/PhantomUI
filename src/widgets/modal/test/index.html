@@ -111,8 +111,31 @@
         .ph-modal-button:first-child:last-child {
             border-radius: 0 0 0.35rem 0.35rem;
         }
+        .ph-modal-button:first-child {
+            border-radius: 0 0 0 0.35rem;
+        }
+        .ph-modal-button:last-child {
+            border-radius: 0 0 0.35rem 0;
+        }
         .ph-modal-button:active {
             background: #d4d4d4 !important;
+        }
+        .ph-modal-line:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            left: auto;
+            bottom: auto;
+            width: 1px;
+            height: 100%;
+            background-color: #b5b5b5;
+            display: block;
+            z-index: 15;
+            -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+            -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
         }
     </style>
 </head>
@@ -125,10 +148,21 @@
     <script src="../modal.js"></script>
     <a href="http://www.baidu.com">baidu</a>
     <script>
-        var modal1 = new Modal();
+        var modal1 = new Modal({
+            callbackOk : function() {
+                console.log("modal1被点击了");
+            }
+        });
         var modal2 = new Modal({
+            "type" : "confirm",
             "title" : "这是另一个alert",
-            "test" : "不服就来试一试"
+            "test" : "不服就来试一试",
+            callbackOk : function() {
+                console.log("modal2被点击了");
+            },
+            callbackCancel : function() {
+                console.log("modal2呗取消了");
+            }
         })
     </script>
 </body>
