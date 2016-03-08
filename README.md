@@ -8,7 +8,8 @@ PhantomUI
 1. `core`是PhatomUI的核心类库，所有的组件都依赖于core生成的widget类。  
 2. `core`由几个功能独立的核心类组成，包括`Class.js` `Base.js` `Widget.js`。    
 3. class.js提供OO继承关系, base.js提供了Event Attributes功能, Widget则提供组件基本的生命周期模板功能.  
-4. 详系用法请查看各自的readme文件.   
+4. 详系用法请查看各自的readme文件.  
+[核心组件](https://github.com/T-phantom/PhantomUI/tree/master/src/core)
  
 ### 基础样式库  
 1. 基于flex布局的栅格系统  
