@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../src/reset.css">
+    <style>
+        .page-panel {
+            position: fixed;
+            z-index: 10000;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.4);
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 400ms;
+        }
+        .ph-modal {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -6.75rem;
+            text-align: center;
+            border-radius: 0.35rem;
+            width: 13.5rem;
+            transition-property: transform, opacity;
+            transform: translate3d(0, 0, 0) scale(1.185);
+            opacity: 0;
+            color: #3d4145;
+            z-index: 11000;
+        }
+        .ph-modal.ph-modal-in {
+            opacity: 1;
+            transform: translate3d(0, 0, 0) scale(1);
+            transition-duration: 400ms;
+        }
+        .ph-modal.ph-modal-out {
+            opacity: 0;
+            z-index: 10999;
+            -webkit-transition-duration: 400ms;
+            transition-duration: 400ms;
+            -webkit-transform: translate3d(0, 0, 0) scale(0.815);
+            transform: translate3d(0, 0, 0) scale(0.815);
+        }
+        .ph-modal-inner {
+            padding: 0.75rem;
+            border-radius: 0.35rem 0.35rem 0 0;
+            position: relative;
+            background: #e8e8e8;
+        }
+        .ph-modal-title {
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        .ph-modal-title+.ph-modal-text {
+            margin-top: 0.25rem;
+        }
+        .ph-modal-inner:after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            right: auto;
+            top: auto;
+            height: 1px;
+            width: 100%;
+            background-color: #b5b5b5;
+            display: block;
+            z-index: 15;
+            -webkit-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+        }
+        .ph-modal-buttons {
+            height: 2.2rem;
+            overflow: hidden;
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-pack: center;
+            -webkit-justify-content: center;
+            justify-content: center;
+        }
+        .ph-modal-button {
+            width: 100%;
+            padding: 0 0.25rem;
+            height: 2.2rem;
+            font-size: 0.85rem;
+            line-height: 2.2rem;
+            text-align: center;
+            color: #0894ec;
+            background: #e8e8e8;
+            display: block;
+            position: relative;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            cursor: pointer;
+            box-sizing: border-box;
+            -webkit-box-flex: 1;
+        }
+        .ph-modal-button:first-child:last-child {
+            border-radius: 0 0 0.35rem 0.35rem;
+        }
+        .ph-modal-button:first-child {
+            border-radius: 0 0 0 0.35rem;
+        }
+        .ph-modal-button:last-child {
+            border-radius: 0 0 0.35rem 0;
+        }
+        .ph-modal-button:active {
+            background: #d4d4d4 !important;
+        }
+        .ph-modal-line:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            left: auto;
+            bottom: auto;
+            width: 1px;
+            height: 100%;
+            background-color: #b5b5b5;
+            display: block;
+            z-index: 15;
+            -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+            -webkit-transform: scaleY(0.5);
+            transform: scaleY(0.5);
+        }
+        input.ph-text-input {
+            box-sizing: border-box;
+            height: 1.5rem;
+            background: #fff;
+            margin: 0;
+            margin-top: 0.75rem;
+            padding: 0 0.25rem;
+            border: 1px solid #a0a0a0;
+            border-radius: 0.25rem;
+            width: 100%;
+            font-size: 0.7rem;
+            font-family: inherit;
+            display: block;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        /*--- 其他内容 ---*/
+        header {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 100;
+            background: #0e90d2;
+            color: #FFF;
+            box-shadow: 0 0 3px rgba(0,0,0,.15);
+            width: 100%;
+            height: 45px;
+        }
+        header h1 {
+            text-align: center;
+            font-size: 18px;
+            color: #ffffff;
+        }
+        .wrap {
+            margin-top: 45px;
+        }
+        .list>li {
+            position: relative;
+            display: block;
+            margin-bottom: -1px;
+            background-color: #fff;
+            border: 1px solid #dedede;
+            border-width: 1px 0;
+        }
+        .list>li>a {
+            display: block;
+            padding: 20px;
+            background-color: transparent;
+            color: #0e90d2;
+            font-size: 16px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="page-group">
+        <div class="page">
+            <header>
+                <h1>Modal 测试</h1>
+            </header>
+            <section class="wrap">
+                <ul class="list" style="padding: 0;">
+                    <li>
+                        <a href="" id="alert-none">Alert 测试</a>
+                    </li>
+                    <li>
+                        <a href="" id="alert-title">Alert带有title测试</a>
+                    </li>
+                    <li>
+                        <a href="" id="confirm">Confirm 测试</a>
+                    </li>
+                    <li>
+                        <a href="" id="prompt">prompt测试</a>
+                    </li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <script src="../src/zepto.min.js"></script>
+    <script src="../src/class.js"></script>
+    <script src="../src/base.js"></script>
+    <script src="../src/widget.js"></script>
+    <script src="./pannel.js"></script>
+    <script src="./modal.js"></script>
+    <script>
+        $("#alert-none").on("click touchstart", function(event) {
+            event.preventDefault();
+            alertNone.show();
+        });
+        $("#alert-title").on("click touchstart", function(event) {
+            event.preventDefault();
+            alertTitle.show();
+        });
+        $("#confirm").on("click touchstart", function(event) {
+            event.preventDefault();
+            confirm.show();
+        });
+        $("#prompt").on("click touchstart", function(event) {
+            event.preventDefault();
+            prompt.show();
+        });
+        var prompt = new Modal({
+            "type" : "prompt",
+            "text" : "prompt测试 请输入内容",
+            callbackOk : function(text) {
+                console.log(mo);
+                var mo = new Modal({
+                    "text" : "您输入的内容是" + text,
+                    callbackOk : function() {
+                        mo.hide();
+                        mo.destroy();
+                    }
+                });
+                mo.show();
+            }
+        });
+
+        var alertNone = new Modal({
+            "text" : "欢迎使用PhantomUI",
+            callbackOk : function() {
+                console.log("alertNode被点击了");
+            }
+        });
+        var alertTitle = new Modal({
+            "title" : "CaelumTian",
+            "text" : "带有title的alert",
+            callbackOk : function() {
+                console.log("alertTitle被点击了");
+            }
+        });
+        var confirm = new Modal({
+            "type" : "confirm",
+            "text" : "confirm测试,点击确定,取消",
+            callbackOk : function() {
+                successModal.show();
+            },
+            callbackCancel : function() {
+                cancelModal.show();
+            }
+        });
+        var successModal = new Modal({
+            "text" : "您点击了确定按钮"
+        });
+        var cancelModal = new Modal({
+            "text" : "您点击了取消按钮"
+        });
+    </script>
+</body>
+</html>

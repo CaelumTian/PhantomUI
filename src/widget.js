@@ -14,13 +14,14 @@
             id : null,
             className : null,
             style : null,
+            parentNode : document.body,
             //渲染模板, 节点插入位置
-            template : "<div></div>",
-            parentNode : document.body
+            template : "<div></div>"
         },
         init : function(config) {
             config = this._parseConfig(config);
             Widget._super.init.call(this, config);
+            this._initTemplate();
             this._parseElement();
             //加入缓存实例
             this._stamp();
@@ -28,6 +29,7 @@
             this.delegateEvents();
             this.setup();
         },
+        _initTemplate : function() {},
         _parseConfig : function(config) {
             config = config || {};
             //element, events不作为attrs
@@ -232,8 +234,12 @@
     });
     // 根据selector获取widget实例
     Widget.query = function(selector) {
-        var uuid = parseInt($(selector).attr("data-widget-id"));
-        return cacheWidgets[uuid];
+        var result = [];
+        $(selector).each(function(index, ele) {
+            var uuid = parseInt($(ele).attr("data-widget-id"), 10);
+            result.push(cacheWidgets[uuid]);
+        });
+        return result;
     };
     var Util = {
         uuid : 0,
