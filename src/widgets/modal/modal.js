@@ -49,8 +49,10 @@
                     this.set("cancel", str);
                     break;
                 case "prompt" :
-                    var str = '<input type="text" class="' + this.get("classNames.input") + '">';
-                    this.set("input", str);
+                    var strCancel = '<div class="' + this.get("classNames.buttonCancel") + '">' + this.get("cancelText") + '</div>';
+                    var strInput = '<input type="text" class="' + this.get("classNames.input") + '">';
+                    this.set("cancel", strCancel);
+                    this.set("input", strInput);
                     break;
                 default:
                     break;
@@ -89,7 +91,7 @@
 
                 //绑定确认按钮事件
                 this.delegateEvents(document, "click .ph-confirm", this._handlerOk);
-                if(this.get("type") === "confirm") {
+                if(this.get("type") !== "alert") {
                     this.delegateEvents(document, "click .ph-cancel", this._handlerCancel);
                 }
             }
@@ -119,24 +121,34 @@
         },
         _handlerOk : function(event) {
             if(Util.contain(document, this.element)) {
-                this.hide();
                 this.undelegateEvents(document, "click .ph-confirm");
                 //触发点击ok后的回调函数
                 if(typeof this.get("callbackOk") === "function") {
                     this.get("callbackOk").call(this, this.inputValue);
                 }
-                $(".ph-text-input").val("");
+                if(this.get("type") === "prompt") {
+                    $(".ph-text-input").val("");
+                    this.inputValue = "";
+                }
+                try{
+                    this.hide();
+                }catch(e) {}
             }
         },
         _handlerCancel : function() {
             if(Util.contain(document, this.element)) {
-                this.hide();
                 this.undelegateEvents(document, "click .ph-cancel");
                 //触发点击ok后的回调函数
                 if(typeof this.get("callbackCancel") === "function") {
-                    this.get("callbackCancel").apply(this, this.inputValue);
+                    this.get("callbackCancel").call(this, this.inputValue);
                 }
-                $(".ph-text-input").val("");
+                if(this.get("type") === "prompt") {
+                    $(".ph-text-input").val("");
+                    this.inputValue = "";
+                }
+                try{
+                    this.hide();
+                }catch(e) {}
             }
         }
     });

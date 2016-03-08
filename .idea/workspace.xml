@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c55839ed-833c-41ae-92cb-5a5c2e6644b5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/reset.css" afterPath="$PROJECT_DIR$/build/reset.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/less/reset.less" afterPath="$PROJECT_DIR$/less/reset.less" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/widgets/modal/modal.js" afterPath="$PROJECT_DIR$/src/widgets/modal/modal.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/widgets/modal/test/index.html" afterPath="$PROJECT_DIR$/src/widgets/modal/test/index.html" />
     </list>
@@ -27,27 +25,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/widgets/modal/test/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6740413">
-              <caret line="179" column="42" selection-start-line="179" selection-start-column="42" selection-end-line="179" selection-end-column="42" />
+            <state vertical-scroll-proportion="-7.769231">
+              <caret line="243" column="30" selection-start-line="243" selection-start-column="30" selection-end-line="243" selection-end-column="30" />
+              <folding>
+                <element signature="n#style#0;n#ul#0;n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/widgets/router/test/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-3.8461537">
+              <caret line="227" column="25" selection-start-line="227" selection-start-column="25" selection-end-line="227" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="modal.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="modal.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/widgets/modal/modal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.703704">
-              <caret line="116" column="48" selection-start-line="116" selection-start-column="48" selection-end-line="116" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.27621862">
+              <caret line="96" column="13" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
               <folding>
-                <marker date="1457420225000" expanded="true" signature="1069:1624" placeholder="..." />
-                <marker date="1457420225000" expanded="true" signature="1133:1375" placeholder="..." />
-                <marker date="1457420225000" expanded="true" signature="1441:1478" placeholder="..." />
-                <marker date="1457420225000" expanded="true" signature="1441:1553" placeholder="..." />
-                <marker date="1457420225000" expanded="true" signature="1441:1590" placeholder="..." />
+                <marker date="1457429848000" expanded="true" signature="1069:1624" placeholder="..." />
+                <marker date="1457429848000" expanded="true" signature="1133:1375" placeholder="..." />
+                <marker date="1457429848000" expanded="true" signature="1441:1478" placeholder="..." />
+                <marker date="1457429848000" expanded="true" signature="1441:1553" placeholder="..." />
+                <marker date="1457429848000" expanded="true" signature="1441:1590" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -134,8 +144,8 @@
         <option value="$PROJECT_DIR$/src/widgets/modal/README.md" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/less/reset.less" />
-        <option value="$PROJECT_DIR$/src/widgets/modal/modal.js" />
         <option value="$PROJECT_DIR$/src/widgets/modal/test/index.html" />
+        <option value="$PROJECT_DIR$/src/widgets/modal/modal.js" />
       </list>
     </option>
   </component>
@@ -884,13 +894,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/router/test/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15044248">
-          <caret line="6" column="63" selection-start-line="6" selection-start-column="4" selection-end-line="6" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/base/base.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-5.549483">
@@ -952,25 +955,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/modal/modal.js">
+    <entry file="file://$PROJECT_DIR$/src/widgets/modal/test/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.703704">
-          <caret line="116" column="48" selection-start-line="116" selection-start-column="48" selection-end-line="116" selection-end-column="48" />
+        <state vertical-scroll-proportion="-7.769231">
+          <caret line="243" column="30" selection-start-line="243" selection-start-column="30" selection-end-line="243" selection-end-column="30" />
           <folding>
-            <marker date="1457420225000" expanded="true" signature="1069:1624" placeholder="..." />
-            <marker date="1457420225000" expanded="true" signature="1133:1375" placeholder="..." />
-            <marker date="1457420225000" expanded="true" signature="1441:1478" placeholder="..." />
-            <marker date="1457420225000" expanded="true" signature="1441:1553" placeholder="..." />
-            <marker date="1457420225000" expanded="true" signature="1441:1590" placeholder="..." />
+            <element signature="n#style#0;n#ul#0;n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/modal/test/index.html">
+    <entry file="file://$PROJECT_DIR$/src/widgets/router/test/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6740413">
-          <caret line="179" column="42" selection-start-line="179" selection-start-column="42" selection-end-line="179" selection-end-column="42" />
+        <state vertical-scroll-proportion="-3.8461537">
+          <caret line="227" column="25" selection-start-line="227" selection-start-column="25" selection-end-line="227" selection-end-column="25" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/modal/modal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27621862">
+          <caret line="96" column="13" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
+          <folding>
+            <marker date="1457429848000" expanded="true" signature="1069:1624" placeholder="..." />
+            <marker date="1457429848000" expanded="true" signature="1133:1375" placeholder="..." />
+            <marker date="1457429848000" expanded="true" signature="1441:1478" placeholder="..." />
+            <marker date="1457429848000" expanded="true" signature="1441:1553" placeholder="..." />
+            <marker date="1457429848000" expanded="true" signature="1441:1590" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
