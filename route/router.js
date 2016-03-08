@@ -427,8 +427,8 @@
             self._animateElement($from, $to, direction);
 
             window.requestAnimationFrame(function() {
-                $from.removeClass(this.get("curPageClass"));
-                $to.addClass(this.get("curPageClass"));
+                $from.removeClass(self.get("curPageClass"));
+                $to.addClass(self.get("curPageClass"));
             });
 
             this.trigger("pageAnimationStart", [toId, $to]);
