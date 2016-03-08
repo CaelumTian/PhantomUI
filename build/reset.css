@@ -130,6 +130,13 @@ textarea {
   margin: 0;
   /* 3 */
 }
+a,
+input,
+textarea,
+select,
+button {
+  outline: 0;
+}
 button {
   overflow: visible;
 }
@@ -198,4 +205,8 @@ optgroup {
 }
 .content-padd {
   margin: 0.5rem;
+}
+.button:active {
+  color: #0a8ddf;
+  border-color: #0a8ddf;
 }

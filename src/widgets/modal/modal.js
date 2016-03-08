@@ -4,6 +4,7 @@
 (function(global) {
     var modalCache = [];
     var Modal = Class.create(Widget, {
+        inputValue : "",
         attrs : {
             type : "alert",
             classNames : {
@@ -15,7 +16,8 @@
                 "text" : "ph-modal-text",
                 "buttons" : "ph-modal-buttons",
                 "buttonConfirm" : "ph-modal-button ph-confirm",
-                "buttonCancel" : "ph-modal-button ph-modal-line ph-cancel"
+                "buttonCancel" : "ph-modal-button ph-modal-line ph-cancel",
+                "input" : "ph-text-input"
             },
             callbackOk : null,
             callbackCancel : null,
@@ -25,10 +27,12 @@
             confirmText : "确认",
             cancelText : "取消",
             cancel : "",
+            input : "",
             template :   '<div class="{$classNames.container}">'
                         +   '<div class="{$classNames.inner}">'
                         +       '<div class="{$classNames.title}">{$title}</div>'
                         +       '<div class="{$classNames.text}">{$text}</div>'
+                        +       '{$input}'
                         +   '</div>'
                         +   '<div class="{$classNames.buttons}">'
                         +       '{$cancel}' + '<span class="{$classNames.buttonConfirm}">{$confirmText}</span>'
@@ -38,10 +42,18 @@
         _initTemplate : function() {
             var self = this;
             var template = this.get('template');
+            //选择对应的组件, 默认alert
             switch(this.get("type")) {
                 case "confirm" :
                     var str = '<div class="' + this.get("classNames.buttonCancel") + '">' + this.get("cancelText") + '</div>';
                     this.set("cancel", str);
+                    break;
+                case "prompt" :
+                    var str = '<input type="text" class="' + this.get("classNames.input") + '">';
+                    this.set("input", str);
+                    break;
+                default:
+                    break;
             }
             // 替换template中的{$className}占位符
             typeof template == 'string' && (template = template.replace(/{\$([^\})]*)}/g, function() {
@@ -55,6 +67,10 @@
                 this.pannel = new Pannel();
             }else {
                 this.pannel = Widget.query("." + this.get("containerClass"))[0];
+            }
+            //监听input事件
+            if(this.get("type") === "prompt") {
+                this.delegateEvents(document, "input .ph-text-input", this._handlerInput);
             }
         },
         _pushModalCache : function() {
@@ -70,6 +86,8 @@
                 });
                 this.$element.removeClass(this.get("classNames.none"));
                 this.$element.addClass(this.get("classNames.appear"));
+
+                //绑定确认按钮事件
                 this.delegateEvents(document, "click .ph-confirm", this._handlerOk);
                 if(this.get("type") === "confirm") {
                     this.delegateEvents(document, "click .ph-cancel", this._handlerCancel);
@@ -95,14 +113,19 @@
                 this.pannel.hide();
             }
         },
+        _handlerInput : function(event) {
+            var $input = $(event.currentTarget);
+            this.inputValue = $input.val().trim();
+        },
         _handlerOk : function(event) {
             if(Util.contain(document, this.element)) {
                 this.hide();
                 this.undelegateEvents(document, "click .ph-confirm");
                 //触发点击ok后的回调函数
                 if(typeof this.get("callbackOk") === "function") {
-                    this.get("callbackOk").apply(this);
+                    this.get("callbackOk").call(this, this.inputValue);
                 }
+                $(".ph-text-input").val("");
             }
         },
         _handlerCancel : function() {
@@ -111,8 +134,9 @@
                 this.undelegateEvents(document, "click .ph-cancel");
                 //触发点击ok后的回调函数
                 if(typeof this.get("callbackCancel") === "function") {
-                    this.get("callbackCancel").apply(this);
+                    this.get("callbackCancel").apply(this, this.inputValue);
                 }
+                $(".ph-text-input").val("");
             }
         }
     });

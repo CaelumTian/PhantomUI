@@ -137,6 +137,24 @@
             -webkit-transform: scaleY(0.5);
             transform: scaleY(0.5);
         }
+        input.ph-text-input {
+            box-sizing: border-box;
+            height: 1.5rem;
+            background: #fff;
+            margin: 0;
+            margin-top: 0.75rem;
+            padding: 0 0.25rem;
+            border: 1px solid #a0a0a0;
+            border-radius: 0.25rem;
+            width: 100%;
+            font-size: 0.7rem;
+            font-family: inherit;
+            display: block;
+            box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
     </style>
 </head>
 <body>
@@ -154,11 +172,12 @@
             }
         });
         var modal2 = new Modal({
-            "type" : "confirm",
+            "type" : "prompt",
             "title" : "这是另一个alert",
             "test" : "不服就来试一试",
             callbackOk : function() {
                 console.log("modal2被点击了");
+                console.log(arguments[0]);
             },
             callbackCancel : function() {
                 console.log("modal2呗取消了");
