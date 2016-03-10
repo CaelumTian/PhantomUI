@@ -19,7 +19,7 @@
             this.$element.css({
                 "top" : this.get("top")
             });
-            
+
             //注册事件
             this.on("refresh", this._handlerRefresh);
             this.delegateEvents(document, "touchstart .pull-refresh-content", this._handleTouchStart);

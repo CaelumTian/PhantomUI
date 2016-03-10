@@ -111,18 +111,68 @@
                 transform: rotate(360deg);
             }
         }
+        /*--- 其他内容 ---*/
+        header {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 100;
+            background: #0e90d2;
+            color: #FFF;
+            box-shadow: 0 0 3px rgba(0,0,0,.15);
+            width: 100%;
+            height: 45px;
+            line-height: 45px;
+        }
+        header h1 {
+            text-align: center;
+            font-size: 18px;
+            color: #ffffff;
+        }
+        .list>li {
+            position: relative;
+            display: block;
+            margin-bottom: -1px;
+            background-color: #fff;
+            border: 1px solid #dedede;
+            border-width: 1px 0;
+        }
+        .list>li>a {
+            display: block;
+            padding: 20px;
+            background-color: transparent;
+            color: #0e90d2;
+            font-size: 16px;
+            text-decoration: none;
+        }
     </style>
 </head>
 <body>
+    <header>
+        <h1>下拉刷新测试</h1>
+    </header>
     <div class="content pull-refresh-content">
         <!-- 下拉层 -->
         <div class="pull-refresh-layer">
             <div class="preloader"></div>
             <div class="pull-refresh-arrow"></div>
         </div>
-        <div class="card">
-
-        </div>
+        <section class="wrap">
+            <ul class="list">
+                <li>
+                    <a href="">测试数据1</a>
+                </li>
+                <li>
+                    <a href="">测试数据2</a>
+                </li>
+                <li>
+                    <a href="">测试数据3</a>
+                </li>
+                <li>
+                    <a href="">测试数据4</a>
+                </li>
+            </ul>
+        </section>
     </div>
     <script src="../../../../support/zepto.min.js"></script>
     <script src="../../../core/base/class.js"></script>
@@ -130,11 +180,18 @@
     <script src="../../../core/widget/widget.js"></script>
     <script src="../pullRefresh.js"></script>
     <script>
+        var count = 4;
         var pull = new PullRefresh({
             element : ".pull-refresh-content",
             handleRefresh : function() {
                 setTimeout(function() {
-                    console.log("刷新完毕");
+                    var html =   '<li>'
+                                +   '<a href="">测试数据' + (++count) + '</a>'
+                                +'</li>'
+                                +'<li>'
+                                +   '<a href="">测试数据' + (++count) + '</a>'
+                                +'</li>';
+                    $(".list").prepend(html);
                     pull.refreshDone();
                 }, 2000)
             }
