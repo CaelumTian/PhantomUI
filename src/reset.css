@@ -21,6 +21,37 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: "Segoe UI", "Lucida Grande", Helvetica, Arial, "Microsoft YaHei", FreeSans, Arimo, "Droid Sans", "wenquanyi micro hei", "Hiragino Sans GB", "Hiragino Sans GB W3", Arial, sans-serif;
 }
+body,
+dl,
+dd,
+ul,
+ol,
+p,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+thead,
+tbody,
+tfoot,
+th,
+td,
+input,
+textarea,
+fieldset,
+legend,
+optgroup,
+blockquote,
+figure,
+menu {
+  margin: 0;
+  padding: 0;
+}
 *,
 *:before,
 *:after {

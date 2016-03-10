@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../src/reset.css">
+    <title>Document</title>
+    <style>
+        .pull-refresh-content {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+            transform: translate3d(0, 0, 0);
+        }
+        .pull-refresh-layer {
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 2.2rem;
+        }
+        .pull-refresh-layer .preloader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -0.5rem;
+            margin-top: -0.5rem;
+            visibility: hidden;
+        }
+        .pull-refresh-layer .pull-refresh-arrow {
+            width: 0.65rem;
+            height: 1rem;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -0.15rem;
+            margin-top: -0.5rem;
+            background: no-repeat center;
+            background-image: url("../resource/arrow.svg");
+            background-size: 0.65rem  1rem;
+            z-index: 10;
+            -webkit-transform: rotate(0deg) translate3d(0, 0, 0);
+            transform: rotate(0deg) translate3d(0, 0, 0);
+            -webkit-transition-duration: 300ms;
+            transition-duration: 300ms;
+        }
+        .pull-refresh-content:not(.refreshing) .pull-refresh-layer .preloader {
+            -webkit-animation: none;
+            animation: none;
+        }
+        .pull-refresh-content.refreshing .pull-refresh-arrow {
+            visibility: hidden;
+            -webkit-transition-duration: 0ms;
+            transition-duration: 0ms;
+        }
+        .pull-refresh-content.refreshing .preloader {
+            visibility: visible;
+        }
+        .pull-refresh-content.pull-up .pull-refresh-arrow {
+            -webkit-transform: rotate(180deg) translate3d(0, 0, 0);
+            transform: rotate(180deg) translate3d(0, 0, 0);
+        }
+        .pull-refresh-content {
+            top: 0rem;
+        }
+        .pull-refresh-content.refreshing {
+            -webkit-transform: translate3d(0, 2.2rem, 0);
+            transform: translate3d(0, 2.2rem, 0);
+        }
+
+        .pull-refresh-content {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+        }
+        .pull-refresh-content.transitioning,
+        .pull-refresh-content.refreshing {
+            -webkit-transition: -webkit-transform 400ms;
+            transition: transform 400ms;
+        }
+        .preloader {
+            display: inline-block;
+            width: 1rem;
+            height: 1rem;
+            -webkit-transform-origin: 50%;
+            transform-origin: 50%;
+            -webkit-animation: preloader-spin 1s steps(12, end) infinite;
+            animation: preloader-spin 1s steps(12, end) infinite;
+        }
+        .preloader:after {
+            display: block;
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-image: url("../resource/load.svg");
+            background-position: 50%;
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+        @-webkit-keyframes preloader-spin {
+            100% {
+                -webkit-transform: rotate(360deg);
+            }
+        }
+        @keyframes preloader-spin {
+            100% {
+                -webkit-transform: rotate(360deg);
+                transform: rotate(360deg);
+            }
+        }
+        /*--- 其他内容 ---*/
+        header {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            z-index: 100;
+            background: #0e90d2;
+            color: #FFF;
+            box-shadow: 0 0 3px rgba(0,0,0,.15);
+            width: 100%;
+            height: 45px;
+            line-height: 45px;
+        }
+        header h1 {
+            text-align: center;
+            font-size: 18px;
+            color: #ffffff;
+        }
+        .list>li {
+            position: relative;
+            display: block;
+            margin-bottom: -1px;
+            background-color: #fff;
+            border: 1px solid #dedede;
+            border-width: 1px 0;
+        }
+        .list>li>a {
+            display: block;
+            padding: 20px;
+            background-color: transparent;
+            color: #0e90d2;
+            font-size: 16px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>下拉刷新测试</h1>
+    </header>
+    <div class="content pull-refresh-content">
+        <!-- 下拉层 -->
+        <div class="pull-refresh-layer">
+            <div class="preloader"></div>
+            <div class="pull-refresh-arrow"></div>
+        </div>
+        <section class="wrap">
+            <ul class="list">
+                <li>
+                    <a>测试数据1</a>
+                </li>
+                <li>
+                    <a>测试数据2</a>
+                </li>
+                <li>
+                    <a>测试数据3</a>
+                </li>
+                <li>
+                    <a>测试数据4</a>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <script src="../src/zepto.min.js"></script>
+    <script src="../src/class.js"></script>
+    <script src="../src/base.js"></script>
+    <script src="../src/widget.js"></script>
+    <script src="./pullRefresh.js"></script>
+    <script>
+        var count = 4;
+        var pull = new PullRefresh({
+            element : ".pull-refresh-content",
+            handleRefresh : function() {
+                setTimeout(function() {
+                    var html =   '<li>'
+                                +   '<a href="">测试数据' + (++count) + '</a>'
+                                +'</li>'
+                                +'<li>'
+                                +   '<a href="">测试数据' + (++count) + '</a>'
+                                +'</li>';
+                    $(".list").prepend(html);
+                    pull.refreshDone();
+                }, 2000)
+            }
+        });
+    </script>
+</body>
+</html>
