@@ -8,11 +8,11 @@
         isMoved : false,
         isScolling : undefined,
         wasScrolled : undefined,
-        touchesStart  : {},
+        touchesStart  : {},         //记录鼠标位置x,y
         attrs : {
-            top : 0,            //下拉刷新 容器 上端距离
-            distance : 45,
-            handleRefresh : null,
+            top : 0,                //下拉刷新 容器 上端距离
+            distance : 45,          //下拉刷新距离
+            handleRefresh : null,   //下拉回调函数
         },
         setup : function() {
             //重新计算距离位置
@@ -33,6 +33,8 @@
         },
         _handleTouchStart : function(event) {
             this.isTouched = true;
+
+            //修正PC端和移动端
             if(event.type === "touchstart") {
                 this.touchesStart.x = event.targetTouches[0].pageX;
                 this.touchesStart.y = event.targetTouches[0].pageY;
@@ -52,6 +54,8 @@
                 var pageX = event.pageX;
                 var pageY = event.pageY;
             }
+
+            //计算是否滚动
             if (typeof this.isScrolling === 'undefined') {
                 this.isScrolling = !!(this.isScrolling || Math.abs(pageY - this.touchesStart.y) > Math.abs(pageX - this.touchesStart.x));
             }
@@ -59,12 +63,13 @@
                 this.isTouched = false;
                 return;
             }
+
+            //消除滚动条的影响,当scrollTop = 0 的时候才下拉加载
             this.scrollTop = this.element.scrollTop;
             if(typeof this.wasScrolled === 'undefined' && this.scrollTop !== 0) {
                 this.wasScrolled = true;
             }
             if(!this.isMoved) {
-                console.log("111");
                 this.$element.removeClass("transitioning");
                 if(this.scrollTop > this.element.offsetHeight) {
                     this.isTouched = false;
@@ -76,14 +81,14 @@
                 this.useTranslate = true;
             }
             this.isMoved = true;
+
             //移动距离
             this.touchesDiff = pageY - this.touchesStart.y;
-
-
             if(this.touchesDiff > 0 && this.scrollTop <= 0 || this.scrollTop < 0) {
                 if(this.useTranslate) {
                     event.preventDefault();
                     this.translate = (Math.pow(this.touchesDiff, 0.85) + this.startTranslate);
+
                     //移动容器
                     this.$element.css({
                         "transform" : 'translate3d(0,' + this.translate + 'px,0)'
@@ -117,17 +122,21 @@
                 "transform" : ""
             });
             if (this.refresh) {
-                //防止二次触发
-                if(this.$element.hasClass('refreshing')) return;
+                //防止多次触发刷新
+                if(this.$element.hasClass('refreshing')) {
+                    return;
+                }
                 this.$element.addClass('refreshing');
+
+                //调用刷新函数
                 this.trigger('refresh');
             } else {
                 this.$element.removeClass('pull-down');
             }
-
             this.isTouched = false;
             this.isMoved = false;
         },
+        //刷新完成后,调用,用于结束刷新状态
         refreshDone : function() {
             var self = this;
             this.$element.removeClass('refreshing').addClass('transitioning');
@@ -135,6 +144,13 @@
                 self.$element.removeClass('transitioning pull-up pull-down');
                 self.$element.off("transitionEnd webkitTransitionEnd");
             })
+        },
+        refreshTrigger : function() {
+            if(this.$element.hasClass("refreshing")) {
+                return;
+            }
+            this.$element.addClass("transitioning refreshing");
+            this.trigger("refresh");
         },
         _handlerRefresh : function() {
             var callback = this.get("handleRefresh");
