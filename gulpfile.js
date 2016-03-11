@@ -5,7 +5,13 @@ var gulp = require("gulp"),
 var concat = require("gulp-concat");
 const $ =  gulpLoadPlugins();
 gulp.task("less", function() {
-	return gulp.src("./less/*.less")
+	return gulp.src([
+					'./less/reset.less',
+					'./less/font.less',
+					'./less/flex.less',
+					'./less/base.less'
+				])
+		       .pipe($.concat("phantomui.css"))
 			   .pipe($.less())
 			   .pipe($.autoprefixer())
 			   .pipe(gulp.dest("./build"));

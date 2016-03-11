@@ -76,7 +76,6 @@
                     return;
                 }
                 this.startTranslate = this.$element.hasClass('refreshing') ? this.get("distance") : 0;
-                console.log(this.startTranslate);
 
                 this.useTranslate = true;
             }

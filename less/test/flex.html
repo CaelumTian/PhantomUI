@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="../../build/phantomui.css">
+    <style>
+        /*--- 其他内容 ---*/
+        .list>li {
+            position: relative;
+            display: block;
+            margin-bottom: -1px;
+            background-color: #fff;
+            border: 1px solid #dedede;
+            border-width: 1px 0;
+        }
+        .list>li>a {
+            display: block;
+            padding: 20px;
+            background-color: transparent;
+            color: #0e90d2;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .wrap {
+            margin-top: 2.2rem;
+        }
+        .flex div {
+            text-align: center;
+            border: 1px solid #ff0000;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="bar bar-nav">
+        <a href="" class="button pull-left">
+            <i class="icon icon-chevron-left"></i>
+            返回
+        </a>
+        <h1 class="title">flex栅格</h1>
+    </header>
+    <div class="content-padd wrap flex">
+        <div class="flex-item-12">
+            flex-item-12
+        </div>
+        <div class="flex-item-6">
+            flex-item-6
+        </div>
+        <div class="flex-item-6">
+            flex-item-6
+        </div>
+        <div class="flex-item-4">
+            flex-item-4
+        </div>
+        <div class="flex-item-4 flex-offset-4">
+            flex-item-4 flex-offset-4
+        </div>
+        <div class="flex-item-3">
+            flex-item-3
+        </div>
+        <div class="flex-item">
+            flex-item
+        </div>
+        <div class="flex-item-3">
+            flex-item-3
+        </div>
+    </div>
+</body>
+</html>

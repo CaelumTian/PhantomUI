@@ -1,0 +1,41 @@
+@import "mixin.less";
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+.bar {
+  position: absolute;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  height: @barHeight;
+  padding-right: @barSideSpacing;
+  padding-left: @barSideSpacing;
+  background-color: @barBgColor;
+  border-bottom: @colorSplite;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  overflow: hidden;
+  .button {
+    position: absolute;
+    line-height: 2.2rem;
+    color: #fff;
+    display: block;
+  }
+}
+.bar-nav {
+  top: 0;
+}
+.title {
+  position: absolute;
+  width: 100%;
+  padding: 0;
+  margin: 0 (-@barSideSpacing);
+  font-size: @fontSizeDefault;
+  font-weight: @fontWeight;
+  line-height: @barHeight;
+  color: @color-title;
+  text-align: center;
+  white-space: nowrap;
+}

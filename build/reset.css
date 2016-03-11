@@ -241,3 +241,6 @@ optgroup {
   color: #0a8ddf;
   border-color: #0a8ddf;
 }
+p {
+  margin: 1em 0;
+}
