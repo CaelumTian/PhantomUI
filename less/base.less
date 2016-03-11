@@ -5,7 +5,9 @@
   clear: both;
 }
 .bar {
-  position: absolute;
+  /*放置paint多次绘制*/
+  transform: translate3d(0, 0, 0);
+  position: fixed;
   right: 0;
   left: 0;
   z-index: 10;
@@ -22,6 +24,11 @@
     line-height: 2.2rem;
     color: #fff;
     display: block;
+  }
+  &~.content {
+    margin-top: @barHeight;
+    width: 100%;
+    overflow: scroll;
   }
 }
 .bar-nav {

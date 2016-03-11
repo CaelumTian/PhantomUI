@@ -1,0 +1,57 @@
+@import "mixin.less";
+.list-content {
+  margin: 1.75rem 0;
+  ul {
+    background-color: @listContentBg;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    border-top: 1px solid @listSplite;
+    border-bottom: 1px solid @listSplite;
+    .list-item:last-child>.item-inner{
+      border-bottom: none;
+    }
+    .list-item .item-img+.item-inner {
+      margin-left: 0.75rem;
+    }
+    ul {
+      border-top: none;
+      border-bottom: none;
+      padding-left: 2.25rem;
+    }
+  }
+}
+.item-img {
+
+}
+.list-item {
+  padding-left: 0.75rem;
+  min-height: 2.2rem;
+}
+.item-inner {
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.35rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid @listSplite;
+  justify-content: space-between;
+  align-items: center;
+}
+.list-content-title {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #6d6d72;
+  margin: 1.5rem 0.75rem 0.5rem;
+  &+.list-content {
+    margin: 0;
+  }
+}

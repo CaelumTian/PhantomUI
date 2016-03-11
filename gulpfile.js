@@ -9,7 +9,8 @@ gulp.task("less", function() {
 					'./less/reset.less',
 					'./less/font.less',
 					'./less/flex.less',
-					'./less/base.less'
+					'./less/base.less',
+					'./less/list.less'
 				])
 		       .pipe($.concat("phantomui.css"))
 			   .pipe($.less())

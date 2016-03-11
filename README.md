@@ -9,10 +9,12 @@ PhantomUI
 2. `core`由几个功能独立的核心类组成，包括`Class.js` `Base.js` `Widget.js`。    
 3. class.js提供OO继承关系, base.js提供了Event Attributes功能, Widget则提供组件基本的生命周期模板功能.  
 4. 详系用法请查看各自的readme文件.  
-[核心组件](https://github.com/T-phantom/PhantomUI/tree/master/src/core)
+[核心组件 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/core)
  
 ### 基础样式库  
-1. 基于flex布局的栅格系统  
+1. 基于flex布局的栅格系统   
+2. 基础CSS: 标题, 段落, 列表, 字体图标, 导航等  
+[基础样式 展示地址](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/ui)
 
 ### 基础组件库  
 1.  `Router` 路由组件 : Router默认开启, 帮助用户完成`SPA`应用, 无需自主配置 会默认拦截浏览器的跳转事件转向路由. 当然一切都可配置, 
@@ -25,6 +27,7 @@ PhantomUI
 2. `03/07` 完成flex栅格设计.
 3. `03/08` 完成Modal组件, 文档待更新; router发现bug, 建议NA端处理
 4. `03/10` 完成PullRefresh组件, 更新Widget类, 修正Widget.query方法  
+5. `03/11` 完成部分基础CSS, 包括 标题 段落 列表 字体图标. 同意less内容  
 
     
 

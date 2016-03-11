@@ -13,8 +13,10 @@ html {
  * Remove default margin.
  */
 body {
+  background: #eeeeee;
   margin: 0;
   font-size: 0.85rem;
+  color: #3d4145;
   line-height: 1.5;
   /*字体反锯齿*/
   -webkit-font-smoothing: antialiased;
@@ -245,6 +247,8 @@ optgroup {
 p {
   margin: 1em 0;
 }
+/*bar样式*/
+/*列表样式*/
 @font-face {
   font-family: "icon-phantom";
   src: url("../fonts/icomoon.eot");
@@ -258,6 +262,9 @@ p {
 }
 .icon-chevron-left:after {
   content: '\f053';
+}
+.icon-chevron-right:after {
+  content: '\f054';
 }
 .icon-music:after {
   content: '\f001';
@@ -588,14 +595,16 @@ p {
     display: none !important;
   }
 }
-/*bar样式*/
 .clearfix:after {
   content: '';
   display: table;
   clear: both;
 }
 .bar {
-  position: absolute;
+  /*放置paint多次绘制*/
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  position: fixed;
   right: 0;
   left: 0;
   z-index: 10;
@@ -614,6 +623,11 @@ p {
   color: #fff;
   display: block;
 }
+.bar ~ .content {
+  margin-top: 2.2rem;
+  width: 100%;
+  overflow: scroll;
+}
 .bar-nav {
   top: 0;
 }
@@ -628,4 +642,64 @@ p {
   color: #fff;
   text-align: center;
   white-space: nowrap;
+}
+.list-content {
+  margin: 1.75rem 0;
+}
+.list-content ul {
+  background-color: #fff;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  border-top: 1px solid #e7e7e7;
+  border-bottom: 1px solid #e7e7e7;
+}
+.list-content ul .list-item:last-child > .item-inner {
+  border-bottom: none;
+}
+.list-content ul .list-item .item-img + .item-inner {
+  margin-left: 0.75rem;
+}
+.list-content ul ul {
+  border-top: none;
+  border-bottom: none;
+  padding-left: 2.25rem;
+}
+.list-item {
+  padding-left: 0.75rem;
+  min-height: 2.2rem;
+}
+.item-inner {
+  width: 100%;
+  padding-right: 0.75rem;
+  padding-top: 0.4rem;
+  padding-bottom: 0.35rem;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid #e7e7e7;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+              -ms-grid-row-align: center;
+          align-items: center;
+}
+.list-content-title {
+  position: relative;
+  overflow: hidden;
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #6d6d72;
+  margin: 1.5rem 0.75rem 0.5rem;
+}
+.list-content-title + .list-content {
+  margin: 0;
 }
