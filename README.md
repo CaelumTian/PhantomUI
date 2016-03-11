@@ -14,7 +14,7 @@ PhantomUI
 ### 基础样式库  
 1. 基于flex布局的栅格系统   
 2. 基础CSS: 标题, 段落, 列表, 字体图标, 导航等  
-[基础样式 展示地址](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/ui)
+[基础样式 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/less)
 
 ### 基础组件库  
 1.  `Router` 路由组件 : Router默认开启, 帮助用户完成`SPA`应用, 无需自主配置 会默认拦截浏览器的跳转事件转向路由. 当然一切都可配置, 
