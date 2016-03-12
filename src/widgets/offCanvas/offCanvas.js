@@ -5,15 +5,35 @@
     var OffCanvas = Class.create(Widget, {
         element : ".offcanvas",
         isOpen : false,
+        touchesStart  : {},         //记录鼠标位置x,y
+        $overlay : null,
+        isTouched : false,
+        isMoved : false,
         attrs : {
+            touchAction : true,   //是否开启手势滑动, 暂未开启
+            overlayShow : false,  //遮罩层是否显示
             direction : "left",
-            effect : "cover"      //导航效果
+            effect : "reveal"      //导航效果
         },
         setup : function() {
+            //初始化配置
+            this.$overlay = $('.offcanvas-overlay');
+
+            //配置事件监听
             this.on("opened", this._opened);
             this.on("closed", this._closed);
-            this.$element.addClass("offcanvas-" + this.get("direction"));
-            this.$element.addClass("offcanvas-" + this.get("effect"));
+
+            //遮罩层关闭事件
+            this.delegateEvents(document, "click .offcanvas-overlay", this._handleClose);
+            this.delegateEvents(document, "touchstart .offcanvas-overlay", this._handleClose);
+
+            this.render();
+        },
+        _handleClose : function() {
+            if(!this.isOpen) {
+                return;
+            }
+            this.closeCanvas();
         },
         openCanvas : function() {
             var self = this;
@@ -31,7 +51,6 @@
             this.element.offsetWidth;
 
             var transitionTarget = this.get("effect") === "reveal" ? $(".page").eq(0) : this.$element;
-            console.log(transitionTarget);
 
             transitionTarget.on("transitionEnd webkitTransitionEnd", function(event) {
                 self.isOpen = true;
@@ -50,16 +69,42 @@
             this.$element.removeClass("active");
             var transitionTarget = this.get("effect") === "reveal" ? $(".page").eq(0) : this.$element;
 
-            console.log(transitionTarget);
             transitionTarget.on("transitionEnd webkitTransitionEnd", function(event) {
                 self.isOpen = false;
                 self.trigger("closed");
                 self.$element.css({
                     display : "none"
                 });
+                $(document.body).removeClass("offcanvas-closing");
                 transitionTarget.off("transitionEnd webkitTransitionEnd");
             });
             $(document.body).addClass("offcanvas-closing").removeClass("with-offcanvas-" + this.get("direction") + "-" + this.get("effect"))
+        },
+        _onRenderOverlayShow : function() {
+            if(this.get("overlayShow")) {
+                this.$overlay.css({
+                    background : "rgba(0, 0, 0, 0.5)"
+                })
+            }
+        },
+        _onRenderEffect : function() {
+            //重置属性
+            this.$element.removeClass("offcanvas-reveal offcanvas-cover");
+            this.$element.addClass("offcanvas-" + this.get("effect"));
+        },
+        _onRenderDirection : function() {
+            //重置方向
+            this.$element.removeClass("offcanvas-left offcanvas-right");
+            this.$element.addClass("offcanvas-" + this.get("direction"));
+        },
+        _handleTouchStart : function() {
+
+        },
+        _handleTouchMove : function() {
+
+        },
+        _handleTouchEnd : function() {
+
         },
         _opened : function() {
             console.log("菜单已经打开");

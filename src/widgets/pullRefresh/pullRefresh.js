@@ -30,6 +30,7 @@
             this.delegateEvents(document, "mousedown .pull-refresh-content", this._handleTouchStart);
             this.delegateEvents(document, "mousemove .pull-refresh-content", this._handleTouchMove);
             this.delegateEvents(document, "mouseup .pull-refresh-content", this._handleTouchEnd);
+            this.render();
         },
         _handleTouchStart : function(event) {
             this.isTouched = true;
