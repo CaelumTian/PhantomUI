@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="./phantomui.css">
+    <style>
+        .page,
+        .page-group {
+            box-sizing: border-box;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: #efeff4;
+            display: none;
+            overflow: hidden;
+        }
+        .page.page-current {
+            display: block;
+        }
+        .offcanvas {
+            z-index: 1000;
+            display: none;
+            background: #111;
+            color: white;
+            box-sizing: border-box;
+            overflow: auto;
+            -webkit-overflow-scrolling: touch;
+            position: absolute;
+            width: 12rem;
+            top: 0;
+            height: 100%;
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            -webkit-transition: -webkit-transform 400ms;
+            transition: transform 400ms;
+        }
+        .offcanvas-overlay {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0);
+            z-index: 5000;
+            display: none;
+            opacity: 0;
+            transition: opacity 400ms;
+        }
+        .offcanvas.offcanvas-left.offcanvas-cover {
+            z-index: 6000;
+            left: -12rem;
+        }
+        .offcanvas.offcanvas-left.offcanvas-reveal {
+            left: 0px;
+        }
+        .offcanvas.offcanvas-right.offcanvas-cover {
+            z-index: 6000;
+            right: -12rem;
+        }
+        .offcanvas.offcanvas-right.offcanvas-reveal {
+            right: 0px;
+        }
+        body.with-offcanvas-left-cover .page,
+        body.with-offcanvas-right-cover .page {
+            -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+            -webkit-transition: -webkit-transform 400ms;
+            transition: transform 400ms;
+        }
+        /*遮罩层*/
+        body.with-offcanvas-left-cover .offcanvas-overlay,
+        body.with-offcanvas-right-cover .offcanvas-overlay,
+        body.with-offcanvas-left-reveal .offcanvas-overlay,
+        body.with-offcanvas-right-reveal .offcanvas-overlay {
+            opacity: 1;
+            display: block;
+        }
+
+        body.with-offcanvas-left-reveal .page,
+        body.with-offcanvas-right-reveal .page {
+            -webkit-transition: 400ms;
+            transition: 400ms;
+            -webkit-transition-property: -webkit-transform;
+            transition-property: transform;
+            z-index: 2000;
+        }
+        /*左边reveal body移动*/
+        body.with-offcanvas-left-reveal .page {
+            -webkit-transform: translate3d(12rem, 0, 0);
+            transform: translate3d(12rem, 0, 0);
+        }
+        body.with-offcanvas-left-reveal .offcanvas-overlay {
+            margin-left: 12rem;
+        }
+
+        /*左边cover offcanvas层移动*/
+        body.with-offcanvas-left-cover .offcanvas-left {
+            -webkit-transform: translate3d(12rem, 0, 0);
+            transform: translate3d(12rem, 0, 0);
+        }
+
+
+        /*右边反向就好*/
+        body.with-offcanvas-right-reveal .page {
+            -webkit-transform: translate3d(-12rem, 0, 0);
+            transform: translate3d(-12rem, 0, 0);
+        }
+        body.with-offcanvas-right-reveal .offcanvas-overlay {
+            margin-left: -12rem;
+        }
+        body.with-offcanvas-right-cover .offcanvas-right {
+            -webkit-transform: translate3d(-12rem, 0, 0);
+            transform: translate3d(-12rem, 0, 0);
+        }
+
+        body.offcanvas-closing .page {
+            -webkit-transition: 400ms;
+            transition: 400ms;
+            -webkit-transition-property: -webkit-transform;
+            transition-property: transform;
+            z-index: 2000;
+        }
+        /*其他样式*/
+        .list>li {
+            position: relative;
+            display: block;
+            margin-bottom: -1px;
+            background-color: #fff;
+            border: 1px solid #dedede;
+            border-width: 1px 0;
+            cursor: pointer;
+        }
+        .list>li>a {
+            display: block;
+            padding: 20px;
+            background-color: transparent;
+            color: #0e90d2;
+            font-size: 16px;
+            text-decoration: none;
+        }
+        .back {
+            display: inline-block;
+            position: absolute;
+            line-height: 45px;
+            left: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .wrap {
+            padding: 1rem;
+            font-size: 0.75rem;
+        }
+        .wrap > a {
+            cursor: pointer;
+            color: #00ffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="page page-current">
+        <header class="bar bar-nav">
+            <h1 class="title">侧栏</h1>
+        </header>
+        <div class="content">
+            <ul class="list">
+                <li>
+                    <a id="revealLeft">reveal left方式 打开菜单</a>
+                </li>
+                <li>
+                    <a id="coverLeft">cover left方式 打开菜单</a>
+                </li>
+                <li>
+                    <a id="revealRight">reveal right方式 打开菜单</a>
+                </li>
+                <li>
+                    <a id="coverRight">cover right方式 打开菜单</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="offcanvas-overlay"></div>
+    <div class="offcanvas">
+        <div class="wrap">
+            <p>我是offcanvas层</p>
+            <p>开启: offcanvas.openCanvas</p>
+            <p>关闭: offcanvas.closeCanvas</p>
+            <a id="close">关闭</a>
+        </div>
+    </div>
+
+    <script src="../src/zepto.min.js"></script>
+    <script src="../src/class.js"></script>
+    <script src="../src/base.js"></script>
+    <script src="../src/widget.js"></script>
+    <script src="./offCanvas.js"></script>
+    <script>
+        var offcanvas = new OffCanvas({
+            element : ".offcanvas",
+            callbackClose : function() {
+                if(this.get("overlayShow")) {
+                    this.set("overlayShow", false);
+                }
+            }
+        });
+        $("#revealLeft").on("click touchstart", function(event) {
+            offcanvas.set("direction", "left");
+            offcanvas.set("effect", "reveal");
+            offcanvas.openCanvas();
+        });
+        $("#revealRight").on("click touchstart", function(event) {
+            offcanvas.set("direction", "right");
+            offcanvas.set("effect", "reveal");
+            offcanvas.openCanvas();
+        });
+        $("#coverLeft").on("click touchstart", function(event) {
+            offcanvas.set("direction", "left");
+            offcanvas.set("effect", "cover");
+            offcanvas.openCanvas();
+        });
+        $("#coverRight").on("click touchstart", function(event) {
+            offcanvas.set("direction", "right");
+            offcanvas.set("effect", "cover");
+            offcanvas.openCanvas();
+        });
+        $("#close").on("click touchstart", function(event) {
+            offcanvas.closeCanvas();
+        })
+    </script>
+</body>
+</html>
