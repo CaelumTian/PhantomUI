@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c55839ed-833c-41ae-92cb-5a5c2e6644b5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/less/README.md" afterPath="$PROJECT_DIR$/less/README.md" />
     </list>
     <ignored path="PhantomUI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -24,115 +23,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="reset.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/less/reset.less">
+      <file leaf-file-name="pullRefresh.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/widgets/pullRefresh/pullRefresh.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-7.1923075">
-              <caret line="20" column="37" selection-start-line="18" selection-start-column="1" selection-end-line="20" selection-end-column="37" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="77" column="102" selection-start-line="77" selection-start-column="102" selection-end-line="77" selection-end-column="102" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/widgets/pullRefresh/test/index.html">
+      <file leaf-file-name="widget.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/core/widget/widget.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.65384614">
-              <caret line="152" column="13" selection-start-line="150" selection-start-column="4" selection-end-line="152" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/widgets/offCanvas/test/test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-79.11539">
+              <caret line="121" column="26" selection-start-line="121" selection-start-column="26" selection-end-line="121" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="offCanvas.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/widgets/offCanvas/offCanvas.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.22599705">
+              <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
               <folding>
-                <marker date="1457606728000" expanded="true" signature="5907:5958" placeholder="..." />
-                <marker date="1457606728000" expanded="true" signature="5907:5961" placeholder="..." />
-                <marker date="1457606728000" expanded="true" signature="5907:5981" placeholder="..." />
-                <marker date="1457606728000" expanded="true" signature="5907:5982" placeholder="..." />
-                <marker date="1457606728000" expanded="true" signature="5907:6023" placeholder="..." />
-                <marker date="1457606728000" expanded="true" signature="6063:6179" placeholder="..." />
+                <element signature="n#!!doc" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.724138">
-              <caret line="20" column="89" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="89" />
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/less/README.md">
-          <provider editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="99" column="59" selection-start-line="99" selection-start-column="59" selection-end-line="99" selection-end-column="59" />
-              <folding />
-            </state>
-          </provider>
-          <provider selected="true" editor-type-id="MarkdownPreviewEditor">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="flex.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/less/test/flex.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.653847">
-              <caret line="56" column="46" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="flex.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/less/flex.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.5">
-              <caret line="52" column="10" selection-start-line="52" selection-start-column="3" selection-end-line="52" selection-end-column="10" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/less/base.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.692307">
-              <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="mixin.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/less/mixin.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="10" column="26" selection-start-line="10" selection-start-column="26" selection-end-line="10" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/less/test/list.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-24.115385">
-              <caret line="44" column="14" selection-start-line="17" selection-start-column="8" selection-end-line="44" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="list.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/less/list.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="52" column="12" selection-start-line="52" selection-start-column="12" selection-end-line="52" selection-end-column="12" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -143,8 +71,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -154,8 +82,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/core/class.js" />
-        <option value="$PROJECT_DIR$/src/core/base/text/index.html" />
         <option value="$PROJECT_DIR$/src/core/base/README.md" />
         <option value="$PROJECT_DIR$/src/core/base/class.js" />
         <option value="$PROJECT_DIR$/src/core/base/test/test.html" />
@@ -203,6 +129,10 @@
         <option value="$PROJECT_DIR$/less/base.less" />
         <option value="$PROJECT_DIR$/less/test/flex.html" />
         <option value="$PROJECT_DIR$/less/README.md" />
+        <option value="$PROJECT_DIR$/src/widgets/modal/offCanvas/test/test.html" />
+        <option value="$PROJECT_DIR$/src/widgets/modal/offCanvas/offCanvas.js" />
+        <option value="$PROJECT_DIR$/src/widgets/offCanvas/test/test.html" />
+        <option value="$PROJECT_DIR$/src/widgets/offCanvas/offCanvas.js" />
       </list>
     </option>
   </component>
@@ -247,7 +177,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -394,7 +323,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modal" />
+              <option name="myItemId" value="offCanvas" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -416,11 +345,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="modal" />
+              <option name="myItemId" value="offCanvas" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhantomUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhantomUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="widgets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -589,6 +536,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -596,7 +544,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
-    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/caelumtian/Programmer/PhantomUI/src/core/widget/test/test.html" />
+    <property name="SearchEverywhereHistoryKey" value="element&#9;FILE&#9;file:///Users/caelumtian/Programmer/PhantomUI/node_modules/gulp-autoprefixer/node_modules/autoprefixer/node_modules/caniuse-db/features-json/element-closest.json" />
     <property name="FullScreen" value="true" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../PhantomUI-IO" />
@@ -692,18 +640,18 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -734,30 +682,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/core/base/class.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/base/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="49" column="8" selection-start-line="49" selection-start-column="8" selection-end-line="49" selection-end-column="8" />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/base/class.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/base/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -938,13 +862,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/router/test/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-148.42308">
-          <caret line="227" column="25" selection-start-line="227" selection-start-column="25" selection-end-line="227" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/widgets/modal/pannel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -963,7 +880,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="64" column="0" selection-start-line="64" selection-start-column="0" selection-end-line="64" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="MarkdownPreviewEditor">
@@ -977,25 +893,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/widget/widget.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/widgets/modal/modal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="96" column="13" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
-          <folding>
-            <marker date="1457429848000" expanded="true" signature="1069:1624" placeholder="..." />
-            <marker date="1457429848000" expanded="true" signature="1133:1375" placeholder="..." />
-            <marker date="1457429848000" expanded="true" signature="1441:1478" placeholder="..." />
-            <marker date="1457429848000" expanded="true" signature="1441:1553" placeholder="..." />
-            <marker date="1457429848000" expanded="true" signature="1441:1590" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1003,9 +904,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="1.278761">
           <caret line="51" column="52" selection-start-line="51" selection-start-column="52" selection-end-line="51" selection-end-column="52" />
-          <folding>
-            <marker date="1457351734000" expanded="true" signature="795:902" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1013,19 +911,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.2692308">
           <caret line="5" column="69" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="69" />
-          <folding>
-            <element signature="n#style#0;n#ul#0;n#section#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/pullRefresh/pullRefresh.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="77" column="102" selection-start-line="77" selection-start-column="102" selection-end-line="77" selection-end-column="102" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1054,7 +939,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="37" column="13" selection-start-line="31" selection-start-column="4" selection-end-line="37" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1062,7 +946,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1084,46 +967,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/less/base.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.692307">
+        <state vertical-scroll-proportion="0.0">
           <caret line="26" column="17" selection-start-line="26" selection-start-column="17" selection-end-line="26" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/pullRefresh/test/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.65384614">
-          <caret line="152" column="13" selection-start-line="150" selection-start-column="4" selection-end-line="152" selection-end-column="13" />
-          <folding>
-            <marker date="1457606728000" expanded="true" signature="5907:5958" placeholder="..." />
-            <marker date="1457606728000" expanded="true" signature="5907:5961" placeholder="..." />
-            <marker date="1457606728000" expanded="true" signature="5907:5981" placeholder="..." />
-            <marker date="1457606728000" expanded="true" signature="5907:5982" placeholder="..." />
-            <marker date="1457606728000" expanded="true" signature="5907:6023" placeholder="..." />
-            <marker date="1457606728000" expanded="true" signature="6063:6179" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/less/reset.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-7.1923075">
-          <caret line="20" column="37" selection-start-line="18" selection-start-column="1" selection-end-line="20" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/less/test/flex.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.653847">
-          <caret line="56" column="46" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/less/flex.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.5">
+        <state vertical-scroll-proportion="0.0">
           <caret line="52" column="10" selection-start-line="52" selection-start-column="3" selection-end-line="52" selection-end-column="10" />
           <folding />
         </state>
@@ -1131,21 +983,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/less/test/list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.115385">
+        <state vertical-scroll-proportion="0.0">
           <caret line="44" column="14" selection-start-line="17" selection-start-column="8" selection-end-line="44" selection-end-column="14" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.724138">
-          <caret line="20" column="89" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/less/README.md">
@@ -1157,6 +998,98 @@
       </provider>
       <provider selected="true" editor-type-id="MarkdownPreviewEditor">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.47111112">
+          <caret line="20" column="89" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/less/test/flex.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49852508">
+          <caret line="56" column="46" selection-start-line="56" selection-start-column="32" selection-end-line="56" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/less/reset.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.025073746">
+          <caret line="20" column="37" selection-start-line="18" selection-start-column="1" selection-end-line="20" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/pullRefresh/test/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.3480826">
+          <caret line="179" column="58" selection-start-line="176" selection-start-column="3" selection-end-line="179" selection-end-column="58" />
+          <folding>
+            <marker date="1457606728000" expanded="true" signature="5907:5958" placeholder="..." />
+            <marker date="1457606728000" expanded="true" signature="5907:5961" placeholder="..." />
+            <marker date="1457606728000" expanded="true" signature="5907:5981" placeholder="..." />
+            <marker date="1457606728000" expanded="true" signature="5907:5982" placeholder="..." />
+            <marker date="1457606728000" expanded="true" signature="5907:6023" placeholder="..." />
+            <marker date="1457606728000" expanded="true" signature="6063:6179" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/router/test/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.441003">
+          <caret line="250" column="4" selection-start-line="250" selection-start-column="4" selection-end-line="253" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/pullRefresh/pullRefresh.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="77" column="102" selection-start-line="77" selection-start-column="102" selection-end-line="77" selection-end-column="102" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/gulp-autoprefixer/node_modules/autoprefixer/node_modules/caniuse-db/features-json/element-closest.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/widget/widget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="9" selection-start-line="12" selection-start-column="9" selection-end-line="12" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/offCanvas/test/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-79.11539">
+          <caret line="121" column="26" selection-start-line="121" selection-start-column="26" selection-end-line="121" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/offCanvas/offCanvas.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.22599705">
+          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>
