@@ -160,6 +160,7 @@
         .wrap > a {
             cursor: pointer;
             color: #00ffff;
+            -webkit-appearance: none;
         }
     </style>
 </head>
@@ -230,6 +231,7 @@
             offcanvas.openCanvas();
         });
         $("#close").on("click touchstart", function(event) {
+            event.stopPropagation();
             offcanvas.closeCanvas();
         })
     </script>

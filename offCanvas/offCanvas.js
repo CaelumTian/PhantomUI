@@ -49,13 +49,13 @@
                 display: 'block'
             }).addClass('active');
 
+            self.isOpen = true;
             //触发 layout, 不触发会导致cover动画效果消失
             this.element.offsetWidth;
 
             var transitionTarget = this.get("effect") === "reveal" ? $(".page").eq(0) : this.$element;
 
             transitionTarget.on("transitionEnd webkitTransitionEnd", function(event) {
-                self.isOpen = true;
                 self.trigger("opened");
                 transitionTarget.off("transitionEnd webkitTransitionEnd");
             });
@@ -70,9 +70,8 @@
             }
             this.$element.removeClass("active");
             var transitionTarget = this.get("effect") === "reveal" ? $(".page").eq(0) : this.$element;
-
+            self.isOpen = false;
             transitionTarget.on("transitionEnd webkitTransitionEnd", function(event) {
-                self.isOpen = false;
                 self.trigger("closed");
                 self.$element.css({
                     display : "none"
