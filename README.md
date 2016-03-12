@@ -20,7 +20,8 @@ PhantomUI
 1.  `Router` 路由组件 : Router默认开启, 帮助用户完成`SPA`应用, 无需自主配置 会默认拦截浏览器的跳转事件转向路由. 当然一切都可配置, 
 详情请见: [Router 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/router)    
 2. `Modal` 对话框组件 : 提供Alert, Confirm, Prompt类型,详情请见: [Modal 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/modal)  
-3. `PullRefresh` 下拉刷新组件 : 提供下拉刷新容器. [PullRefresh 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/pullRefresh)   
+3. `PullRefresh` 下拉刷新组件 : 提供下拉刷新容器. [PullRefresh 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/pullRefresh)  
+4. `OffCanvas`  侧滑组件 : 提供从左侧或者右侧滑出的面板。[OffCanvas 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/offCanvas)
 
 ## 更新日志  
 1. `03/06` 完成router模块的最后调试,解决测试中问题,添加思考. 完善widget文档  
@@ -28,6 +29,7 @@ PhantomUI
 3. `03/08` 完成Modal组件, 文档待更新; router发现bug, 建议NA端处理
 4. `03/10` 完成PullRefresh组件, 更新Widget类, 修正Widget.query方法  
 5. `03/11` 完成部分基础CSS, 包括 标题 段落 列表 字体图标. 同意less内容  
+6. `03/12` 完成OffCanvas组件
 
     
 

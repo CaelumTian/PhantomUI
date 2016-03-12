@@ -46,6 +46,8 @@
             background: rgba(0, 0, 0, 0);
             z-index: 5000;
             display: none;
+            opacity: 0;
+            transition: opacity 400ms;
         }
         .offcanvas.offcanvas-left.offcanvas-cover {
             z-index: 6000;
@@ -72,7 +74,8 @@
         body.with-offcanvas-left-cover .offcanvas-overlay,
         body.with-offcanvas-right-cover .offcanvas-overlay,
         body.with-offcanvas-left-reveal .offcanvas-overlay,
-        body.width-offcanvas-right-reveal .offcanvas-overlay {
+        body.with-offcanvas-right-reveal .offcanvas-overlay {
+            opacity: 1;
             display: block;
         }
 
@@ -128,6 +131,7 @@
             background-color: #fff;
             border: 1px solid #dedede;
             border-width: 1px 0;
+            cursor: pointer;
         }
         .list>li>a {
             display: block;
@@ -145,6 +149,14 @@
             cursor: pointer;
             font-size: 14px;
         }
+        .wrap {
+            padding: 1rem;
+            font-size: 0.75rem;
+        }
+        .wrap > a {
+            cursor: pointer;
+            color: #00ffff;
+        }
     </style>
 </head>
 <body>
@@ -155,19 +167,29 @@
         <div class="content">
             <ul class="list">
                 <li>
-                    <a id="reveal">reveal方式 打开菜单</a>
+                    <a id="revealLeft">reveal left方式 打开菜单</a>
                 </li>
                 <li>
-                    <a id="cover">cover方式 打开菜单</a>
+                    <a id="coverLeft">cover left方式 打开菜单</a>
                 </li>
                 <li>
-                    <a id="hasLayer">带有遮罩层打开</a>
+                    <a id="revealRight">reveal right方式 打开菜单</a>
+                </li>
+                <li>
+                    <a id="coverRight">cover right方式 打开菜单</a>
                 </li>
             </ul>
         </div>
     </div>
     <div class="offcanvas-overlay"></div>
-    <div class="offcanvas"></div>
+    <div class="offcanvas">
+        <div class="wrap">
+            <p>我是offcanvas层</p>
+            <p>开启: offcanvas.openCanvas</p>
+            <p>关闭: offcanvas.closeCanvas</p>
+            <a id="close">关闭</a>
+        </div>
+    </div>
 
     <script src="../../../../support/zepto.min.js"></script>
     <script src="../../../core/base/class.js"></script>
@@ -176,8 +198,36 @@
     <script src="../offCanvas.js"></script>
     <script>
         var offcanvas = new OffCanvas({
-            element : ".offcanvas"
+            element : ".offcanvas",
+            callbackClose : function() {
+                if(this.get("overlayShow")) {
+                    this.set("overlayShow", false);
+                }
+            }
         });
+        $("#revealLeft").on("click touchstart", function(event) {
+            offcanvas.set("direction", "left");
+            offcanvas.set("effect", "reveal");
+            offcanvas.openCanvas();
+        });
+        $("#revealRight").on("click touchstart", function(event) {
+            offcanvas.set("direction", "right");
+            offcanvas.set("effect", "reveal");
+            offcanvas.openCanvas();
+        });
+        $("#coverLeft").on("click touchstart", function(event) {
+            offcanvas.set("direction", "left");
+            offcanvas.set("effect", "cover");
+            offcanvas.openCanvas();
+        });
+        $("#coverRight").on("click touchstart", function(event) {
+            offcanvas.set("direction", "right");
+            offcanvas.set("effect", "cover");
+            offcanvas.openCanvas();
+        });
+        $("#close").on("click touchstart", function(event) {
+            offcanvas.closeCanvas();
+        })
     </script>
 </body>
 </html>

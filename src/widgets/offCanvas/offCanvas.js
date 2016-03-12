@@ -13,7 +13,9 @@
             touchAction : true,   //是否开启手势滑动, 暂未开启
             overlayShow : false,  //遮罩层是否显示
             direction : "left",
-            effect : "reveal"      //导航效果
+            effect : "reveal",      //导航效果,
+            callbackOpen : null,
+            callbackClose : null,
         },
         setup : function() {
             //初始化配置
@@ -108,9 +110,15 @@
         },
         _opened : function() {
             console.log("菜单已经打开");
+            if(typeof this.get("callbackOpen") === "function") {
+                this.get("callbackOpen").call(this);
+            }
         },
         _closed : function() {
             console.log("菜单已经关闭");
+            if(typeof this.get("callbackClose") === "function") {
+                this.get("callbackClose").call(this);
+            }
         }
     });
     global.OffCanvas = OffCanvas;
