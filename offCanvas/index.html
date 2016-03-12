@@ -211,26 +211,31 @@
             }
         });
         $("#revealLeft").on("click touchstart", function(event) {
+            event.stopPropagation();
             offcanvas.set("direction", "left");
             offcanvas.set("effect", "reveal");
             offcanvas.openCanvas();
         });
         $("#revealRight").on("click touchstart", function(event) {
+            event.stopPropagation();
             offcanvas.set("direction", "right");
             offcanvas.set("effect", "reveal");
             offcanvas.openCanvas();
         });
         $("#coverLeft").on("click touchstart", function(event) {
+            event.stopPropagation();
             offcanvas.set("direction", "left");
             offcanvas.set("effect", "cover");
             offcanvas.openCanvas();
         });
         $("#coverRight").on("click touchstart", function(event) {
+            event.stopPropagation();
             offcanvas.set("direction", "right");
             offcanvas.set("effect", "cover");
             offcanvas.openCanvas();
         });
         $("#close").on("click touchstart", function(event) {
+            event.stopPropagation();
             event.stopPropagation();
             offcanvas.closeCanvas();
         })
