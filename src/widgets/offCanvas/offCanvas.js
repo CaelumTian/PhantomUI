@@ -68,10 +68,17 @@
             if(!this.isOpen) {
                 return;
             }
+            if(!this.$element.hasClass("active")) {
+                return;
+            }
             this.$element.removeClass("active");
             var transitionTarget = this.get("effect") === "reveal" ? $(".page").eq(0) : this.$element;
             self.isOpen = false;
             transitionTarget.on("transitionEnd webkitTransitionEnd", function(event) {
+                //防止快速切换产生侧栏不显示问题
+                if(!this.$element.hasClass("active")) {
+                    return;
+                }
                 self.trigger("closed");
                 self.$element.css({
                     display : "none"
