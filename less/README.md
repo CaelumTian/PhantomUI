@@ -157,5 +157,6 @@ PhantomUI中列表样式参考IOS界面列表，采用`flex`辅助布局
         <a href="#" class="link">分享</a>
     </div>
 </div>   
-```
+```  
+[卡片样式展示](http://t-phantom.github.io/PhantomUI/ui/card.html) 
 
