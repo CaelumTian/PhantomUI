@@ -13,7 +13,8 @@ PhantomUI
  
 ### 基础样式库  
 1. 基于flex布局的栅格系统   
-2. 基础CSS: 标题, 段落, 列表, 字体图标, 导航等  
+2. 基础CSS: 标题, 段落, 列表, 字体图标, 导航等   
+3. 扩展CSS: 表哥, 卡片, 视频  
 [基础样式 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/less)
 
 ### 基础组件库  
@@ -30,6 +31,7 @@ PhantomUI
 4. `03/10` 完成PullRefresh组件, 更新Widget类, 修正Widget.query方法  
 5. `03/11` 完成部分基础CSS, 包括 标题 段落 列表 字体图标. 同意less内容  
 6. `03/12` 完成OffCanvas组件
+7. `03/13` 完成表格, 卡片样式, 修正基本样式库  
 
     
 
