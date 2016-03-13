@@ -65,7 +65,7 @@ PhabtomUI字体图标库引用自`IcoMoon App`，图标使用需要 类`icon` `i
 字体图标大小默认`0.85rem`   
 [栅格样式展示](http://t-phantom.github.io/PhantomUI/ui/icon.html)   
 
-## 四丶 列表  
+## 四丶 列表 && 表单    
 PhantomUI中列表样式参考IOS界面列表，采用`flex`辅助布局  
 `list-content` 指定列表容器。`list-item`为每项内容容器，`list-inner`为主要内容，以上两个容器需要指定
 `flex`成为弹性容器。 `list-img`为可选项，指定容器的图标。基本使用如下  
@@ -97,5 +97,65 @@ PhantomUI中列表样式参考IOS界面列表，采用`flex`辅助布局
         </li>
     </ul>
 </div>
+```   
+在此基础上,扩展出表单样式, 进需要修改列表中 `.item-back`部分为下面内容:  
+```html
+<!-- 文本内容 -->
+<li class="list-item flex">
+    <div class="item-img"></div>
+    <div class="item-inner flex">
+        <div class="item-prev label">
+            姓名
+        </div>
+        <div class="item-input">
+            <input type="text" placeholder="输入姓名">
+        </div>
+    </div> 
+</li>
+<!-- chackbox内容对应替换内容即可 -->
+<div class="item-input">
+    <label class="label-switch">
+        <input type="checkbox">
+        <div class="checkbox"></div>
+    </label>
+</div>  
 ```  
-[列表样式展示](http://t-phantom.github.io/PhantomUI/ui/list.html)
+[列表样式展示](http://t-phantom.github.io/PhantomUI/ui/list.html)  
+[表单样式展示](http://t-phantom.github.io/PhantomUI/ui/form.html)  
+
+## 五丶卡片样式  
+卡片含有独特的相关数据，例如，照片，文字,视频等相关内容, 更好的组织页面结构.   
+ `card-header` 卡片头部, `card-content`卡片主体(`card-content-inner`, `<p>`), `card-footer`卡片尾部, `img-card` 特殊卡片1  
+```html  
+<div class="card">
+    <div class="card-content">
+        <div class="card-content-inner">
+            -webkit-line-clamp 是一个 不规范的属性（unsupported WebKit property），它没有出现在 CSS 规范草案中。
+            限制在一个块元素显示的文本的行数
+        </div>
+    </div>
+</div>
+<!-- 特殊卡片 -->
+<div class="card img-card">
+    <div class="card-header">
+        <div class="card-avatar">
+            <img src="./image/cardImg.png" alt="">
+        </div>
+        <div class="card-name">
+            CaelumTian
+        </div>
+        <div class="card-time">
+            2016-03-13 星期日
+        </div>
+    </div>
+    <div class="card-content">
+        <img src="./image/cardImg.png" alt="">
+    </div>
+    <div class="card-footer">
+        <a href="#" class="link">赞</a>
+        <a href="#" class="link">评论</a>
+        <a href="#" class="link">分享</a>
+    </div>
+</div>   
+```
+
