@@ -1,0 +1,95 @@
+.card {
+  background: #fff;
+  box-shadow: 0 0.05rem 0.1rem rgba(0,0,0,0.3);
+  margin: 0.5rem;
+  position: relative;
+  border-radius: 0.1rem;
+  font-size: 0.7rem;
+}
+.card-content {
+  position: relative;
+}
+.card-content-inner {
+  padding: 0.75rem;
+  position: relative;
+  &>p:first-child {
+    margin-top: 0;
+  }
+  &>p:last-child {
+    margin-bottom: 0;
+  }
+  .list-block, >.content-block {
+    margin: -0.75rem;
+  }
+}
+.card-header, .card-footer {
+  display: flex;
+  min-height: 2.2rem;
+  position: relative;
+  padding: 0.5rem 0.75rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: space-between;
+  a.link {
+    line-height: 2.2rem;
+    height: 2.2rem;
+    text-decoration: none;
+    position: relative;
+    margin-top: -0.5rem;
+    margin-bottom: -0.5rem;
+    transition-duration: 300ms;
+    i+span, i+i, span+i, span+span {
+      margin-left: 0.35rem;
+    }
+    i.icon {
+      display: block;
+    }
+  }
+}
+.card-header {
+  border-radius: 0.1rem 0.1rem 0 0;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+.card-footer {
+  border-radius: 0 0 0.1rem 0.1rem;
+  border-top: 1px solid #e1e1e1;
+}
+.img-card {
+  .card-header {
+    display: block;
+    padding: 0.5rem;
+    border-bottom: none;
+  }
+  .card-footer {
+    padding: 0.5rem;
+    border-top: none;
+  }
+  .card-avatar {
+    float: left;
+    img {
+      width: 34px;
+      height: 34px;
+    }
+  }
+  .card-name {
+    margin-left: 2.2rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+  .card-time {
+    margin-left: 2.2rem;
+    font-size: 0.65rem;
+    color: #5f646e;
+  }
+  .card-content {
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+  .card-content-inner {
+    padding: 0.75rem 0.5rem;
+  }
+}
+

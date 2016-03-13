@@ -861,3 +861,111 @@ textarea {
 .list-content-title + .list-content {
   margin: 0;
 }
+.card {
+  background: #fff;
+  box-shadow: 0 0.05rem 0.1rem rgba(0, 0, 0, 0.3);
+  margin: 0.5rem;
+  position: relative;
+  border-radius: 0.1rem;
+  font-size: 0.7rem;
+}
+.card-content {
+  position: relative;
+}
+.card-content-inner {
+  padding: 0.75rem;
+  position: relative;
+}
+.card-content-inner > p:first-child {
+  margin-top: 0;
+}
+.card-content-inner > p:last-child {
+  margin-bottom: 0;
+}
+.card-content-inner .list-block,
+.card-content-inner > .content-block {
+  margin: -0.75rem;
+}
+.card-header,
+.card-footer {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 2.2rem;
+  position: relative;
+  padding: 0.5rem 0.75rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.card-header a.link,
+.card-footer a.link {
+  line-height: 2.2rem;
+  height: 2.2rem;
+  text-decoration: none;
+  position: relative;
+  margin-top: -0.5rem;
+  margin-bottom: -0.5rem;
+  -webkit-transition-duration: 300ms;
+          transition-duration: 300ms;
+}
+.card-header a.link i + span,
+.card-footer a.link i + span,
+.card-header a.link i + i,
+.card-footer a.link i + i,
+.card-header a.link span + i,
+.card-footer a.link span + i,
+.card-header a.link span + span,
+.card-footer a.link span + span {
+  margin-left: 0.35rem;
+}
+.card-header a.link i.icon,
+.card-footer a.link i.icon {
+  display: block;
+}
+.card-header {
+  border-radius: 0.1rem 0.1rem 0 0;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #e1e1e1;
+}
+.card-footer {
+  border-radius: 0 0 0.1rem 0.1rem;
+  border-top: 1px solid #e1e1e1;
+}
+.img-card .card-header {
+  display: block;
+  padding: 0.5rem;
+  border-bottom: none;
+}
+.img-card .card-footer {
+  padding: 0.5rem;
+  border-top: none;
+}
+.img-card .card-avatar {
+  float: left;
+}
+.img-card .card-avatar img {
+  width: 34px;
+  height: 34px;
+}
+.img-card .card-name {
+  margin-left: 2.2rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+.img-card .card-time {
+  margin-left: 2.2rem;
+  font-size: 0.65rem;
+  color: #5f646e;
+}
+.img-card .card-content img {
+  width: 100%;
+  display: block;
+}
+.img-card .card-content-inner {
+  padding: 0.75rem 0.5rem;
+}
