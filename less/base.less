@@ -1,8 +1,32 @@
 @import "mixin.less";
-.clearfix:after {
-  content: '';
-  display: table;
-  clear: both;
+body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+}
+.content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.content-padd {
+  margin: @barSideSpacing;
+}
+.page {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: @color-bg;
+  z-index: 2000;
 }
 .bar {
   /*放置paint多次绘制*/
@@ -46,4 +70,123 @@
   color: @color-title;
   text-align: center;
   white-space: nowrap;
+}
+.clearfix:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+a {
+  color: @color-link;
+  text-decoration: none;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+
+  &:active {
+    color: @color-link-active;
+  }
+}
+//表单内容重置 + 扩展内容
+input[type="text"],
+input[type="password"],
+input[type="search"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+input[type="date"],
+input[type="datetime-local"],
+input[type="time"],
+input[type="number"],
+select,
+textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  box-sizing: border-box;
+  border: none;
+  background: none;
+  border-radius: 0 0 0 0;
+  box-shadow: none;
+  display: block;
+  padding: 0 0 0 0.25rem;
+  margin: 0;
+  width: 100%;
+  height: 2.15rem;
+  color: @color-text;
+  font-size: 0.85rem;
+  font-family: inherit;
+}
+
+
+.label-switch {
+  display: inline-block;
+  vertical-align: middle;
+  width: 2.6rem;
+  border-radius: 0.8rem;
+  box-sizing: border-box;
+  height: 1.6rem;
+  position: relative;
+  cursor: pointer;
+  align-items: center;
+  .checkbox {
+    width: 2.6rem;
+    border-radius: 0.8rem;
+    box-sizing: border-box;
+    height: 1.6rem;
+    background: #e5e5e5;
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    border:none;
+    cursor: pointer;
+    position: relative;
+    transition-duration: 300ms;
+    &:before {
+      content:' ';
+      position: absolute;
+      left: 0.1rem;
+      top: 0.1rem;
+      width: 2.4rem;
+      border-radius: 0.8rem;
+      box-sizing: border-box;
+      height: 1.4rem;
+      background: #fff;
+      z-index: 1;
+      transition-duration: 300ms;
+      transform: scale(1);
+    }
+    &:after {
+      content:' ';
+      height: 1.4rem;
+      width: 1.4rem;
+      border-radius: 1.4rem;
+      background: #fff;
+      position: absolute;
+      z-index: 2;
+      top: 0.1rem;
+      left: 0.1rem;
+      box-shadow: 0 0.1rem 0.25rem rgba(0,0,0,0.4);
+      transform: translateX(0px);
+      transition-duration: 300ms;
+    }
+  }
+  input[type="checkbox"] {
+    display: none;
+    &:checked {
+      &+ .checkbox {
+        background: @color-success;
+        &:before {
+          transform: scale(0);
+        }
+        &:after {
+          transform: translateX(1.1rem);
+        }
+      }
+    }
+  }
 }
