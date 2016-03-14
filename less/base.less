@@ -59,6 +59,38 @@ body {
 .bar-nav {
   top: 0;
 }
+.bar-tab {
+  bottom: 0;
+  width: 100%;
+  height: @barTabHeight;
+  padding: 0;
+  display: table;
+  table-layout: fixed;
+  .tab-item {
+    color: #ffffff;
+    position: relative;
+    display: table-cell;
+    height: @barTabHeight;
+    text-align: center;
+    vertical-align: middle;
+    &.active,
+    &:active {
+      color: @color-link-active;
+    }
+  }
+  .icon {
+    height: 1.2rem;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0.3rem;
+    &~.tab-label {
+      display: block;
+      font-size: 0.55rem;
+    }
+  }
+}
 .title {
   position: absolute;
   width: 100%;
@@ -83,7 +115,7 @@ a {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 
   &:active {
-    color: @color-link-active;
+    color: #ffffff;
   }
 }
 //表单内容重置 + 扩展内容
