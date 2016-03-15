@@ -5,8 +5,10 @@
     var Tabs = Class.create(Widget, {
         element : ".tabs-group",
         attrs : {
+            links : ".buttons-tab",
             container : ".tabs",
-            aimClass : ".tab-link"
+            aimClass : ".tab-link",
+            handlerShow : null
         },
         setup : function() {
             //事件修复注意
@@ -15,7 +17,9 @@
             this.render();
         },
         _handlerShow : function() {
-
+            if(typeof this.handlerShow === "function") {
+                this.handlerShow.call(this);
+            }
         },
         _showTab : function(event) {
             event.preventDefault();
@@ -29,11 +33,18 @@
                 return false;
             }
             var tabs = newTab.parent(this.get("container"));
+            var links = force.parent(this.get("links"));
+
+
             if (tabs.length === 0) {
                 return false;
             }
-            var oldTab = tabs.children('.tab.active').removeClass('active');
-            newTab.addClass('active');
+            tabs.children('.tab.tab-active').removeClass('tab-active');
+            links.children('.tab-link.active').removeClass("active");
+
+
+            force.addClass("active");
+            newTab.addClass('tab-active');
             this.trigger("showTab");
         }
     });

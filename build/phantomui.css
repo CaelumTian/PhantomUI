@@ -1016,14 +1016,11 @@ textarea {
 .img-card .card-content-inner {
   padding: 0.75rem 0.5rem;
 }
-.content {
-  background: white;
-  position: relative;
-}
 .buttons-tab {
   border-bottom: 1px solid #d0d0d0;
 }
 .buttons-tab .tab-link {
+  display: block;
   color: #5f646e;
   font-size: 0.8rem;
   width: 100%;
@@ -1042,9 +1039,39 @@ textarea {
   color: #0894ec;
   border-color: #0894ec;
 }
+.buttons-row .tab-link {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: block;
+  color: #0894ec;
+  border: 1px solid #0894ec;
+  border-left: none;
+  text-align: center;
+}
+.buttons-row .tab-link:first-child {
+  border-radius: 0.25rem 0 0 0.25rem;
+  margin-left: 0;
+  border-left-width: 1px;
+  border-left-style: solid;
+}
+.buttons-row .tab-link.active {
+  background-color: #0894ec;
+  color: #ffffff;
+  z-index: 90;
+}
+.buttons-row .tab-link:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
 .tabs .tab {
   display: none;
 }
 .tabs .tab.tab-active {
   display: block;
+}
+.content-block {
+  margin: 1.75rem 0;
+  padding: 0 0.75rem;
+  color: #6d6d72;
 }

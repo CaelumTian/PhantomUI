@@ -1,11 +1,8 @@
 @import "mixin.less";
-.content {
-  background: white;
-  position: relative;
-}
 .buttons-tab {
   border-bottom:1px solid #d0d0d0;
   .tab-link {
+    display: block;
     color: #5f646e;
     font-size: 0.8rem;
     width: 100%;
@@ -22,6 +19,30 @@
     border-color: @color-link;
   }
 }
+.buttons-row {
+  .tab-link{
+    flex: 1;
+    display: block;
+    color: @color-link;
+    border: 1px solid @color-link;
+    border-left: none;
+    text-align: center;
+    &:first-child {
+      border-radius: 0.25rem 0 0 0.25rem;
+      margin-left: 0;
+      border-left-width: 1px;
+      border-left-style: solid;
+    }
+    &.active {
+      background-color: @color-link;
+      color: #ffffff;
+      z-index: 90;
+    }
+    &:last-child {
+      border-radius: 0 0.25rem 0.25rem 0;
+    }
+  }
+}
 .tabs {
   .tab {
     display: none;
@@ -29,4 +50,9 @@
       display: block;
     }
   }
+}
+.content-block {
+  margin: 1.75rem 0;
+  padding: 0 0.75rem;
+  color: #6d6d72;
 }
