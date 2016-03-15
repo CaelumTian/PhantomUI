@@ -601,6 +601,21 @@ body {
   left: 0;
   overflow: hidden;
 }
+@media only screen and (min-width: 400px) {
+  html {
+    font-size: 21.33333333px !important;
+  }
+}
+@media only screen and (min-width: 414px) {
+  html {
+    font-size: 22.08px !important;
+  }
+}
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 25.6px !important;
+  }
+}
 .content {
   position: absolute;
   top: 0;
@@ -654,6 +669,38 @@ body {
 .bar-nav {
   top: 0;
 }
+.bar-tab {
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0;
+  display: table;
+  table-layout: fixed;
+}
+.bar-tab .tab-item {
+  color: #ffffff;
+  position: relative;
+  display: table-cell;
+  height: 2.5rem;
+  text-align: center;
+  vertical-align: middle;
+}
+.bar-tab .tab-item.active,
+.bar-tab .tab-item:active {
+  color: #ffffff;
+}
+.bar-tab .icon {
+  height: 1.2rem;
+  font-size: 1.2rem;
+  line-height: 1.2rem;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0.3rem;
+}
+.bar-tab .icon ~ .tab-label {
+  display: block;
+  font-size: 0.55rem;
+}
 .title {
   position: absolute;
   width: 100%;
@@ -677,7 +724,7 @@ a {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 a:active {
-  color: #0894ec;
+  color: #ffffff;
 }
 input[type="text"],
 input[type="password"],
@@ -968,4 +1015,63 @@ textarea {
 }
 .img-card .card-content-inner {
   padding: 0.75rem 0.5rem;
+}
+.buttons-tab {
+  border-bottom: 1px solid #d0d0d0;
+}
+.buttons-tab .tab-link {
+  display: block;
+  color: #5f646e;
+  font-size: 0.8rem;
+  width: 100%;
+  height: 2rem;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  line-height: 2rem;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  border-radius: 0;
+  text-align: center;
+}
+.buttons-tab .active {
+  color: #0894ec;
+  border-color: #0894ec;
+}
+.buttons-row .tab-link {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: block;
+  color: #0894ec;
+  border: 1px solid #0894ec;
+  border-left: none;
+  text-align: center;
+}
+.buttons-row .tab-link:first-child {
+  border-radius: 0.25rem 0 0 0.25rem;
+  margin-left: 0;
+  border-left-width: 1px;
+  border-left-style: solid;
+}
+.buttons-row .tab-link.active {
+  background-color: #0894ec;
+  color: #ffffff;
+  z-index: 90;
+}
+.buttons-row .tab-link:last-child {
+  border-radius: 0 0.25rem 0.25rem 0;
+}
+.tabs .tab {
+  display: none;
+}
+.tabs .tab.tab-active {
+  display: block;
+}
+.content-block {
+  margin: 1.75rem 0;
+  padding: 0 0.75rem;
+  color: #6d6d72;
 }

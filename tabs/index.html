@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../ui/phantomui.css">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <style>
+        .buttons-tab {
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <header class="bar bar-nav">
+        <h1 class="title">
+            Tab 组件
+        </h1>
+    </header>
+    <div class="content">
+        <div class="tabs-groups">
+            <div class="buttons-tab flex">
+                <a href="#tab1" class="tab-link active">新闻</a>
+                <a href="#tab2" class="tab-link">热点</a>
+                <a href="#tab3" class="tab-link">视频</a>
+            </div>
+            <div class="tabs content-padd">
+                <div id="tab1" class="tab tab-active">
+                    <h2>新闻内容</h2>
+                    <p>今天的新闻是......</p>
+                </div>
+                <div id="tab2" class="tab">
+                    <h2>热点内容</h2>
+                </div>
+                <div id="tab3" class="tab">
+                    <h3>视频内容</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../src/zepto.min.js"></script>
+    <script src="../src/class.js"></script>
+    <script src="../src/base.js"></script>
+    <script src="../src/widget.js"></script>
+    <script src="./tabs.js"></script>
+    <script>
+        var Tabs = new Tabs({
+            element : ".tabs-group"
+        })
+    </script>
+</body>
+</html>
