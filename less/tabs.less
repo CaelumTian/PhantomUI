@@ -1,0 +1,32 @@
+@import "mixin.less";
+.content {
+  background: white;
+  position: relative;
+}
+.buttons-tab {
+  border-bottom:1px solid #d0d0d0;
+  .tab-link {
+    color: #5f646e;
+    font-size: 0.8rem;
+    width: 100%;
+    height: 2rem;
+    flex: 1;
+    line-height: 2rem;
+    border: 0;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    text-align: center;
+  }
+  .active {
+    color: @color-link;
+    border-color: @color-link;
+  }
+}
+.tabs {
+  .tab {
+    display: none;
+    &.tab-active {
+      display: block;
+    }
+  }
+}

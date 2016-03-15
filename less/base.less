@@ -7,6 +7,22 @@ body {
   left: 0;
   overflow: hidden;
 }
+//响应式大小计算
+@media only screen and (min-width: 400px) {
+  html {
+    font-size: 21.33333333px !important;
+  }
+}
+@media only screen and (min-width: 414px) {
+  html {
+    font-size: 22.08px !important;
+  }
+}
+@media only screen and (min-width: 480px) {
+  html {
+    font-size: 25.6px !important;
+  }
+}
 .content {
   position: absolute;
   top: 0;
@@ -75,7 +91,7 @@ body {
     vertical-align: middle;
     &.active,
     &:active {
-      color: @color-link-active;
+      color: #ffffff;
     }
   }
   .icon {
