@@ -12,7 +12,8 @@
             animationTime : 500,  //切换时间
             easing : "ease",      //切换动画
             pagination : true,    //是否显示导航
-            direction : "horizon" //默认方向水平
+            direction : "horizon", //默认方向水平
+            loop : true            //是否允许循环(定时采用)
         },
         setup : function() {
             //页面容器,总共页面数量, 单容器宽度
@@ -76,13 +77,97 @@
                 }
             }
             var currentIndex = parseInt(index) - 1;
+            console.log(currentIndex);
             this.$element.css({
-                "-webkit-transform": (this.get("direction") === 'vertical') ? "translate3d(0," + (comPos - this.get("offWidth") * currentIndex) + "px,0)" : "translate3d(" + (comPos - this.get("offWidth") * currentIndex) + "px,0,0)",
+                "-webkit-transform": (this.get("direction") === 'vertical') ? "translate3d(0," + (comPos - this.offsetValue * currentIndex) + "px,0)" : "translate3d(" + (comPos - this.offsetValue * currentIndex) + "px,0,0)",
                 "-webkit-transition": "all " + 0 + "ms ",
-                "transform": (this.get("direction") == 'vertical') ? "translate3d(0," + (comPos - this.get("offWidth") * currentIndex) + "px,0)" : "translate3d(" + (comPos - this.get("offWidth") * currentIndex) + "px,0,0)",
+                "transform": (this.get("direction") === 'vertical') ? "translate3d(0," + (comPos - this.offsetValue * currentIndex) + "px,0)" : "translate3d(" + (comPos - this.offsetValue * currentIndex) + "px,0,0)",
                 "transition": "all " + 0 + "ms "
             });
             this.steps = 2;
+        },
+        _handleTouchEnd : function(event) {
+            event.preventDefault();
+            if(this.steps !== 2) {
+                return;
+            }else {
+                this.touchDown = false;
+            }
+            var comPos =  this.endPos - this.startPos,
+                index = this.$element.find("section.active").data("index");
+
+            if(Math.abs(comPos) < this.get("limitDistance")) {
+                this.$element.css({
+                    "-webkit-transform": (this.get("direction") === 'vertical') ? "translate3d(0," + (parseInt( index - 1) * -100) + "%, 0)" : "translate3d(" + (parseInt(index - 1) * -100) + "%,0,0)",
+                    "-webkit-transition": "all " + 500 + "ms ",
+                    "transform": (this.get("direction") === 'vertical') ? "translate3d(0," + (parseInt(index - 1) * -100) + "%,0)":"translate3d(" + (parseInt(index - 1) * -100) + "%,0,0)",
+                    "transition": "all " + 500 + "ms "
+                })
+            }else {
+                if(comPos < 0) {
+                    this.turnNext();
+                }else {
+                    this.turnPre();
+                }
+            }
+            this.steps = 3;
+        },
+        /**
+         * 跳转到下一个页面
+         * @returns {boolean} 是否成功
+         */
+        turnNext : function() {
+            var index = this.$element.find("section.active").data("index"),
+                $current = this.$element.find("[data-index='" + index + "']"),
+                $next = this.$element.find("[data-index='" + (index + 1) + "']");
+            if($next.length === 0) {
+                //开启循环设置, 则直接跳转到第一个
+                if(this.get("loop")) {
+                    var pos = 0;
+                    $next = this.$element.find("[data-index='1']");
+                }else {
+                    return false;
+                }
+            }else {
+                var pos = (index * 100) * -1;
+            }
+            $current.removeClass("active");
+            $next.addClass("active");
+            this._transformPage(pos, $next.data("index"));
+        },
+        /**
+         * 跳转到上一个页面
+         * @returns {boolean} 是否成功
+         */
+        turnPre : function() {
+            var index = this.$element.find("section.active").data("index"),
+                $current = this.$element.find("[data-index='" + index + "']"),
+                $pre = this.$element.find("[data-index='" + (index - 1) + "']");
+            if($pre.length === 0) {
+                if(this.get("loop")) {
+                    var pos = ((this.total - 1) * 100) * -1;
+                    $pre = this.$element.find("[data-index='" + this.total + "']");
+                }else {
+                    return;
+                }
+            } else {
+                var pos = (($pre.data("index") - 1) * 100) * -1;
+            }
+            $current.removeClass("active");
+            $pre.addClass("active");
+            this._transformPage(pos, $pre.data("index"));
+        },
+        _transformPage : function(pos, index) {
+            this.$element.css({
+                "-webkit-transform": (this.get("direction") == 'horizon') ? "translate3d(" + pos + "%, 0, 0)" : "translate3d(0, " + pos + "%, 0)",
+                "-webkit-transition": "all " + this.get("animationTime") + "ms " + this.get("easing"),
+                "-moz-transform": (this.get("direction") == 'horizon') ? "translate3d(" + pos + "%, 0, 0)" : "translate3d(0, " + pos + "%, 0)",
+                "-moz-transition": "all " +  this.get("animationTime") + "ms " + this.get("easing"),
+                "-ms-transform": (this.get("direction") == 'horizon') ? "translate3d(" + pos + "%, 0, 0)" : "translate3d(0, " + pos + "%, 0)",
+                "-ms-transition": "all " +  this.get("animationTime") + "ms " + this.get("easing"),
+                "transform": (this.get("direction") == 'horizon') ? "translate3d(" + pos + "%, 0, 0)" : "translate3d(0, " + pos + "%, 0)",
+                "transition": "all " +  this.get("animationTime") + "ms " + this.get("easing")
+            })
         }
     });
     global.Swiper = Swiper;
