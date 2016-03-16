@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="../../../../build/phantomui.css">
+    <title>Title</title>
+    <style>
+        .swiper-container {
+            position: relative;
+        }
+        .swiper-container > section {
+            width: 100%;
+            position: absolute;
+        }
+        .swiper-container > section > img {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header class="bar bar-nav">
+        <h1 class="title">跑马灯组件</h1>
+    </header>
+    <div class="content">
+        <div class="swiper-container">
+            <section>
+                <img src="./swiper1.jpg" alt="">
+            </section>
+            <section>
+                <img src="./swiper2.jpg" alt="">
+            </section>
+            <section>
+                <img src="./swiper3.jpg" alt="">
+            </section>
+            <section>
+                <img src="./swiper4.jpg" alt="">
+            </section>
+        </div>
+    </div>
+    <script src="../../../../support/zepto.min.js"></script>
+    <script src="../../../core/base/class.js"></script>
+    <script src="../../../core/base/base.js"></script>
+    <script src="../../../core/widget/widget.js"></script>
+    <script src="../swiper.js"></script>
+    <script>
+        var swiper = new Swiper({
+            element : ".swiper-container"
+        });
+    </script>
+</body>
+</html>
