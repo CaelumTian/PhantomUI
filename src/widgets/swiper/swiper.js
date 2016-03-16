@@ -13,7 +13,9 @@
             easing : "ease",      //切换动画
             pagination : true,    //是否显示导航
             direction : "horizon", //默认方向水平
-            loop : true            //是否允许循环(定时采用)
+            loop : true,            //是否允许循环(定时采用)
+            callbackStart : null,
+            callbackEnd : null
         },
         setup : function() {
             //页面容器,总共页面数量, 单容器宽度
@@ -21,16 +23,19 @@
             this.total = this.sections.length;
             this.offsetValue = this.get("direction") === "vertical" ? this.sections.eq(0).height() : this.sections.eq(0).width();
             for(var i = 0; i < this.total; i++) {
-                this.sections.eq(i).css({
-                    "position" : "absolute",
-                    "top" : "0px",
-                    "left" : i * 100+ "%"
-                }).attr("data-index", (i + 1));
+                this.sections.eq(i).attr("data-index", (i + 1));
             }
             this.sections.eq(0).addClass("active");
+            this.on("swiperStart", this._handleStart);
+            this.on("swiperEnd", this._handleEnd);
+
             this.delegateEvents(document, "touchstart .swiper-container", this._handleTouchStart);
             this.delegateEvents(document, "touchmove .swiper-container", this._handleTouchMove);
             this.delegateEvents(document, "touchend .swiper-container", this._handleTouchEnd);
+            //PC端, 最后可以删去
+            this.delegateEvents(document, "mousedown .swiper-container", this._handleTouchStart);
+            this.delegateEvents(document, "mousemove .swiper-container", this._handleTouchMove);
+            this.delegateEvents(document, "mouseup .swiper-container", this._handleTouchEnd);
         },
         _handleTouchStart : function(event) {
             event.preventDefault();
@@ -77,7 +82,6 @@
                 }
             }
             var currentIndex = parseInt(index) - 1;
-            console.log(currentIndex);
             this.$element.css({
                 "-webkit-transform": (this.get("direction") === 'vertical') ? "translate3d(0," + (comPos - this.offsetValue * currentIndex) + "px,0)" : "translate3d(" + (comPos - this.offsetValue * currentIndex) + "px,0,0)",
                 "-webkit-transition": "all " + 0 + "ms ",
@@ -155,9 +159,18 @@
             }
             $current.removeClass("active");
             $pre.addClass("active");
+
             this._transformPage(pos, $pre.data("index"));
         },
+        /**
+         * 运动函数
+         * @param pos   运动距离
+         * @param index 当前索引
+         * @private
+         */
         _transformPage : function(pos, index) {
+            var self = this;
+            this.trigger("swiperStart");
             this.$element.css({
                 "-webkit-transform": (this.get("direction") == 'horizon') ? "translate3d(" + pos + "%, 0, 0)" : "translate3d(0, " + pos + "%, 0)",
                 "-webkit-transition": "all " + this.get("animationTime") + "ms " + this.get("easing"),
@@ -167,7 +180,22 @@
                 "-ms-transition": "all " +  this.get("animationTime") + "ms " + this.get("easing"),
                 "transform": (this.get("direction") == 'horizon') ? "translate3d(" + pos + "%, 0, 0)" : "translate3d(0, " + pos + "%, 0)",
                 "transition": "all " +  this.get("animationTime") + "ms " + this.get("easing")
+            });
+            this.$element.on("transitoinEnd webkitTransitionEnd", function() {
+                //滚动完毕,触发回掉
+                self.trigger("swiperEnd");
+                self.$element.off("transitionEnd webkitTransitionEnd");
             })
+        },
+        _handleStart : function() {
+            if(typeof this.get("callbackStart") === "function") {
+                this.get("callbackStart").call(this);
+            }
+        },
+        _handleEnd : function() {
+            if(typeof this.get("callbackEnd") === "function") {
+                this.get("callbackEnd").call(this);
+            }
         }
     });
     global.Swiper = Swiper;

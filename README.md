@@ -23,7 +23,8 @@ PhantomUI
 2. `Modal` 对话框组件 : 提供Alert, Confirm, Prompt类型,详情请见: [Modal 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/modal)  
 3. `PullRefresh` 下拉刷新组件 : 提供下拉刷新容器. [PullRefresh 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/pullRefresh)  
 4. `OffCanvas`  侧滑组件 : 提供从左侧或者右侧滑出的面板。[OffCanvas 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/offCanvas)  
-5. `Tabs` 标签页组件: 提供大小两组标签页样式. [Tabs 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/tabs)  
+5. `Tabs` 标签页组件 : 提供大小两组标签页样式. [Tabs 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/tabs)  
+6. `Swiper` 幻灯片组件 : 提供图片轮播效果. [Swiper 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/swiper)   
 
 ## 更新日志  
 1. `03/06` 完成router模块的最后调试,解决测试中问题,添加思考. 完善widget文档  
@@ -34,6 +35,8 @@ PhantomUI
 6. `03/12` 完成OffCanvas组件
 7. `03/13` 完成表单, 卡片样式, 修正基本样式库  
 8. `03/15` 完成Tabs组件，添加CSS屏幕适配(rem大小调整)
+9. `03/16` 完成Swiper组件  
+
 
     
 
