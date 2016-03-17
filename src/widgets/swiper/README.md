@@ -1,6 +1,6 @@
 Swiper 幻灯片组件  
 ===   
-[使用DEMO](t-phantom.github.io/PhantomUI/swiper)  
+[使用DEMO](http://t-phantom.github.io/PhantomUI/swiper)  
 幻灯片组件，提供基础的图片轮播效果，手势滑动。    
 
 ## 一丶基本使用  
