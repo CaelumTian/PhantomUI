@@ -26,6 +26,22 @@
                 this.sections.eq(i).attr("data-index", (i + 1));
             }
             this.sections.eq(0).addClass("active");
+
+            //插入导航
+            if(this.get("pagination")) {
+                var arr = [];
+                if(this.$element.find(".swiper-pagination").length === 0) {
+                    this.$pagination = $("<ul class='swiper-pagination'></ul>");
+                    for(var i = 0; i < this.total; i++) {
+                        arr[i] = "<li data-index='" + (i + 1) + "'>" + "</li>";
+                    }
+                    this.$pagination.html(arr.join(""));
+                }
+                this.$element.parent(".swiper-wrap").append(this.$pagination);
+                this.$lists = this.$pagination.find("li");
+                this.$lists.eq(0).addClass("active");
+            }
+
             this.on("swiperStart", this._handleStart);
             this.on("swiperEnd", this._handleEnd);
 
@@ -169,6 +185,12 @@
          * @private
          */
         _transformPage : function(pos, index) {
+
+            if(this.get("pagination")) {
+                this.$lists.removeClass("active");
+                this.$lists.eq(index - 1).addClass("active");
+            }
+
             var self = this;
             this.trigger("swiperStart");
             this.$element.css({

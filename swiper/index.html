@@ -22,6 +22,38 @@
         .swiper-container > section > img {
             width: 100%;
         }
+        .swiper-pagination {
+            list-style: none;
+            display: flex;
+            position: absolute;
+            bottom: 1rem;
+            left: 50%;
+            -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+        }
+        .swiper-pagination>li {
+            margin-right: 0.7rem;
+        }
+        .swiper-pagination>li:after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #9c9c9c;
+            border-radius: 50%;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+        }
+        .swiper-pagination>li.active:after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #0894ec;
+            border-radius: 50%;
+            -webkit-border-radius: 10px;
+            -moz-border-radius: 10px;
+        }
     </style>
 </head>
 <body>
