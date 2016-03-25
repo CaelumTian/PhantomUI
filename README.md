@@ -1,5 +1,6 @@
-PhantomUI  
+PhantomUI    
 === 
+![](https://travis-ci.org/T-phantom/PhantomUI.svg?branch=master)  
 ## HTML5 移动端组件库  
 丰富的高性能移动端组件库, 每个组件都可单独使用作为独立的模块, 目前正在`开发中`, 预计4月初正式完成.   
 
