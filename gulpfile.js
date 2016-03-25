@@ -35,6 +35,8 @@ gulp.task("js", function() {
 gulp.task("clean", function() {
 	//del(['./styles/**/*.css']);
 });
+gulp.task('release', ["less", "js"]);
+
 gulp.task("build", ["less", "js"], function() {
 	console.log("文件打包完毕");
 });
