@@ -6,7 +6,7 @@ PhantomUI
 
 ## 安装方法：  
 ```javascript  
-npm install phantom-ui  
+$ npm install phantom-ui  
 ```
 
 ## 已经完成模块  
