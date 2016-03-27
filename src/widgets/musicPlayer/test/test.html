@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../../../build/phantomui.css">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <style>
+        .music-box {
+            width: 100%;
+            height: 100%;
+        }
+        .main-box {
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            bottom: 7.7rem;
+            display: flex;
+            flex-direction: column;
+        }
+        .music-info {
+            display: flex;
+            padding: 15px 80px 15px 15px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+        .album-img {
+            width: 80px;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="music-box">
+            <div class="main-box">
+                <div class="music-info">
+                    <div class="album-img">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../../../support/zepto.min.js"></script>
+    <script src="../../../core/base/class.js"></script>
+    <script src="../../../core/base/base.js"></script>
+    <script src="../../../core/widget/widget.js"></script>
+    <script src="../musicPalyer.js"></script>
+    <script>
+        var Tabs = new MusicPlayer({
+
+        })
+    </script>
+</body>
+</html>
