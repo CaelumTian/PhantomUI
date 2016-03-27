@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c55839ed-833c-41ae-92cb-5a5c2e6644b5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/widgets/musicPlayer/musicPalyer.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/widgets/musicPlayer/test/music.lrc" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/widgets/musicPlayer/test/test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/build/phantomui.css" afterPath="$PROJECT_DIR$/build/phantomui.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/less/font.less" afterPath="$PROJECT_DIR$/less/font.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/widgets/musicPlayer/musicPalyer.js" afterPath="$PROJECT_DIR$/src/widgets/musicPlayer/musicPalyer.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/widgets/musicPlayer/test/test.html" afterPath="$PROJECT_DIR$/src/widgets/musicPlayer/test/test.html" />
     </list>
     <ignored path="PhantomUI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,42 +37,99 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/widgets/musicPlayer/test/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.57840234">
-              <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+            <state vertical-scroll-proportion="-18.807692">
+              <caret line="153" column="18" selection-start-line="153" selection-start-column="18" selection-end-line="153" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="musicPalyer.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="musicPalyer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/widgets/musicPlayer/musicPalyer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.2977208">
+              <caret line="108" column="24" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="24" />
+              <folding>
+                <marker date="1459080604000" expanded="true" signature="287:340" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:399" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:461" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:535" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:580" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:595" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:1047" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:1110" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:1128" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:1152" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:1236" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:1289" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:1326" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:1368" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:1383" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:1384" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:1389" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:1390" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:1391" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:1468" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:1501" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="287:1600" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="340:399" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="399:461" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="461:535" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="644:820" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="887:1005" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="1152:1236" placeholder="..." />
+                <marker date="1459080604000" expanded="true" signature="1451:1462" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider editor-type-id="MarkdownPreviewEditor">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-15.034483">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="music.lrc" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/widgets/musicPlayer/test/music.lrc">
+      <file leaf-file-name="font.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/less/font.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="25" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="1005" />
+            <state vertical-scroll-proportion="-24.692308">
+              <caret line="106" column="16" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="swiper.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/widgets/swiper/swiper.js">
+      <file leaf-file-name="widget.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/core/widget/widget.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+              <caret line="164" column="43" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="43" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="modal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/widgets/modal/modal.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="43" column="48" selection-start-line="42" selection-start-column="11" selection-end-line="43" selection-end-column="48" />
+              <folding>
+                <marker date="1457429848000" expanded="true" signature="1069:1624" placeholder="..." />
+                <marker date="1457429848000" expanded="true" signature="1133:1375" placeholder="..." />
+                <marker date="1457429848000" expanded="true" signature="1441:1590" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -112,7 +169,6 @@
         <option value="$PROJECT_DIR$/less/test/index.html" />
         <option value="$PROJECT_DIR$/less/test/text.html" />
         <option value="$PROJECT_DIR$/less/test/icon.html" />
-        <option value="$PROJECT_DIR$/less/font.less" />
         <option value="$PROJECT_DIR$/less/test/list.html" />
         <option value="$PROJECT_DIR$/less/test/flex.html" />
         <option value="$PROJECT_DIR$/src/widgets/modal/offCanvas/test/test.html" />
@@ -135,7 +191,6 @@
         <option value="$PROJECT_DIR$/src/widgets/tabs/test/test.html" />
         <option value="$PROJECT_DIR$/src/widgets/tabs/README.md" />
         <option value="$PROJECT_DIR$/src/widgets/offCanvas/test/test.html" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/widgets/swiper/README.md" />
         <option value="$PROJECT_DIR$/src/widgets/swiper/swiper.js" />
         <option value="$PROJECT_DIR$/src/widgets/swiper/test/test.html" />
@@ -143,8 +198,10 @@
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/widgets/musicPlayer/test/music.lrc" />
-        <option value="$PROJECT_DIR$/src/widgets/musicPlayer/musicPalyer.js" />
+        <option value="$PROJECT_DIR$/less/font.less" />
         <option value="$PROJECT_DIR$/src/widgets/musicPlayer/test/test.html" />
+        <option value="$PROJECT_DIR$/src/widgets/musicPlayer/musicPalyer.js" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -351,6 +408,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="widgets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="modal" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhantomUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhantomUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="core" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -400,6 +479,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhantomUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="PhantomUI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="less" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -566,16 +659,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/README.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/support/zepto.touch.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="3.9602273">
@@ -632,13 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/less/font.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/less/flex.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -650,13 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/widget/widget.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="164" column="43" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="43" />
         </state>
       </provider>
     </entry>
@@ -743,13 +812,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6725926">
           <caret line="79" column="0" selection-start-line="79" selection-start-column="0" selection-end-line="79" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/modal/modal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68607956">
-          <caret line="96" column="13" selection-start-line="96" selection-start-column="13" selection-end-line="96" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -842,16 +904,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69777775">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.048295453">
@@ -907,10 +959,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/swiper/test/test.html">
+    <entry file="file://$PROJECT_DIR$/src/core/README.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6923077">
-          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="10" selection-start-line="0" selection-start-column="10" selection-end-line="0" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -925,25 +980,102 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/widgets/swiper/swiper.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.6780627">
           <caret line="30" column="37" selection-start-line="30" selection-start-column="37" selection-end-line="30" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/less/font.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-24.692308">
+          <caret line="106" column="16" selection-start-line="106" selection-start-column="16" selection-end-line="106" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/swiper/test/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.6923077">
+          <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/modal/modal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="43" column="48" selection-start-line="42" selection-start-column="11" selection-end-line="43" selection-end-column="48" />
+          <folding>
+            <marker date="1457429848000" expanded="true" signature="1069:1624" placeholder="..." />
+            <marker date="1457429848000" expanded="true" signature="1133:1375" placeholder="..." />
+            <marker date="1457429848000" expanded="true" signature="1441:1590" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/musicPlayer/test/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.807692">
+          <caret line="153" column="18" selection-start-line="153" selection-start-column="18" selection-end-line="153" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/widget/widget.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="164" column="43" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-15.034483">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/widgets/musicPlayer/musicPalyer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="21" selection-start-line="65" selection-start-column="21" selection-end-line="65" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/musicPlayer/test/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.57840234">
-          <caret line="29" column="29" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
-          <folding />
+        <state vertical-scroll-proportion="0.2977208">
+          <caret line="108" column="24" selection-start-line="108" selection-start-column="24" selection-end-line="108" selection-end-column="24" />
+          <folding>
+            <marker date="1459080604000" expanded="true" signature="287:340" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:399" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:461" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:535" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:580" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:595" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:1047" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:1110" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:1128" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:1152" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:1236" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:1289" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:1326" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:1368" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:1383" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:1384" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:1389" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:1390" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:1391" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:1468" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:1501" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="287:1600" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="340:399" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="399:461" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="461:535" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="644:820" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="887:1005" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="1152:1236" placeholder="..." />
+            <marker date="1459080604000" expanded="true" signature="1451:1462" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
