@@ -33,7 +33,7 @@ $ npm install phantom-ui
 6. `Swiper` 幻灯片组件 : 提供图片轮播效果. [Swiper 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/swiper)     
 
 ### 扩展组件库  
-1. `MusicPlayer` 音乐播放组件  
+1. `MusicPlayer` 音乐播放组件 [DEMO 浏览器模拟手机界面查看](http://t-phantom.github.io/PhantomUI/musicPlayer/)   
 
 ## 更新日志  
 1. `03/06` 完成router模块的最后调试,解决测试中问题,添加思考. 完善widget文档  
