@@ -3,7 +3,15 @@
  */
 (function(global) {
     var MusicPlayer = Class.create(Widget, {
+        _isUpdate : true,
+        _hasLyric : false,
+        audio : null,
+        $timeStart : null,
+        $timeEnd : null,
+        $barPlay : null,
+        _canPlay : false,
         attrs : {
+            lyricHeight : 42,
             text : "",
             lyrics : [],
             parentNode : ".content",
@@ -26,9 +34,20 @@
                        +            '<div class="lyric-text" id="lyricText"></div>'
                        +        '</div></div></div>'
                        +    '</div>'
-                       +    '<div class="music-control"></div>'
+                       +    '<div class="music-control">'
+                       +        '<div class="music-operate music-list"></div>'
+                       +        '<div class="music-operate music-like"><i class="icon icon-heart"></i></div>'
+                       +        '<div class="music-progress">'
+                       +            '<div class="progress-bar">'
+                       +                '<div class="progress-load"></div>'
+                       +                '<div class="progress-play"></div>'
+                       +            '</div>'
+                       +            '<span id="time-start">00:00</span>'
+                       +            '<span id="time-end">00:00</span>'
+                       +        '</div>'
+                       +     '</div>'
                        +    '<div class="music-bg" style="{$album.bg}"></div><div class="music-pannel"></div>'
-                       +    '<audio id="h5audio" height="0" width="0" src="{$album.url}"></audio>',
+                       +    '<audio id="h5audio" height="0" width="0" src="{$album.url}" autoplay></audio>',
             album : {
                 img : "./yuanliang.jpg",
                 title : "原谅",
@@ -51,8 +70,24 @@
             this.set("template", template);
         },
         setup : function() {
-            this.set("lyrics", Util.parseLyric(this.get("album.lrc")));
-            Util.lrcRender(this.$element.find("#lyricText"), this.get("lyrics"));
+            this.audio = this.$element.find("#h5audio")[0];
+            this.$lastEle = this.$element.find("#lyric-0");
+            this.$lyricText = this.$element.find("#lyricText");
+            this.$timeStart = this.$element.find("#time-start");
+            this.$timeEnd = this.$element.find("#time-end");
+            this.$barPlay = this.$element.find(".progress-play").eq(0);
+
+            if(this.get("album.lrc") !== false) {
+                this.set("lyrics", Util.parseLyric(this.get("album.lrc")));
+                Util.lrcRender(this.$element.find("#lyricText"), this.get("lyrics"));
+                this._hasLyric = true;
+            }
+
+            this.audio.addEventListener("timeupdate", this.handleTimeUpdate.bind(this), false);
+            this.audio.addEventListener("loadedmetadata", this.handleLoadMeta.bind(this), false);
+            this.audio.addEventListener("canplay", this.handleCanPlay.bind(this), false);
+            this.delegateEvents(document, "click .control-button", this.handlePlay);
+
             this.render();
         },
         /**
@@ -63,6 +98,57 @@
             //测试案例
             if(this.get("album")) {
                 return;
+            }
+        },
+        handlePlay : function(event) {
+            var $target = $(event.currentTarget);
+            if(this.audio.paused && this._canPlay) {
+                this.audio.play();
+                $target.find("i").removeClass("icon-play").addClass("icon-pause");
+            }else {
+                this.audio.pause();
+                $target.find("i").removeClass("icon-pause").addClass("icon-play");
+            }
+        },
+        handleCanPlay : function() {
+            this._canPlay  = true;
+            this.$element.find(".control-button i").removeClass("icon-play").addClass("icon-pause");
+        },
+        handleLoadMeta : function() {
+            //音频信息夹在完毕
+            this.$timeEnd.text(Util.parseSec(this.audio.duration));
+        },
+        handleTimeUpdate : function() {
+            if(!this._isUpdate) {
+                return;
+            }
+
+            var curTime       = (this.audio.currentTime).toFixed(0);
+            var curTimeForLrc = (this.audio.currentTime).toFixed(3);
+            var playPercent   = 100 * (curTime / this.audio.duration);
+
+            //给控制条用一个
+
+            this.$barPlay.css({
+                "transform" : "translate3d(" + playPercent + "%, 0, 0)"
+            });
+
+            this.$timeStart.text(Util.parseSec(curTime));
+
+            if(this._hasLyric) {
+                //获取歌词索引
+                var lyricIndex = Util.getCurrentIndex(curTime, this.get("lyrics"));
+                var $lyricEle = this.$element.find("#lyric-" + lyricIndex);
+                this.$lastEle.removeClass("lyric-active");
+                $lyricEle.addClass("lyric-active");
+                this.$lastEle = $lyricEle;
+                if(curTime > 0 && lyricIndex > 2) {
+                    this.$lyricText.css({
+                        "transform" : "translate3d(0px, " + ((lyricIndex - 2) * this.get("lyricHeight") * -1) + "px, 0px)",
+                        "transform-origin" : "0px 0px 0px",
+                        "transition" : "transform 0.3s ease-out"
+                    })
+                }
             }
         }
     });
@@ -125,6 +211,13 @@
                 }
             }
             return i;
+        },
+        parseSec : function(sec) {
+            var tempMin = Math.floor((sec / 60)).toFixed(0);
+            var tempSec = (sec % 60).toFixed(0);
+            var curMin  = tempMin < 10 ? ('0' + tempMin) : tempMin;
+            var curSec  = tempSec < 10 ? ('0' + tempSec) : tempSec;
+            return curMin + ':' + curSec;
         }
     };
     global.MusicPlayer = MusicPlayer;

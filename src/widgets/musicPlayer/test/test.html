@@ -139,6 +139,83 @@
             color: rgba(255,255,255,.6);
             text-align: center;
         }
+        .lyric-active {
+            color: #31c27c !important;
+        }
+        .music-control {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 3;
+            width: 100%;
+            height: 154px;
+        }
+        .music-operate {
+            position: absolute;
+            bottom: 114px;
+            overflow: hidden;
+        }
+        .music-operate i {
+            font-size: 20px;
+            color: #B9BABC;
+        }
+        .music-list {
+            left: 15px;
+        }
+        .music-like {
+            right: 15px;
+        }
+        .music-progress {
+            position: absolute;
+            bottom: 74px;
+            width: 100%;
+            height: 40px;
+        }
+        .progress-load,
+        .progress-bg,
+        .progress-play {
+            position: absolute;
+            top: 19px;
+            width: 100%;
+            height: 2px;
+            -webkit-transition: all 1s linear;
+        }
+        .progress-bar {
+            position: absolute;
+            top: 0;
+            left: 50px;
+            right: 50px;
+            height: 40px;
+            overflow: hidden;
+        }
+        .progress-load {
+            left: 0;
+            z-index: 4;
+            background-color: rgba(255,255,255,.2);
+        }
+        .progress-play {
+            left: -100%;
+            z-index: 5;
+            width: 100%;
+            background-color: #31c27c;
+        }
+        #time-start,
+        #time-end {
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            width: 55px;
+            line-height: 40px;
+            text-align: center;
+            color: #808080;
+            font-size: 13px;
+        }
+        #time-start {
+            left: 0;
+        }
+        #time-end {
+            right: 0;
+        }
     </style>
 </head>
 <body>
