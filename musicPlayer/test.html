@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../ui/phantomui.css">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <style>
+        .music-box {
+            width: 100%;
+            height: 100%;
+        }
+        .main-box {
+            width: 100%;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            bottom: 7.7rem;
+            display: flex;
+            flex-direction: column;
+            z-index: 3;
+        }
+        .music-info {
+            position: relative;
+            display: flex;
+            padding: 15px 80px 15px 15px;
+            background: rgba(0, 0, 0, 0.1);
+        }
+        .album-img {
+            width: 80px;
+            margin-right: 15px;
+            overflow: hidden;
+        }
+        .album-img > img {
+            width: 100%;
+        }
+        .music-bg {
+            -webkit-filter: blur(15px);
+            filter: blur(15px);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            background-size: cover;
+            background-position: bottom center;
+        }
+        .music-pannel {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 2;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+        .album-title {
+            flex: 1;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+        }
+        .album-title > h2 {
+            position: relative;
+            height: 30px;
+            overflow: hidden;
+            font-size: 18px;
+            font-weight: normal;
+            font-weight: bold;
+            color: #fff;
+        }
+        .album-title > p {
+            margin: 0;
+            position: relative;
+            height: 30px;
+            overflow: hidden;
+            font-size: 15px;
+            font-weight: normal;
+            color: #fff;
+        }
+        .control-button {
+            position: absolute;
+            top: 50%;
+            right: 25px;
+            width: 43px;
+            height: 43px;
+            margin-top: -22px;
+            border: solid 1px #fff;
+            border-radius: 999px;
+            background: rgba(0,0,0,.1);
+            opacity: .6;
+        }
+        .control-button > i.icon-pause {
+            margin: -15px -8px;
+        }
+        .control-button > i {
+            color: #fff;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            font-size: 20px;
+            margin: -14px -5px;
+        }
+        .lyric-container {
+            flex: 1;
+            position: relative;
+        }
+        .lyric {
+            display: flex;
+            justify-content: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        .lyric-box {
+            position: relative;
+            width: 100%;
+            height: 336px;
+            overflow: hidden;
+        }
+        .lyric-text {
+            position: absolute;
+            left: 10px;
+            right: 10px;
+            overflow: hidden;
+            min-height: 150px;
+        }
+        .lyric-text > p {
+            margin: 0;
+            height: 42px;
+            line-height: 42px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            font-size: 16px;
+            color: rgba(255,255,255,.6);
+            text-align: center;
+        }
+        .lyric-active {
+            color: #31c27c !important;
+        }
+        .music-control {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 3;
+            width: 100%;
+            height: 154px;
+        }
+        .music-operate {
+            position: absolute;
+            bottom: 114px;
+            overflow: hidden;
+        }
+        .music-operate i {
+            font-size: 20px;
+            color: #B9BABC;
+        }
+        .music-list {
+            left: 15px;
+        }
+        .music-like {
+            right: 15px;
+        }
+        .music-progress {
+            position: absolute;
+            bottom: 74px;
+            width: 100%;
+            height: 40px;
+        }
+        .progress-load,
+        .progress-bg,
+        .progress-play {
+            position: absolute;
+            top: 19px;
+            width: 100%;
+            height: 2px;
+            -webkit-transition: all 1s linear;
+        }
+        .progress-bar {
+            position: absolute;
+            top: 0;
+            left: 50px;
+            right: 50px;
+            height: 40px;
+            overflow: hidden;
+        }
+        .progress-load {
+            left: 0;
+            z-index: 4;
+            background-color: rgba(255,255,255,.2);
+        }
+        .progress-play {
+            left: -100%;
+            z-index: 5;
+            width: 100%;
+            background-color: #31c27c;
+        }
+        #time-start,
+        #time-end {
+            position: absolute;
+            top: 0;
+            z-index: 1;
+            width: 55px;
+            line-height: 40px;
+            text-align: center;
+            color: #808080;
+            font-size: 13px;
+        }
+        #time-start {
+            left: 0;
+        }
+        #time-end {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+
+    </div>
+    <script src="../src/zepto.min.js"></script>
+    <script src="../src/class.js"></script>
+    <script src="../src/base.js"></script>
+    <script src="../src/widget.js"></script>
+    <script src="./musicPalyer.js"></script>
+    <script>
+        var player = new MusicPlayer({
+
+        })
+    </script>
+</body>
+</html>
