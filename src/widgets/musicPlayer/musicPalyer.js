@@ -135,7 +135,7 @@
                     "transition" : "transform 0.3s ease-out"
                 })
             }
-            if(disY < (player.get("lyrics").length - this._containCount) * this.get("lyricHeight")) {
+            if(disY < (player.get("lyrics").length - this._containCount) * this.get("lyricHeight") * -1) {
                 this.$lyricText.css({
                     "transform" : "translate3d(0px, " + ((player.get("lyrics").length - this._containCount) * this.get("lyricHeight") * -1) + "px, 0px)",
                     "transform-origin" : "0px 0px 0px",

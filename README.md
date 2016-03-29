@@ -1,6 +1,6 @@
 PhantomUI    
 === 
-![](https://travis-ci.org/T-phantom/PhantomUI.svg?branch=master)  ![](https://img.shields.io/badge/npm-v0.1.0-blue.svg)  
+![](https://travis-ci.org/T-phantom/PhantomUI.svg?branch=master)  ![](https://img.shields.io/badge/npm-v0.1.1-blue.svg)  
 ## HTML5 移动端组件库  
 丰富的高性能移动端组件库, 每个组件都可单独使用作为独立的模块, 目前正在`开发中`, 预计4月初正式完成.   
 
@@ -33,7 +33,7 @@ $ npm install phantom-ui
 6. `Swiper` 幻灯片组件 : 提供图片轮播效果. [Swiper 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/swiper)     
 
 ### 扩展组件库  
-1. `MusicPlayer` 音乐播放组件 [DEMO 浏览器模拟手机界面查看](http://t-phantom.github.io/PhantomUI/musicPlayer/)   
+1. `MusicPlayer` 音乐播放组件 [MusicPlayer 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/musicPlayer)   
 
 ## 更新日志  
 1. `03/06` 完成router模块的最后调试,解决测试中问题,添加思考. 完善widget文档  
@@ -46,6 +46,7 @@ $ npm install phantom-ui
 8. `03/15` 完成Tabs组件，添加CSS屏幕适配(rem大小调整)
 9. `03/16` 完成Swiper组件   
 10. `03/27`配置音乐播放组件
+11. `03/29`完成音乐组件, 更新版本v0.1.1
 
 
     
