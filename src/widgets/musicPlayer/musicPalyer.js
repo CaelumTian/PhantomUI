@@ -10,6 +10,7 @@
         $timeEnd : null,
         $barPlay : null,
         _canPlay : false,
+        _containCount : 8,   //最大容量数目
         attrs : {
             lyricHeight : 42,
             text : "",
@@ -87,6 +88,9 @@
             this.audio.addEventListener("loadedmetadata", this.handleLoadMeta.bind(this), false);
             this.audio.addEventListener("canplay", this.handleCanPlay.bind(this), false);
             this.delegateEvents(document, "click .control-button", this.handlePlay);
+            this.delegateEvents(document, "touchstart #lyricText", this.handleTouchStart);
+            this.delegateEvents(document, "touchmove #lyricText", this.handleTouchMove);
+            this.delegateEvents(document, "touchend #lyricText", this.handleTouchEnd);
 
             this.render();
         },
@@ -99,6 +103,49 @@
             if(this.get("album")) {
                 return;
             }
+        },
+        handleTouchStart : function(event) {
+            clearTimeout(this._interval);
+            this._isUpdate = false;
+            this._touchStartY = event.targetTouches[0].pageY;
+            //按下时, 滚动距离
+            this._currDis = parseInt(this.$lyricText.css("transform").split(",")[1]);
+            if(!this._currDis) {
+                this._currDis = 0
+            }
+        },
+        handleTouchMove : function(event) {
+            //移动距离
+            var disY = event.targetTouches[0].pageY - this._touchStartY;
+            this.$lyricText.css({
+                "transform" : "translate3d(0px, " + (disY + this._currDis)+ "px, 0px)",
+                "transform-origin" : "0px 0px 0px",
+                "transition" : "transform 0s"
+            })
+
+        },
+        handleTouchEnd : function(event) {
+            var self = this;
+            //移动距离
+            var disY = parseInt(this.$lyricText.css("transform").split(",")[1]);
+            if(disY > 0) {
+                this.$lyricText.css({
+                    "transform" : "translate3d(0px, " + 0 + "px, 0px)",
+                    "transform-origin" : "0px 0px 0px",
+                    "transition" : "transform 0.3s ease-out"
+                })
+            }
+            if(disY < (player.get("lyrics").length - this._containCount) * this.get("lyricHeight")) {
+                this.$lyricText.css({
+                    "transform" : "translate3d(0px, " + ((player.get("lyrics").length - this._containCount) * this.get("lyricHeight") * -1) + "px, 0px)",
+                    "transform-origin" : "0px 0px 0px",
+                    "transition" : "transform 0.3s ease-out"
+                });
+            }
+            //延时启动回弹函数
+            this._interval = setTimeout(function() {
+                self._isUpdate = true;
+            }, 1000);
         },
         handlePlay : function(event) {
             var $target = $(event.currentTarget);
@@ -119,10 +166,6 @@
             this.$timeEnd.text(Util.parseSec(this.audio.duration));
         },
         handleTimeUpdate : function() {
-            if(!this._isUpdate) {
-                return;
-            }
-
             var curTime       = (this.audio.currentTime).toFixed(0);
             var curTimeForLrc = (this.audio.currentTime).toFixed(3);
             var playPercent   = 100 * (curTime / this.audio.duration);
@@ -135,14 +178,23 @@
 
             this.$timeStart.text(Util.parseSec(curTime));
 
-            if(this._hasLyric) {
+            if(this._hasLyric && this._isUpdate) {
                 //获取歌词索引
                 var lyricIndex = Util.getCurrentIndex(curTime, this.get("lyrics"));
                 var $lyricEle = this.$element.find("#lyric-" + lyricIndex);
                 this.$lastEle.removeClass("lyric-active");
                 $lyricEle.addClass("lyric-active");
                 this.$lastEle = $lyricEle;
-                if(curTime > 0 && lyricIndex > 2) {
+
+                if(lyricIndex >= (player.get("lyrics").length - this._containCount)) {
+                    this.$lyricText.css({
+                        "transform" : "translate3d(0px, " + ((player.get("lyrics").length - this._containCount) * this.get("lyricHeight") * -1) + "px, 0px)",
+                        "transform-origin" : "0px 0px 0px",
+                        "transition" : "transform 0.3s ease-out"
+                    });
+                    return;
+                }
+                if(curTime >= 0 && lyricIndex > 2) {
                     this.$lyricText.css({
                         "transform" : "translate3d(0px, " + ((lyricIndex - 2) * this.get("lyricHeight") * -1) + "px, 0px)",
                         "transform-origin" : "0px 0px 0px",

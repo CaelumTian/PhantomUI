@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="c55839ed-833c-41ae-92cb-5a5c2e6644b5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/widgets/musicPlayer/musicPalyer.js" afterPath="$PROJECT_DIR$/src/widgets/musicPlayer/musicPalyer.js" />
     </list>
     <ignored path="PhantomUI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,7 +27,7 @@
       <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/widgets/swiper/test/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-15.038462">
               <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
               <folding />
             </state>
@@ -37,64 +37,74 @@
       <file leaf-file-name="test.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/widgets/musicPlayer/test/test.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-25.576923">
-              <caret line="210" column="28" selection-start-line="210" selection-start-column="28" selection-end-line="210" selection-end-column="28" />
+            <state vertical-scroll-proportion="-7.8461537">
+              <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="musicPalyer.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="musicPalyer.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/widgets/musicPlayer/musicPalyer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="87" column="60" selection-start-line="87" selection-start-column="60" selection-end-line="87" selection-end-column="60" />
+            <state vertical-scroll-proportion="0.31392047">
+              <caret line="142" column="19" selection-start-line="142" selection-start-column="19" selection-end-line="142" selection-end-column="19" />
               <folding>
-                <marker date="1459166057000" expanded="true" signature="495:548" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:607" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:669" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:743" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:788" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:803" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:1255" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:1318" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:1336" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:1360" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:1444" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:1497" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:1534" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:1576" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:1591" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:1592" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:1671" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:1781" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:2328" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:2329" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:2330" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:2407" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:2440" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="495:2548" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="548:607" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="607:669" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="669:743" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="852:1028" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="1095:1213" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="1360:1444" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="1592:1671" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="1844:1909" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="1844:2291" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="1909:2106" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="1909:2291" placeholder="..." />
-                <marker date="1459166057000" expanded="true" signature="2390:2401" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:586" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:645" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:707" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:781" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:826" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:841" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:1293" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:1356" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:1374" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:1398" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:1482" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:1535" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:1572" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:1614" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:1629" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:1630" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:1709" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:1819" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:2366" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:2367" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:2368" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:2445" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:2478" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="533:2586" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="586:645" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="645:707" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="707:781" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="890:1066" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="1133:1251" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="1398:1482" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="1630:1709" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="1882:1947" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="1882:2329" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="1947:2144" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="1947:2329" placeholder="..." />
+                <marker date="1459266104000" expanded="true" signature="2428:2439" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pullRefresh.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/widgets/pullRefresh/pullRefresh.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="40" column="66" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.37037036">
+            <state vertical-scroll-proportion="0.0">
               <caret line="35" column="96" selection-start-line="35" selection-start-column="96" selection-end-line="35" selection-end-column="96" />
               <folding />
             </state>
@@ -120,20 +130,6 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="164" column="43" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="43" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="modal.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/widgets/modal/modal.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="48" selection-start-line="42" selection-start-column="11" selection-end-line="43" selection-end-column="48" />
-              <folding>
-                <marker date="1457429848000" expanded="true" signature="1069:1624" placeholder="..." />
-                <marker date="1457429848000" expanded="true" signature="1133:1375" placeholder="..." />
-                <marker date="1457429848000" expanded="true" signature="1441:1590" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -204,8 +200,8 @@
         <option value="$PROJECT_DIR$/src/widgets/musicPlayer/test/music.lrc" />
         <option value="$PROJECT_DIR$/less/font.less" />
         <option value="$PROJECT_DIR$/src/widgets/musicPlayer/test/test.html" />
-        <option value="$PROJECT_DIR$/src/widgets/musicPlayer/musicPalyer.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/widgets/musicPlayer/musicPalyer.js" />
       </list>
     </option>
   </component>
@@ -250,6 +246,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -278,20 +275,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="support" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhantomUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhantomUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -318,103 +301,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="swiper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhantomUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhantomUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="widgets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="swiper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhantomUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhantomUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="widgets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="musicPlayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhantomUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhantomUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="widgets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="musicPlayer" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhantomUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhantomUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="widgets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="modal" />
+              <option name="myItemId" value="pullRefresh" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -433,54 +320,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhantomUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhantomUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="widget" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhantomUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="PhantomUI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="widget" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -501,7 +340,6 @@
         </subPane>
       </pane>
       <pane id="Scope" />
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -606,18 +444,18 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329235" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="UnknownFeatures">
@@ -874,13 +712,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/pullRefresh/pullRefresh.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.2556819">
-          <caret line="56" column="13" selection-start-line="50" selection-start-column="12" selection-end-line="56" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/less/list.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-15.038462">
@@ -983,7 +814,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/widgets/swiper/test/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="-15.038462">
           <caret line="23" column="21" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="21" />
           <folding />
         </state>
@@ -997,17 +828,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/core/widget/widget.js">
+    <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="164" column="43" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="43" />
+          <caret line="35" column="96" selection-start-line="35" selection-start-column="96" selection-end-line="35" selection-end-column="96" />
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="MarkdownPreviewEditor">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/widgets/modal/modal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
+        <state vertical-scroll-proportion="0.024147727">
           <caret line="43" column="48" selection-start-line="42" selection-start-column="11" selection-end-line="43" selection-end-column="48" />
           <folding>
             <marker date="1457429848000" expanded="true" signature="1069:1624" placeholder="..." />
@@ -1017,68 +851,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/widgets/musicPlayer/musicPalyer.js">
+    <entry file="file://$PROJECT_DIR$/src/core/widget/widget.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="87" column="60" selection-start-line="87" selection-start-column="60" selection-end-line="87" selection-end-column="60" />
-          <folding>
-            <marker date="1459166057000" expanded="true" signature="495:548" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:607" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:669" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:743" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:788" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:803" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:1255" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:1318" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:1336" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:1360" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:1444" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:1497" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:1534" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:1576" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:1591" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:1592" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:1671" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:1781" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:2328" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:2329" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:2330" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:2407" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:2440" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="495:2548" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="548:607" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="607:669" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="669:743" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="852:1028" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="1095:1213" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="1360:1444" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="1592:1671" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="1844:1909" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="1844:2291" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="1909:2106" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="1909:2291" placeholder="..." />
-            <marker date="1459166057000" expanded="true" signature="2390:2401" placeholder="..." />
-          </folding>
+          <caret line="164" column="43" selection-start-line="164" selection-start-column="16" selection-end-line="164" selection-end-column="43" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/widgets/musicPlayer/test/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-25.576923">
-          <caret line="210" column="28" selection-start-line="210" selection-start-column="28" selection-end-line="210" selection-end-column="28" />
+        <state vertical-scroll-proportion="-7.8461537">
+          <caret line="12" column="19" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
+    <entry file="file://$PROJECT_DIR$/src/widgets/pullRefresh/pullRefresh.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.37037036">
-          <caret line="35" column="96" selection-start-line="35" selection-start-column="96" selection-end-line="35" selection-end-column="96" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="66" selection-start-line="40" selection-start-column="38" selection-end-line="40" selection-end-column="66" />
           <folding />
         </state>
       </provider>
-      <provider editor-type-id="MarkdownPreviewEditor">
-        <state />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/widgets/musicPlayer/musicPalyer.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31392047">
+          <caret line="142" column="19" selection-start-line="142" selection-start-column="19" selection-end-line="142" selection-end-column="19" />
+          <folding>
+            <marker date="1459266104000" expanded="true" signature="533:586" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:645" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:707" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:781" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:826" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:841" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:1293" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:1356" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:1374" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:1398" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:1482" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:1535" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:1572" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:1614" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:1629" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:1630" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:1709" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:1819" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:2366" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:2367" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:2368" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:2445" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:2478" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="533:2586" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="586:645" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="645:707" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="707:781" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="890:1066" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="1133:1251" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="1398:1482" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="1630:1709" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="1882:1947" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="1882:2329" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="1947:2144" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="1947:2329" placeholder="..." />
+            <marker date="1459266104000" expanded="true" signature="2428:2439" placeholder="..." />
+          </folding>
+        </state>
       </provider>
     </entry>
   </component>
