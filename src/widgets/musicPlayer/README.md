@@ -50,7 +50,7 @@ parentNode ： document.body //组件挂在位置， 默认<body>元素
 |endMusic    |音乐播放完成     |    
 
 ### 可操作对象：  
-`player.audio` : audio元素对象，
+`player.audio` : audio元素对象  
 `player.$barPlay` : 进度条zepto对象  
 ....
 
