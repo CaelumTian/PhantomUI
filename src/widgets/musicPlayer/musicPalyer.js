@@ -13,10 +13,8 @@
         _containCount : 8,   //最大容量数目
         attrs : {
             lyricHeight : 42,
-            text : "",
             lyrics : [],
             parentNode : ".content",
-            musicUrl : "",
             template :  '<div class="music-box">'
                        +    '<div class="main-box">'
                        +        '<div class="music-info">'
@@ -118,7 +116,7 @@
             //移动距离
             var disY = event.targetTouches[0].pageY - this._touchStartY;
             this.$lyricText.css({
-                "transform" : "translate3d(0px, " + (disY + this._currDis)+ "px, 0px)",
+                "transform" : "traanslate3d(0px, " + (disY + this._currDis)+ "px, 0px)",
                 "transform-origin" : "0px 0px 0px",
                 "transition" : "transform 0s"
             })
