@@ -41,7 +41,8 @@ endMusicCall : func
 lyricHeight : 42            //每条歌词所占高度， 默认42px
 parentNode ： document.body //组件挂在位置， 默认<body>元素
 ```  
-支持事件：  
+支持事件：    
+
 |事件类型    |触发说明         |  
 |:----------:|-----------------|  
 |playMusic   |开始播放音乐     |
