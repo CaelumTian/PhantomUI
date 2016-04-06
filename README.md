@@ -2,7 +2,7 @@ PhantomUI
 === 
 ![](https://travis-ci.org/T-phantom/PhantomUI.svg?branch=master)  ![](https://img.shields.io/badge/npm-v0.1.1-blue.svg)  
 ## HTML5 移动端组件库  
-丰富的高性能移动端组件库, 每个组件都可单独使用作为独立的模块, 目前正在`开发中`, 预计4月初正式完成.   
+丰富的高性能移动端组件库, 每个组件都可单独使用作为独立的模块.   
 
 ## 安装方法：  
 ```javascript  
@@ -31,6 +31,7 @@ $ npm install phantom-ui
 4. `OffCanvas`  侧滑组件 : 提供从左侧或者右侧滑出的面板。[OffCanvas 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/offCanvas)  
 5. `Tabs` 标签页组件 : 提供大小两组标签页样式. [Tabs 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/tabs)  
 6. `Swiper` 幻灯片组件 : 提供图片轮播效果. [Swiper 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/swiper)     
+7. `caelendat` 万年历组件  
 
 ### 扩展组件库  
 1. `MusicPlayer` 音乐播放组件 [MusicPlayer 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/musicPlayer)   
