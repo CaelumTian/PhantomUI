@@ -31,7 +31,7 @@ $ npm install phantom-ui
 4. `OffCanvas`  侧滑组件 : 提供从左侧或者右侧滑出的面板。[OffCanvas 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/offCanvas)  
 5. `Tabs` 标签页组件 : 提供大小两组标签页样式. [Tabs 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/tabs)  
 6. `Swiper` 幻灯片组件 : 提供图片轮播效果. [Swiper 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/swiper)     
-7. `caelendat` 万年历组件  
+7. `caelendar` 万年历组件  
 
 ### 扩展组件库  
 1. `MusicPlayer` 音乐播放组件 [MusicPlayer 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/musicPlayer)   
@@ -48,6 +48,7 @@ $ npm install phantom-ui
 9. `03/16` 完成Swiper组件   
 10. `03/27`配置音乐播放组件
 11. `03/29`完成音乐组件, 更新版本v0.1.1
+12. `04/07`配置日历组件
 
 
     
