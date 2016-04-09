@@ -29,6 +29,7 @@ var Calendar = function(options) {
             "6-24" : "骨质疏松日",
             "7-1" : "建党节",
             "8-1" : "建军节",
+            "9-3" : "抗战胜利日",
             "9-10" : "教师节",
             "10-1" : "国庆节",
             "11-17" : "学生日",
@@ -93,7 +94,7 @@ Calendar.prototype = {
         this.noliDateEle.innerHTML =   "<p>" + noli["month"] + noli["date"] +"</p>"
             + "<p>" + Util.getSexagenaryCycle(year) + "【" +Util.getZodiac(year) + "】" +"</p>";
 
-        for(var i = 1, len = suitTaboo["suit"].length; i < len; i++) {
+        for(var i = 0, len = suitTaboo["suit"].length; i < len; i++) {
             gooStr += "<span>" +  suitTaboo["suit"][i] +"</span>";
         }
         for(var i = 0, len = suitTaboo["taboo"].length; i < len; i++) {
@@ -103,12 +104,22 @@ Calendar.prototype = {
         this.badList.innerHTML = badStr;
     },
     initEvents : function() {
+        var self = this;
         var monthEle = this.monthEle = doc.querySelector("." + this.attrs.monthContainer);
+        this.goPrev = doc.querySelector(".goPrev");
+        this.goNext = doc.querySelector(".goNext");
 
         monthEle.addEventListener("mousedown", this._handleTouchStart.bind(this), false);
         monthEle.addEventListener("mousemove", this._handleTouchMove.bind(this), false);
         monthEle.addEventListener("mouseup", this._handleTouchEnd.bind(this), false);
         monthEle.addEventListener("click", this._handleClick.bind(this), false);
+
+        this.goPrev.addEventListener("click", function(event) {
+            self.turnPre();
+        }, false);
+        this.goNext.addEventListener("click", function(event) {
+            self.turnNext();
+        }, false);
         /**
          * 问题, bind(this)的事件函数, 无法removeEventListener
          */
@@ -664,6 +675,10 @@ var Util = {
         var taboo = ["纳采","冠笄","竖柱","掘井","伐木","理发","交易","探病","雕刻","斋醮"];
 
         var dateString = parseInt((year * month * day) % 1025).toString(2);
+        var len = dateString.length;
+        if(len < 10)
+            for(;len < 10 ;len ++)
+                dateString = "0" + dateString;
         dateString = dateString.split("").reverse().join("");
         var dateNum = parseInt(dateString, 2);
         var suitResult = [];
@@ -682,7 +697,7 @@ var Util = {
         var result = {
             'suit' : suitString,
             'taboo' : tabooString
-        };
+        }
         return result;
     }
 };
