@@ -27,10 +27,10 @@
       <file leaf-file-name="canlendar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/widgets/canlendar/canlendar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="16.975853">
-              <caret line="703" column="0" selection-start-line="703" selection-start-column="0" selection-end-line="703" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.95170456">
+              <caret line="735" column="0" selection-start-line="735" selection-start-column="0" selection-end-line="735" selection-end-column="0" />
               <folding>
-                <marker date="1460197604000" expanded="true" signature="15552:15731" placeholder="..." />
+                <marker date="1460223625000" expanded="true" signature="16823:17002" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -776,10 +776,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/widgets/canlendar/canlendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="16.975853">
-          <caret line="703" column="0" selection-start-line="703" selection-start-column="0" selection-end-line="703" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.95170456">
+          <caret line="735" column="0" selection-start-line="735" selection-start-column="0" selection-end-line="735" selection-end-column="0" />
           <folding>
-            <marker date="1460197604000" expanded="true" signature="15552:15731" placeholder="..." />
+            <marker date="1460223625000" expanded="true" signature="16823:17002" placeholder="..." />
           </folding>
         </state>
       </provider>

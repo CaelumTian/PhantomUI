@@ -75,6 +75,7 @@ Calendar.prototype = {
         this.noliDateEle = doc.querySelector(".noliDate");
         this.gooList = doc.querySelector(".gooList");
         this.badList = doc.querySelector(".badList");
+        this.timePannel = doc.getElementById("timePannel");
 
         //初始化 aside页面
         this.setAside();
@@ -112,7 +113,13 @@ Calendar.prototype = {
         monthEle.addEventListener("mousedown", this._handleTouchStart.bind(this), false);
         monthEle.addEventListener("mousemove", this._handleTouchMove.bind(this), false);
         monthEle.addEventListener("mouseup", this._handleTouchEnd.bind(this), false);
+
+        monthEle.addEventListener("touchstart", this._handleTouchStart.bind(this), false);
+        monthEle.addEventListener("touchmove", this._handleTouchMove.bind(this), false);
+        monthEle.addEventListener("touchend", this._handleTouchEnd.bind(this), false);
+
         monthEle.addEventListener("click", this._handleClick.bind(this), false);
+        monthEle.addEventListener("touchstart", this._handleClick.bind(this), false);
 
         this.goPrev.addEventListener("click", function(event) {
             self.turnPre();
@@ -125,6 +132,15 @@ Calendar.prototype = {
          */
         monthEle.addEventListener("transitionend", this._transformEnd.bind(this), false);
         monthEle.addEventListener("webkitTransitionEnd", this._transformEnd.bind(this), false);
+
+        window.addEventListener("resize", this._handleResize.bind(this), false);
+    },
+    _handleResize : function(event) {
+        var self = this;
+        //函数节流, 重调操作快 宽度
+        self.resizeInterval = setTimeout(function() {
+            self.offsetValue = self.monthEle.offsetWidth;
+        }, 300)
     },
     _handleClick : function(event) {
         event.preventDefault();
@@ -147,6 +163,10 @@ Calendar.prototype = {
     },
     _handleTouchStart : function(event) {
         event.preventDefault();
+        //多次触发bug
+        if(!this._interval) {
+            return;
+        }
         this.isTouched = true;
         if(event.type === "touchstart") {
             this.touchesStart.x = event.targetTouches[0].pageX;
@@ -167,9 +187,10 @@ Calendar.prototype = {
         }
         //横向移动距离
         this.touchesDiff = pageX - this.touchesStart.x;
+        this.endPos = pageX;
         //设置样式
-        this.monthEle.style[Util.prefix + "transition"] = "0ms";
-        this.monthEle.style[Util.prefix + "transform"] = "translate3d(" + (this.index * this.offsetValue + this.touchesDiff) + "px, 0px, 0px";
+        this.monthEle.style[Util.prefix + "transition"] = "all 0ms";
+        this.monthEle.style[Util.prefix + "transform"] = "translate3d(" + (this.index * this.offsetValue + this.touchesDiff) + "px, 0px, 0px)";
 
     },
     _handleTouchEnd : function(event) {
@@ -180,12 +201,7 @@ Calendar.prototype = {
             return;
         }
 
-        if(event.type === "touchend") {
-            var pageX = event.targetTouches[0].pageX;
-        }else {
-            var pageX = event.pageX;
-        }
-        var comPos = pageX - this.touchesStart.x;
+        var comPos = this.endPos - this.touchesStart.x;
         if(Math.abs(comPos) < this.attrs.limitDis) {
             this._transformPage();
         }else {
@@ -222,18 +238,33 @@ Calendar.prototype = {
         this._transformPage();
     },
     _transformPage : function() {
-        console.log(this.index);
         this.monthEle.style[Util.prefix + "transition"] = "300ms";
         this.monthEle.style[Util.prefix + "transform"] = "translate3d(" + (this.index * 100) + "%, 0, 0)";
     },
-
+    _tipPannel : function() {
+        var self = this;
+        if(this.offsetValue > 425) {
+            return;
+        }
+        var year = this.value.getFullYear(),
+            month = this.value.getMonth() + 1;
+        this.timePannel.textContent = year + "年" + month + "月";
+        clearTimeout(this.tipInterval);
+        this.timePannel.style["display"] = "block";
+        //强制relayout
+        self.timePannel.offsetWidth;
+        this.timePannel.style["opacity"] = 1;
+        this.tipInterval = setTimeout(function() {
+            self.timePannel.style["opacity"] = 0;
+            self.timePannel.style["display"] = "none";
+        }, 800);
+    },
     _transformEnd : function() {
         //不是翻页不行
         var offset = this._offset;
         if(!this._isTurnPage) {
             return;
         }
-        console.log("时间运算");
         var date = new Date(this.value);
         var year = date.getFullYear(),
             month = date.getMonth();
@@ -255,7 +286,8 @@ Calendar.prototype = {
             }
         }
         this.value = date;
-        console.log(this.value);
+        this._tipPannel();
+
         this.layout();
         // 重定位
         var index = this.index * -1;
@@ -279,7 +311,7 @@ Calendar.prototype = {
     resetDate : function(date) {
         this.value = date;
         this.index = 0;
-        this.monthEle.style[Util.prefix + "transition"] = "0ms";
+        this.monthEle.style[Util.prefix + "transition"] = "all 0ms";
         this.monthEle.style[Util.prefix + "transform"] = "translate3d(0 ,0 ,0)";
         this.prevMonthEle.style[Util.prefix + "transform"] = "translate3d(-100%, 0px, 0px)";
         this.currMonthEle.style[Util.prefix + "transform"] = "translate3d(0%, 0px, 0px)";
