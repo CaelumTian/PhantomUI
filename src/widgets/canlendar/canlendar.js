@@ -43,6 +43,7 @@ var Calendar = function(options) {
         dateFormat: 'yyyy-mm-dd',  //打印格式, formatDate 对应,
         weekHandler : "dayThead",
         monthContainer : "dateUl",
+        toolBar : "timeChoose",
 
         limitDis : 80        //滑动距离限制, 大于该距离时, 触发切换页面
     };
@@ -67,6 +68,7 @@ Calendar.prototype = {
         this.layout();
         //初始化参数
         this.index = 0;
+        this._initEd = true;
         this._interval = true;
         this.offsetValue = this.monthEle.offsetWidth;
         //节点操作
@@ -76,6 +78,9 @@ Calendar.prototype = {
         this.gooList = doc.querySelector(".gooList");
         this.badList = doc.querySelector(".badList");
         this.timePannel = doc.getElementById("timePannel");
+        this.prevMonthEle = doc.querySelector(".prev-month-html");
+        this.currMonthEle = doc.querySelector(".current-month-html");
+        this.nextMonthEle = doc.querySelector(".next-month-html");
 
         //初始化 aside页面
         this.setAside();
@@ -101,12 +106,15 @@ Calendar.prototype = {
         for(var i = 0, len = suitTaboo["taboo"].length; i < len; i++) {
             badStr += "<span>" + suitTaboo["taboo"][i] + "</span>";
         }
+
         this.gooList.innerHTML = gooStr;
         this.badList.innerHTML = badStr;
     },
     initEvents : function() {
         var self = this;
         var monthEle = this.monthEle = doc.querySelector("." + this.attrs.monthContainer);
+        this.timeChooseEle = doc.querySelector(".timeChoose");
+
         this.goPrev = doc.querySelector(".goPrev");
         this.goNext = doc.querySelector(".goNext");
 
@@ -133,7 +141,61 @@ Calendar.prototype = {
         monthEle.addEventListener("transitionend", this._transformEnd.bind(this), false);
         monthEle.addEventListener("webkitTransitionEnd", this._transformEnd.bind(this), false);
 
+        //操作表操作
+        this.timeChooseEle.addEventListener("click", this._handleTimeChoose.bind(this), false);
+        document.addEventListener("click", this._handleDocument.bind(this), false);
+
         window.addEventListener("resize", this._handleResize.bind(this), false);
+    },
+    //toolBar等辅助事件
+    _handleDocument : function(event) {
+        var target = event.target,
+            cls = target.className;
+        if(cls !== "pullDown") {
+            var btns = document.querySelectorAll(".buttonGroup");
+            for(var i = 0, len = btns.length; i < len; i++) {
+                btns[i].classList.remove("open");
+            }
+        }
+    },
+    _handleTimeChoose : function(event) {
+        event.preventDefault();
+        var target = event.target;
+        var parentNode = target.parentNode;
+        var cls = target.className;
+
+        console.log(target);
+        console.log(parentNode);
+
+        //删除非元素节点
+        if(target.nodeType !== 1) {
+            return;
+        }
+        if(cls === "pullDown") {
+            var pCls = parentNode.className.split(" ");
+            if(pCls.indexOf("open") === -1) {
+                parentNode.classList.add("open");
+            }else {
+                parentNode.classList.remove("open");
+            }
+        }
+        //返回今天
+        if(cls === "returnToday" || parentNode.className === "returnToday") {
+            this.resetDate(new Date());
+        }
+        //年份更新
+        if(cls === "list-year") {
+            var year = parseInt(target.getAttribute("data-year")),
+                month = parseInt(doc.getElementById("op-month-time").textContent) - 1;
+            doc.getElementById("op-year-time").textContent = year + "年";
+            this.resetDate(new Date(year, month));
+        }
+        if(cls === "list-month") {
+            var year = parseInt(doc.getElementById("op-year-time").textContent),
+                month = parseInt(target.getAttribute("data-month"));
+            doc.getElementById("op-month-time").textContent = month + "月";
+            this.resetDate(new Date(year, month));
+        }
     },
     _handleResize : function(event) {
         var self = this;
@@ -292,6 +354,7 @@ Calendar.prototype = {
         // 重定位
         var index = this.index * -1;
 
+        //重新获取 时间容器节点
         this.prevMonthEle = doc.querySelector(".prev-month-html");
         this.currMonthEle = doc.querySelector(".current-month-html");
         this.nextMonthEle = doc.querySelector(".next-month-html");
@@ -299,6 +362,9 @@ Calendar.prototype = {
         this.prevMonthEle.style[Util.prefix + "transform"] = "translate3d(" + (index - 1) * 100  + "%, 0px, 0px)";
         this.currMonthEle.style[Util.prefix + "transform"] = "translate3d(" + (index) * 100 + "%, 0px, 0px)";
         this.nextMonthEle.style[Util.prefix + "transform"] = "translate3d(" + (index + 1) * 100 + "%, 0px, 0px)";
+
+        doc.getElementById("op-year-time").textContent = this.value.getFullYear() + "年";
+        doc.getElementById("op-month-time").textContent = (this.value.getMonth() + 1) + "月";
 
         //恢复锁,可以继续触发
         this._interval = true;
@@ -316,6 +382,10 @@ Calendar.prototype = {
         this.prevMonthEle.style[Util.prefix + "transform"] = "translate3d(-100%, 0px, 0px)";
         this.currMonthEle.style[Util.prefix + "transform"] = "translate3d(0%, 0px, 0px)";
         this.nextMonthEle.style[Util.prefix + "transform"] = "translate3d(100%, 0px, 0px)";
+
+        doc.getElementById("op-year-time").textContent = this.value.getFullYear() + "年";
+        doc.getElementById("op-month-time").textContent = (this.value.getMonth() + 1) + "月";
+
         this.layout();
     },
     layout : function() {
@@ -330,21 +400,59 @@ Calendar.prototype = {
             + '<div class="dateLi current-month-html"><div class="dayTbody">' + currentMonthHTML + "</div></div>"
             + '<div class="dateLi next-month-html"><div class="dayTbody">' + nextMonthHTML + "</div></div>"
 
-        //渲染 星期头部
-        var weekHeaderHTML = [];
-        for(var i = 0; i < 7; i++) {
-            var weekDayIndex = (i + this.attrs.firstDay > 6) ? (i - 7 + this.attrs.firstDay) : (i + this.attrs.firstDay);
-            var dayName = this.attrs.dayNames[weekDayIndex];
-            if(this.attrs.weekendDays.indexOf(weekDayIndex) !== -1) {
-                //休息日样式
-                weekHeaderHTML.push('<div class="dayTd active">' + dayName + '</div>');
-            }else {
-                weekHeaderHTML.push('<div class="dayTd">' + dayName + '</div>');
+        if(!this._initEd) {
+            //初次渲染的时候使用, 否则不使用
+            //渲染 星期头部
+            var weekHeaderHTML = [];
+            for(var i = 0; i < 7; i++) {
+                var weekDayIndex = (i + this.attrs.firstDay > 6) ? (i - 7 + this.attrs.firstDay) : (i + this.attrs.firstDay);
+                var dayName = this.attrs.dayNames[weekDayIndex];
+                if(this.attrs.weekendDays.indexOf(weekDayIndex) !== -1) {
+                    //休息日样式
+                    weekHeaderHTML.push('<div class="dayTd active">' + dayName + '</div>');
+                }else {
+                    weekHeaderHTML.push('<div class="dayTd">' + dayName + '</div>');
+                }
             }
+
+
+            var yearSelectHTML = [],
+                monthSelectHTML = [];
+            for(var i = 1900; i <= 2050; i++) {
+                var str = "<li class='list-year' data-year='" + i + "'>" + i + "年</li>";
+                yearSelectHTML.push(str);
+            }
+            for(var i = 1; i <= 12; i++) {
+                var str = "<li class='list-month' data-month='" + (i - 1) + "'>" + i + "月</li>";
+                monthSelectHTML.push(str);
+            }
+
+            doc.querySelector("." + this.attrs.weekHandler).innerHTML = weekHeaderHTML.join("");
+            doc.querySelector("." + this.attrs.toolBar).innerHTML =  '<div class="yearChoose">'
+                +   '<div class="chooseContainer">'
+                +       '<div class="buttonGroup">'
+                +           '<span class="yearTime" id="op-year-time">' + new Date().getFullYear() + '年</span>'
+                +           '<span class="pullDown">+</span>'
+                +       '</div>'
+                +       '<div class="pullSelect">'
+                +           '<ul>' + yearSelectHTML.join('') + '</ul>'
+                +       '</div>'
+                +   '</div>'
+                +'</div>'
+                +'<div class="monthChoose">'
+                +   '<div class="chooseContainer">'
+                +       '<div class="buttonGroup">'
+                +           '<span class="monthTime" id="op-month-time">' + (new Date().getMonth() + 1) + '月</span>'
+                +           '<span class="pullDown">+</span>'
+                +       '</div>'
+                +       '<div class="pullSelect">'
+                +           '<ul>' + monthSelectHTML.join('') + '</ul>'
+                +       '</div>'
+                +   '</div>'
+                +'</div>'
+                +'<div class="returnToday"><span>返回今天</span></div>'
         }
 
-        //渲染各部分HTML
-        doc.querySelector("." + this.attrs.weekHandler).innerHTML = weekHeaderHTML.join("");
         doc.querySelector("." + this.attrs.monthContainer).innerHTML = monthHTML;
     },
     /**
@@ -447,15 +555,21 @@ Calendar.prototype = {
                 //农历日期
                 var ccalendar = Util.getLunarCalendar(dayYear, dayMonth + 1, dayNumber);
                 var holiday = this.attrs.holiday[(dayMonth + 1) + "-" + dayNumber];
+
                 if(holiday) {
                     var alamanac = holiday;
                     classNames.push("date-holiday");
                 }else {
-                    if(ccalendar["solarTerm"]) {
-                        var alamanac = ccalendar["solarTerm"];
+                    if(ccalendar["festival"]) {
+                        var alamanac = ccalendar["festival"];
                         classNames.push("date-holiday");
                     }else {
-                        var alamanac = ccalendar["date"];
+                        if (ccalendar["solarTerm"]) {
+                            var alamanac = ccalendar["solarTerm"];
+                            classNames.push("date-holiday");
+                        } else {
+                            var alamanac = ccalendar["date"];
+                        }
                     }
                 }
 
