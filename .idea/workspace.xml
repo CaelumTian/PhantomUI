@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c55839ed-833c-41ae-92cb-5a5c2e6644b5" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/widgets/canlendar/canlendar.js" afterPath="$PROJECT_DIR$/src/widgets/canlendar/canlendar.js" />
     </list>
     <ignored path="PhantomUI.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,8 +26,8 @@
       <file leaf-file-name="canlendar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/widgets/canlendar/canlendar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.95170456">
-              <caret line="849" column="0" selection-start-line="849" selection-start-column="0" selection-end-line="849" selection-end-column="0" />
+            <state vertical-scroll-proportion="20.042614">
+              <caret line="830" column="29" selection-start-line="830" selection-start-column="29" selection-end-line="830" selection-end-column="29" />
               <folding>
                 <marker date="1460387581000" expanded="true" signature="21608:21787" placeholder="..." />
               </folding>
@@ -161,7 +160,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -237,6 +235,7 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -765,8 +764,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/widgets/canlendar/canlendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.95170456">
-          <caret line="849" column="0" selection-start-line="849" selection-start-column="0" selection-end-line="849" selection-end-column="0" />
+        <state vertical-scroll-proportion="20.042614">
+          <caret line="830" column="29" selection-start-line="830" selection-start-column="29" selection-end-line="830" selection-end-column="29" />
           <folding>
             <marker date="1460387581000" expanded="true" signature="21608:21787" placeholder="..." />
           </folding>
