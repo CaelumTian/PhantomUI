@@ -1,36 +1,34 @@
 var gulp = require("gulp"),
-	gulpLoadPlugins = require('gulp-load-plugins'),
+    gulpLoadPlugins = require('gulp-load-plugins'),
     Browsersync = require('browser-sync').create(),
     reload = Browsersync.reload;
 var concat = require("gulp-concat");
 const $ =  gulpLoadPlugins();
 gulp.task("less", function() {
 	return gulp.src([
-					'./less/reset.less',
-					'./less/font.less',
-					'./less/flex.less',
-					'./less/base.less',
-					'./less/list.less',
-					'./less/card.less',
-					'./less/tabs.less'
-				])
-		       .pipe($.concat("phantomui.css"))
-			   .pipe($.less())
-			   .pipe($.autoprefixer())
-			   .pipe(gulp.dest("./build"));
+		'./less/reset.less',
+		'./less/font.less',
+		'./less/flex.less',
+		'./less/base.less',
+		'./less/list.less',
+		'./less/card.less',
+		'./less/tabs.less'])
+	       .pipe($.concat("phantomui.css"))
+	       .pipe($.less())
+	       .pipe($.autoprefixer())
+	       .pipe(gulp.dest("./build"));
 });
 gulp.task("js", function() {
 	return gulp.src([
-						'./src/core/base/class.js',
-						'./src/core/base/base.js',
-						'./src/core/widget/widget.js',
-						'./src/core/widgets/router/router.js'
-					])
-				.pipe($.concat("phantomui.js"))
-				.pipe($.jshint(".jshintrc"))
-				.pipe($.jshint.reporter('default'))
-				.pipe($.uglify())
-				.pipe(gulp.dest("./build"));
+		'./src/core/base/class.js',
+		'./src/core/base/base.js',
+		'./src/core/widget/widget.js',
+		'./src/core/widgets/router/router.js'])
+		.pipe($.concat("phantomui.js"))
+		.pipe($.jshint(".jshintrc"))
+		.pipe($.jshint.reporter('default'))
+		.pipe($.uglify())
+		.pipe(gulp.dest("./build"));
 });
 gulp.task("clean", function() {
 	//del(['./styles/**/*.css']);
