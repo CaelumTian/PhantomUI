@@ -1,6 +1,6 @@
 {
   "name": "phantom-ui",
-  "version": "0.1.0",
+  "version": "1.2.1",
   "description": "PhantomUI 组件库",
   "devDependencies": {
     "browser-sync": "^2.9.3",
