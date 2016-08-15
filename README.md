@@ -36,19 +36,36 @@ $ npm install phantom-ui
 ### 扩展组件库  
 1. `MusicPlayer` 音乐播放组件 [MusicPlayer 使用说明](https://github.com/T-phantom/PhantomUI/tree/master/src/widgets/musicPlayer)   
 
+### 非UI的功能性组件    
+1. `app-link` jsbridge组件，提供H5页面和native端互相通信的机制  [app-link 使用说明](https://github.com/T-phantom/app-link)  
+2. `si-img` 提供移动端图片优化的功能，包括base64存续，webp支持，惰性加载等 [si-img 使用说明](https://github.com/T-phantom/si-img)  
+3. `si-gesture` 提供移动端的手势扩展功能，例如：tap, pan, 多指触控等 [si-gesture 使用说明](https://github.com/T-phantom/si-gesture)  
+
 ## 更新日志  
-1. `03/06` 完成router模块的最后调试,解决测试中问题,添加思考. 完善widget文档  
-2. `03/07` 完成flex栅格设计.
-3. `03/08` 完成Modal组件, 文档待更新; router发现bug, 建议NA端处理
-4. `03/10` 完成PullRefresh组件, 更新Widget类, 修正Widget.query方法  
-5. `03/11` 完成部分基础CSS, 包括 标题 段落 列表 字体图标. 同意less内容  
-6. `03/12` 完成OffCanvas组件
-7. `03/13` 完成表单, 卡片样式, 修正基本样式库  
-8. `03/15` 完成Tabs组件，添加CSS屏幕适配(rem大小调整)
-9. `03/16` 完成Swiper组件   
-10. `03/27`配置音乐播放组件
-11. `03/29`完成音乐组件, 更新版本v0.1.1
-12. `04/07`配置日历组件
+### 1.0.0  
+1. 完成核心组件库的编写，提供基础搭建环境  
+2. 完成基本组件的编写  
+
+### 1.0.1  
+1. 修复router组件不能触发js的执行的bug   
+
+### 1.1.0  
+1. 添加caelendar日历组件  
+2. 添加MusicPlayer扩展组件  
+
+### 1.1.1  
+1. 提供日历组件对农历的支持  
+2. 优化侧滑组件  
+3. 更新demo代码，去掉点击穿透  
+
+### 1.2.0  
+1. 开发非UI类型的功能性组件  
+2. 添加`app-link`组件，作为Hybrid解决方案  
+
+### 1.2.1  
+1. 添加`si-img`, `si-gesture`组件
+
+
 
 
     
