@@ -1,4 +1,4 @@
 .DS_Store
 /support
-/node_modules
-/.idea
+node_modules/
+.idea
