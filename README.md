@@ -63,7 +63,10 @@ $ npm install phantom-ui
 2. 添加`app-link`组件，作为Hybrid解决方案  
 
 ### 1.2.1  
-1. 添加`si-img`, `si-gesture`组件  
+1. 添加`si-img`, `si-gesture`组件    
+
+### 1.2.2  
+1. 添加`/tools/log.js` 输出信息工具，方便移动端调试  
 
 ## 待更新问题  
 1. 没有对所有类别组件提供一个统一的引入机制，只能自己引入  
