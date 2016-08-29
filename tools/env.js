@@ -144,7 +144,7 @@
                 os.isAndroidPad = true;
             }
         }else if((matched = ua.match(/(iPhone|iPad|iPod)/))) {
-            let name = matched[1];
+            var name = matched[1];
             if((matched = ua.match(/OS ([\d_\.]+) like Mac OS X/))) {
                 os = {
                     name: name,
