@@ -1,6 +1,6 @@
 PhantomUI    
 === 
-![](https://travis-ci.org/T-phantom/PhantomUI.svg?branch=master)  ![](https://img.shields.io/badge/npm-v0.1.1-blue.svg)  
+![](https://travis-ci.org/T-phantom/PhantomUI.svg?branch=master)  ![](https://img.shields.io/badge/npm-v1.2.3-blue.svg)  
 ## HTML5 移动端组件库  
 丰富的高性能移动端组件库, 每个组件都可单独使用作为独立的模块.   
 
@@ -40,6 +40,7 @@ $ npm install phantom-ui
 1. `app-link` jsbridge组件，提供H5页面和native端互相通信的机制  [app-link 使用说明](https://github.com/T-phantom/app-link)  
 2. `si-img` 提供移动端图片优化的功能，包括base64存续，webp支持，惰性加载等 [si-img 使用说明](https://github.com/T-phantom/si-img)  
 3. `si-gesture` 提供移动端的手势扩展功能，例如：tap, pan, 多指触控等 [si-gesture 使用说明](https://github.com/T-phantom/si-gesture)  
+4. `si-env` 判断当前框架的运行的设备环境 [si-env 使用说明](https://github.com/T-phantom/si-env)    
 
 ## 更新日志  
 ### 1.0.0  
@@ -66,7 +67,11 @@ $ npm install phantom-ui
 1. 添加`si-img`, `si-gesture`组件    
 
 ### 1.2.2  
-1. 添加`/tools/log.js` 输出信息工具，方便移动端调试  
+1. 添加`/tools/log.js` 输出信息工具，方便移动端调试   
+
+### 1.2.3  
+1. 添加`/tools/promise.js` 辅助promise对代码改造
+2. 添加`si-env` 判断当前组件运行环境
 
 ## 待更新问题  
 1. 没有对所有类别组件提供一个统一的引入机制，只能自己引入  
