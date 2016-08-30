@@ -12,7 +12,8 @@ gulp.task("less", function() {
 		'./less/base.less',
 		'./less/list.less',
 		'./less/card.less',
-		'./less/tabs.less'])
+		'./less/tabs.less',
+		'./less/widgets.less'])
 	       .pipe($.concat("phantomui.css"))
 	       .pipe($.less())
 	       .pipe($.autoprefixer())
@@ -23,7 +24,13 @@ gulp.task("js", function() {
 		'./src/core/base/class.js',
 		'./src/core/base/base.js',
 		'./src/core/widget/widget.js',
-		'./src/core/widgets/router/router.js'])
+		'./src/core/widgets/router/router.js',
+		'./src/core/widgets/modal/pannel.js',
+		'./src/core/widgets/modal/modal.js',
+		'./src/core/widgets/offCanvas/offCanvas.js',
+		'./src/core/widgets/pullRefresh/pullRefresh.js',
+		'./src/core/widgets/swiper/swiper.js',
+		'./src/core/widgets/tabs/tabs.js'])
 		.pipe($.concat("phantomui.js"))
 		.pipe($.jshint(".jshintrc"))
 		.pipe($.jshint.reporter('default'))
