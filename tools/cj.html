@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .container {
+            display: flex;
+        }
+        .item {
+            flex: 1;
+        }
+        .result div {
+            margin-bottom: 10px;
+        }
+        .red {
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+<h1>开始测试了</h1>
+
+<div class="container">
+    <div class="item">
+        <h2>前端期望接受的内容</h2>
+        <pre>
+    {
+        name: Cj.string.isRequired,
+        age: Cj.number.isRequired,
+        address: Cj.oneOf([
+            "北京市",
+            "杭州市",
+            "深圳市"
+        ]),
+        friends: Cj.arrayOf(Cj.shape({
+            name: Cj.string,
+            id: Cj.number.isRequired
+        })),
+        info: Cj.shape({
+            firstName: Cj.shape({
+                value: Cj.string
+            }),
+            lastName: Cj.shape({
+                value: Cj.string
+            })
+        }),
+        other: Cj.instanceOf(Other)
+    }
+    </pre>
+    </div>
+    <div class="item">
+        <h2>实际后端返回数据</h2>
+        <pre>
+            {
+                name: "tgy",
+                age: 12,
+                address: "北京1市",
+                friends: [
+                    {
+                        name: "lwq",
+                        id: "20135734"
+                    },
+                    {
+                        name: "hyy",
+                        id: 20135755
+                    }
+                ],
+                info: {
+                    firstName: {
+                        value: "L"
+                    },
+                    lastName: {
+                        value: "WQ"
+                    }
+                },
+                newData: {
+                    newName: "lwq"
+                },
+                other: new Tian()
+            }
+        </pre>
+    </div>
+    <div class="item">
+        <h2>测试结果</h2>
+        <div class="result">
+
+        </div>
+    </div>
+</div>
+
+<script>
+    //对console.log重写
+    var wrap = document.querySelector(".result");
+    var _console = window.console;
+    window.console = {
+        log: function(text) {
+            _console.log(text);
+            var ele = document.createElement("div");
+            ele.textContent = text;
+            wrap.appendChild(ele);
+        },
+        warn: function(text) {
+            _console.log(text);
+            var ele = document.createElement("div");
+            ele.classList.add("red");
+            ele.textContent = text;
+            wrap.appendChild(ele);
+        }
+    }
+</script>
+<script>
+    var Cj = {
+        string: _createPrimaryTypeChecker("String"),
+        number: _createPrimaryTypeChecker("Number"),
+        array: _createPrimaryTypeChecker("Array"),
+        func: _createPrimaryTypeChecker("Function"),
+        object: _createPrimaryTypeChecker("Object"),
+
+        arrayOf: _createArrayOfTypeChecker,
+        instanceOf: _createInstanceTypeChecker,
+        oneOf: _createEnumTypeChecker,
+        oneOfType: _createUnionTypeChecker,
+        shape: _createShapeTypeChecker
+    };
+
+    let queue = [];
+    let position = 0;
+
+
+    function _createPrimaryTypeChecker(type) {
+
+        function validate(type, value, originKey) {
+            var flag = Object.prototype.toString.call(value);
+            return flag === "[object " + type + "]";
+        }
+        return _createChainableChecker(validate.bind(null, type));
+    }
+
+    function _createInstanceTypeChecker(_Object) {
+        function validate(_Object, value, originKey) {
+            try {
+                var result = value instanceof _Object;
+                return result;
+            }catch(e) {
+                return false;
+            }
+        }
+        return _createChainableChecker(validate.bind(null, _Object));
+    }
+
+    /**
+     * 必须是数组
+     * @param arr
+     * @private
+     */
+    function _createEnumTypeChecker(arr) {
+        if(!Array.isArray(arr)) {
+            return false;
+        }
+        function validate(arr, value, originKey) {
+            for(var i = 0, len = arr.length; i < len; i++) {
+                //找到由符合得了就结束
+                if(arr[i] === value) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        return _createChainableChecker(validate.bind(null, arr));
+    }
+
+    function _createUnionTypeChecker(arr) {
+        if(!Array.isArray(arr)) {
+            return false;
+        }
+        function validate(arr, value, originKey) {
+            for(var i = 0, len = arr.length; i < len; i++) {
+                if(arr[i](value)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        return _createChainableChecker(validate.bind(null, arr));
+    }
+
+    function _createArrayOfTypeChecker(type) {
+        function validate(type, arr, originKey) {
+            if(!Array.isArray(arr)) {
+                return false;
+            }
+            for(var i = 0, len = arr.length; i < len; i++) {
+                if(!type(arr[i])) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        return _createChainableChecker(validate.bind(null, type));
+    }
+
+    function _createShapeTypeChecker(objType) {
+        if(typeof objType !== "object") {
+            return false;
+        }
+        function validate(objType, obj, originKey) {
+            //result 总抽样
+            let result = true;
+            for(var key in objType) {
+                queue.push(key);
+                position++;
+
+                let func = objType[key];
+
+                if(func(obj[key], key)) {
+                    console.log(queue.join("-->") + "检测通过");
+                }else {
+                    console.warn(queue.join("-->") + "检测失败");
+                    result = false;
+                }
+
+                queue.splice(position - 1, 1);
+                position--;
+
+            }
+            return result;
+        }
+        return _createChainableChecker(validate.bind(null, objType));
+    }
+
+
+
+    function _createChainableChecker(validate) {
+        function checkType(isRequired, value, originKey) {
+
+            if(value) {
+                //value值  originKey
+                return validate(value, originKey);
+            }else {
+                if(isRequired) {
+                    console.log("Error: " + key + "是必须的");
+                    return false;
+                }else {
+                    return true;
+                }
+            }
+        }
+        var chainedCheckType = checkType.bind(null, false);
+        chainedCheckType.isRequired = checkType.bind(null, true);
+        return chainedCheckType;
+    }
+
+
+    //----------测试部分--------
+
+    //类测试
+    function Tian() {}
+
+
+
+
+    var temp =  {
+        name: Cj.string.isRequired,
+        age: Cj.number.isRequired,
+        address: Cj.oneOf([
+            "北京市",
+            "杭州市",
+            "深圳市"
+        ]),
+        friends: Cj.arrayOf(Cj.shape({
+            name: Cj.string,
+            id: Cj.number.isRequired
+        })),
+        info: Cj.shape({
+            firstName: Cj.shape({
+                value: Cj.string
+            }),
+            lastName: Cj.shape({
+                value: Cj.string
+            })
+        }),
+        other: Cj.instanceOf(Tian)
+    };
+
+    var data = {
+        name: "tgy",
+        age: 12,
+        address: "北京1市",
+        friends: [
+            {
+                name: "lwq",
+                id: "20135734"
+            },
+            {
+                name: "hyy",
+                id: 20135755
+            }
+        ],
+        info: {
+            firstName: {
+                value: "L"
+            },
+            lastName: {
+                value: "WQ"
+            }
+        },
+        newData: {
+            newName: "lwq"
+        },
+        other: new Tian()
+    };
+
+
+    for(var key in temp) {
+        queue.push(key);
+        position++;
+        var func = temp[key];
+        if(func(data[key], key)) {
+            console.log(key + "是检测通过的");
+        }else {
+            console.warn(key + "检测失败的");
+        };
+        position = 0;
+        queue = [];
+    }
+</script>
+</body>
+</html>
