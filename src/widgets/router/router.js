@@ -522,7 +522,7 @@
     });
     $(document).ready(function() {
         var router = new Router({});
-        $(document).on("click touchstart", "a", function(event) {
+        $(document).on("click", "a", function(event) {
             //阻止a的默认事件   这里还要添加配置是否开启router
             event.preventDefault();
             var $target = $(event.currentTarget);
